@@ -1,0 +1,25 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+@font-face {
+    font-family: 'FormulaOne-Bold';
+    src: url("../fonts/Formula1-Bold.otf") format('OpenType');
+}
+
+@font-face {
+    font-family: 'FormulaOne-Regular';
+    src: url("../fonts/Formula1-Regular.otf") format('OpenType');
+}
+
+@font-face {
+    font-family: 'FormulaOne-Wide';
+    src: url("../fonts/Formula1-Wide.otf") format('OpenType');
+}
+
+$primary: #e11e00;
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';

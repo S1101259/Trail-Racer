@@ -1,0 +1,78 @@
+<template>
+    <nav class="navbar navbar-expand-lg navbar-light bg-red navbar-padding navbar-custom-padding">
+        <router-link :to="{name: 'home'}" class="navbar-brand navbar-brand-font p-lg-0">
+            <img src="../../../../images/raymonlogo.png"
+                 class="d-inline-block align-top p-lg-0 navbar-brand-logo" alt="">
+        </router-link>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link navbar-item-font" href="#">Competities</a>
+                </li>
+                <li class="nav-item" v-if="isLoggedIn">
+                    <a class="nav-link navbar-item-font" href="#">Mijn Competities</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link navbar-item-font" href="#">Klassement</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav float-lg-right">
+                <template v-if="!isLoggedIn">
+                <li class="nav-item active">
+                    <router-link :to="{name: 'login'}" class="nav-link navbar-item-font">Login</router-link>
+                </li>
+                <li class="nav-item">
+                    <router-link :to="{name: 'register'}" class="nav-link navbar-item-font">Registreer</router-link>
+                </li>
+                </template>
+                <template v-else>
+                    <li class="nav-item">
+                        <a class="nav-link navbar-item-font" href="#">Mijn Profiel</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navbar-item-font" href="#">Uitloggen</a>
+                    </li>
+                </template>
+            </ul>
+        </div>
+    </nav>
+</template>
+
+<script>
+    export default {
+        name: "NavBar",
+        computed: {
+            isLoggedIn: function () {
+                return this.$store.getters.isLoggedIn
+            }
+        }
+    }
+</script>
+
+<style scoped>
+    .bg-red {
+        background-color: #e11e00
+    }
+
+    .navbar-padding {
+        padding: 1em;
+    }
+
+    .navbar-custom-padding {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .navbar-brand-logo {
+        width: 17em;
+    }
+
+    .navbar-item-font {
+        color: white !important;
+        font-family: FormulaOne-Bold, serif;
+    }
+</style>
