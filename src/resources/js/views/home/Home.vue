@@ -1,22 +1,6 @@
 <template>
     <div>
-        <div class="upcoming w-100">
-            <div class="circuit d-flex flex-row">
-                <img class="circuit-layout" src="../../../images/tracks/australia.png" width="" alt="Race track">
-                <div class="circuit-information d-flex">
-                    <h1 class="text-center grand-prix">Abu Dhabi Grand Prix</h1>
-                    <h2 class="text-center circuit">Yas Marina Circuit</h2>
-                </div>
-            </div>
-            <div class="countdown d-flex">
-                <h1>Race start over:</h1>
-                <countdown :time="2 * 24 * 60 * 60 * 1000">
-                    <template slot-scope="props">
-                        {{ props.days }} dagen, {{ props.hours }} uur, {{ props.minutes }} minuten.
-                    </template>
-                </countdown>
-            </div>
-        </div>
+        <upcoming></upcoming>
         <div>
             <div class="trail-racer-information-container">
                 <div class="col-md-6 padding half-width-block">
@@ -94,48 +78,15 @@
 <script>
     import Countdown from "@chenfengyuan/vue-countdown/src/index";
     import Podium from "../../components/shared/podium/Podium";
+    import Upcoming from "../../components/shared/upcoming/Upcoming";
 
     export default {
-        components: {Podium, Countdown},
+        components: {Upcoming, Podium, Countdown},
         name: "Home"
     }
 </script>
 
 <style scoped>
-    .upcoming {
-        background-image: linear-gradient(#0b0d0e, #323232);
-        width: 100%;
-        height: 10rem;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-content: center;
-    }
-
-    .circuit-layout {
-        width: 10rem;
-    }
-
-    .circuit-information {
-        color: white;
-        font-family: FormulaOne-Bold, serif;
-        align-items: center;
-        flex-direction: column;
-        margin: auto 0;
-    }
-
-    .circuit {
-        font-family: FormulaOne-Regular, serif;
-    }
-
-    .countdown {
-        color: white;
-        font-family: FormulaOne-Regular, serif;
-        font-size: 2em;
-        flex-direction: column;
-        margin: auto 0;
-    }
-
     .podium-container {
         background-image: linear-gradient(#212526, #656565);
         display: flex;

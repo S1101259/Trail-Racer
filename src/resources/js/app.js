@@ -4,6 +4,8 @@ import store from "./vuex/store";
 import Vue from 'vue'
 import Vuelidate from 'vuelidate'
 import VueCountdown from '@chenfengyuan/vue-countdown';
+// import axios from 'axios';
+import VueAxios from "vue-axios";
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -16,6 +18,9 @@ require('./bootstrap');
 Vue.config.productionTip = false;
 
 Vue.use(Vuelidate);
+Vue.use(VueAxios, axios);
+
+axios.defaults.baseURL = "/api";
 
 Vue.component(VueCountdown.name, VueCountdown);
 
