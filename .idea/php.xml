@@ -84,6 +84,7 @@
       <path value="$PROJECT_DIR$/src/vendor/opis/closure" />
       <path value="$PROJECT_DIR$/src/vendor/nikic/php-parser" />
       <path value="$PROJECT_DIR$/src/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/src/vendor/laravel/ui" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />

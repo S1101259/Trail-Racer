@@ -2,40 +2,30 @@
     <div class="background">
         <div class="login-container">
             <h2>Welkom terug,</h2>
-
-            <form>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="Vul uw email in">
-                </div>
-                <div class="form-group">
-                    <label for="password">Wachtwoord</label>
-                    <input type="password" class="form-control" id="password" placeholder="Vul uw wachtwoord in">
-                </div>
-                <button class="btn btn-primary float-right rounded px-3">
-                    Inloggen
-                </button>
-            </form>
-            <span class="register">Geen account? <router-link :to="{name: 'register'}"> Registreer gratis!</router-link></span>
+            <LoginForm/>
+            <span class="register">
+                Geen account?
+                <router-link :to="{name: 'register'}"> Registreer gratis!</router-link>
+            </span>
         </div>
         <div class="right-container">
-
         </div>
     </div>
 </template>
 
 <script>
+    import LoginForm from "../../components/auth/LoginForm";
     require('howler');
 
     const sound = new Howl({
         src: ['../../../sounds/Formula1theme.mp3'],
         autoplay: true,
-        html5: true,
         loop: true,
     });
 
     export default {
         name: "LoginPage",
+        components: {LoginForm},
         methods: {
             playSound() {
                 sound.play()
@@ -89,15 +79,6 @@
         background-image: url("../../../images/lando.gif");
         background-position: center;
         background-size: cover;
-    }
-
-    form, label {
-        font-family: FormulaOne-Regular, serif;
-    }
-
-    h2, button {
-        font-family: FormulaOne-Bold, serif;
-        margin-bottom: 1em;
     }
 
     .register {

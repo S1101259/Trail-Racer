@@ -1,8 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c4f124b7-cff4-4d19-abc3-20f118e4bb48" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="c4f124b7-cff4-4d19-abc3-20f118e4bb48" name="Default Changelist" comment="Add Validation, Homepage content and styling. First styling leaderboard">
+      <change afterPath="$PROJECT_DIR$/src/public/images/Italian.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/images/abudhabi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/images/australia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/images/run.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/images/run.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/images/tracks/China.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/images/tracks/abudhabi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/images/tracks/australia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/images/tracks/austria.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/images/tracks/azerbijan.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/images/tracks/bahrain.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/images/tracks/belgium.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/images/tracks/brazil.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/images/tracks/brit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/images/tracks/canada.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/images/tracks/france.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/images/tracks/germany.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/images/tracks/hungary.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/images/tracks/italy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/images/tracks/japan.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/images/tracks/mexico.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/images/tracks/monaco.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/images/tracks/russia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/images/tracks/singapore.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/images/tracks/spain.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/images/tracks/unitedstates.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/js/components/auth/LoginForm.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/js/components/auth/RegisterForm.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/js/components/shared/podium/Podium.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/js/views/leaderboard/Leaderboard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Trail_Racer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Trail_Racer.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node_modules/vue/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/node_modules/vue/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/js/components/shared/navbar/NavBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/js/components/shared/navbar/NavBar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/js/router/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/js/router/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/js/views/auth/LoginPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/js/views/auth/LoginPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/js/views/auth/RegisterPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/js/views/auth/RegisterPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/js/views/home/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/js/views/home/Home.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -135,6 +179,7 @@
       <path value="$PROJECT_DIR$/src/vendor/opis/closure" />
       <path value="$PROJECT_DIR$/src/vendor/nikic/php-parser" />
       <path value="$PROJECT_DIR$/src/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/src/vendor/laravel/ui" />
     </include_path>
   </component>
   <component name="ProjectId" id="1Ty5JJq4FgHB77MQQdKkBNTmkty" />
@@ -142,23 +187,25 @@
     <property name="DatabaseDriversLRU" value="mariadb&#10;mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/public" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/public" />
-      <recent name="$PROJECT_DIR$/src" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/resources/images" />
+      <recent name="$PROJECT_DIR$/src/resources/images/tracks" />
       <recent name="$PROJECT_DIR$/src/resources/sounds" />
       <recent name="$PROJECT_DIR$/src/resources/js/views" />
       <recent name="$PROJECT_DIR$/src/resources/js/vuex" />
-      <recent name="$PROJECT_DIR$/src/resources" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/resources/images/tracks" />
+      <recent name="$PROJECT_DIR$/src/public" />
+      <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -216,12 +263,10 @@
       <envs />
       <method v="2" />
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="npm.dev" />
-        <item itemvalue="npm.watch" />
-      </list>
-    </recent_temporary>
+    <list>
+      <item itemvalue="npm.dev" />
+      <item itemvalue="npm.watch" />
+    </list>
   </component>
   <component name="ServiceViewManager">
     <option name="allServicesViewState">
@@ -230,18 +275,24 @@
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@4e9713d3" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@1f2881be" type="9fbbdea:ServiceModel$ServiceNode" />
             </path>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@4e9713d3" type="9fbbdea:ServiceModel$ServiceNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@14a6b839" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@1f2881be" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@4661e3dd" type="9fbbdea:ServiceModel$ServiceNode" />
             </path>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@4e9713d3" type="9fbbdea:ServiceModel$ServiceNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@14a6b839" type="9fbbdea:ServiceModel$ServiceNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@4c8afc03" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@1f2881be" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@4661e3dd" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@57711fe1" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@1f2881be" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@4661e3dd" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@1155915" type="9fbbdea:ServiceModel$ServiceNode" />
             </path>
           </expand>
           <select />
@@ -264,13 +315,41 @@
       <workItem from="1574670529877" duration="2290000" />
       <workItem from="1574673418622" duration="2807000" />
       <workItem from="1574679212956" duration="9704000" />
+      <workItem from="1574937369646" duration="534000" />
+      <workItem from="1574938071950" duration="276000" />
+      <workItem from="1574938446911" duration="10435000" />
+      <workItem from="1574954411803" duration="7733000" />
     </task>
+    <task id="LOCAL-00001" summary="git ignore">
+      <created>1574698538324</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1574698538324</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="true" />
+    <MESSAGE value="git ignore" />
+    <MESSAGE value="Add Validation, Homepage content and styling. First styling leaderboard" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Validation, Homepage content and styling. First styling leaderboard" />
   </component>
 </project>

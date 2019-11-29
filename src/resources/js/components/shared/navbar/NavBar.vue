@@ -17,7 +17,7 @@
                     <a class="nav-link navbar-item-font" href="#">Mijn Competities</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link navbar-item-font" href="#">Klassement</a>
+                    <router-link :to="{name: 'leaderboard'}" class="nav-link navbar-item-font">Klassement</router-link>
                 </li>
             </ul>
             <ul class="navbar-nav float-lg-right">

@@ -2,33 +2,16 @@
     <div class="background">
         <div class="login-container">
             <h2>Welkom,</h2>
-
-            <form>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="Vul uw email in">
-                </div>
-                <div class="form-group">
-                    <label for="password">Wachtwoord</label>
-                    <input type="password" class="form-control" id="password" placeholder="Vul uw wachtwoord in">
-                </div>
-                <div class="form-group">
-                    <label for="password">Wachtwoord herhalen</label>
-                    <input type="password" class="form-control" id="repeatPassword" placeholder="Herhaal wachtwoord">
-                </div>
-                <button class="btn btn-primary float-right rounded px-3">
-                    Registreren
-                </button>
-            </form>
+            <register-form></register-form>
             <span class="register">Al een account? <router-link :to="{name: 'login'}">Login!</router-link></span>
         </div>
-        <div class="right-container">
-
-        </div>
+        <div class="right-container"></div>
     </div>
 </template>
 
 <script>
+    import RegisterForm from "../../components/auth/RegisterForm.vue";
+
     require('howler');
 
     const sound = new Howl({
@@ -39,12 +22,13 @@
     });
 
     export default {
+        components: {RegisterForm},
         name: "RegisterPage",
         methods: {
             playSound() {
                 sound.play()
             },
-            stopSound(){
+            stopSound() {
                 sound.stop()
             }
         },
@@ -71,7 +55,7 @@
     .login-container {
         clear: both;
         background-color: white;
-        height: 30rem;
+        height: 35rem;
         width: 30rem;
         border-top-left-radius: 10px;
         border-bottom-left-radius: 10px;
@@ -83,7 +67,7 @@
     .right-container {
         clear: both;
         background-color: gray;
-        height: 30rem;
+        height: 35rem;
         width: 20rem;
         border-top-right-radius: 10px;
         border-bottom-right-radius: 10px;
