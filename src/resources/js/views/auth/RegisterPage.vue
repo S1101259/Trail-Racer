@@ -16,8 +16,7 @@
 
     const sound = new Howl({
         src: ['../../../sounds/Formula1theme.mp3'],
-        autoplay: true,
-        html5: true,
+        autoplay: false,
         loop: true,
     });
 

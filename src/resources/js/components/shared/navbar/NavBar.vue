@@ -11,10 +11,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link navbar-item-font" href="#">Competities</a>
+                    <router-link :to="{name: 'competitions'}" class="nav-link navbar-item-font">Competities</router-link>
                 </li>
                 <li class="nav-item" v-if="isLoggedIn">
-                    <a class="nav-link navbar-item-font" href="#">Mijn Competities</a>
+                    <router-link to="" class="nav-link navbar-item-font">Mijn Competities</router-link>
                 </li>
                 <li class="nav-item">
                     <router-link :to="{name: 'leaderboard'}" class="nav-link navbar-item-font">Klassement</router-link>

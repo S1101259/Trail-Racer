@@ -19,7 +19,7 @@
 
     const sound = new Howl({
         src: ['../../../sounds/Formula1theme.mp3'],
-        autoplay: true,
+        autoplay: false,
         loop: true,
     });
 

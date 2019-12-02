@@ -4,24 +4,24 @@
             <div class="second position-relative">
                 <span class="podium-position">2</span>
             </div>
-            <div class="driver text-center">
-                Raymon
+            <div class="driver text-center" data-toggle="tooltip" data-placement="top" :title="second">
+                {{second | truncate(10)}}
             </div>
         </div>
         <div class="pl-1 pr-1">
             <div class="first position-relative">
                 <span class="podium-position">1</span>
             </div>
-            <div class="driver text-center">
-                Stephan
+            <div class="driver text-center" data-toggle="tooltip" data-placement="top" :title="first">
+                {{first | truncate(10)}}
             </div>
         </div>
         <div class="pl-1 pr-1">
             <div class="third position-relative">
                 <span class="podium-position">3</span>
             </div>
-            <div class="driver text-center">
-                Iemabd
+            <div class="driver text-center" data-toggle="tooltip" data-placement="top" :title="third">
+                {{third | truncate(10)}}
             </div>
         </div>
     </div>
@@ -29,7 +29,8 @@
 
 <script>
     export default {
-        name: "Podium"
+        name: "Podium",
+        props: ["first", "second", "third"]
     }
 </script>
 

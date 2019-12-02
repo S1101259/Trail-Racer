@@ -19,7 +19,7 @@
             </div>
             <div class="podium-container">
                 <div class="col-md-6  pt-5 pb-5">
-                    <podium></podium>
+                    <podium first="" second="" third=""></podium>
                 </div>
                 <div class="col-md-6 padding">
                     <h1 class="sub-header">Beste Coureurs</h1>

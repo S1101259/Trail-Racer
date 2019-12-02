@@ -9,7 +9,7 @@
         </div>
         <div class="countdown d-flex">
             <h1>Race start over:</h1>
-            <countdown :time="raceStart">
+            <countdown :time="raceStart" @end="show = false">
                 <template slot-scope="props">
                     {{ props.days }} dagen, {{ props.hours }} uur, {{ props.minutes }} minuten.
                 </template>
