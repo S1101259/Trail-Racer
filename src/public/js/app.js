@@ -2886,6 +2886,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "LeaderboardTable",
   props: ['data'],
@@ -3223,6 +3224,205 @@ var sound = new Howl({
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/competitions/AddCompetitionPage.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/competitions/AddCompetitionPage.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuelidate/lib/validators */ "./node_modules/vuelidate/lib/validators/index.js");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "AddCompetitionPage",
+  data: function data() {
+    return {
+      competition: {
+        name: ''
+      }
+    };
+  },
+  validations: {
+    competition: {
+      name: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["required"]
+      }
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/competitions/AddTime.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/competitions/AddTime.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuelidate/lib/validators */ "./node_modules/vuelidate/lib/validators/index.js");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "AddTime",
+  data: function data() {
+    return {
+      teams: ['Ferrari', 'Mercedes', 'Renault', 'Mclaren', 'Williams', 'Redbull', 'Toro Rosso', 'Haas', 'Alfa Romeo'],
+      circuits: ['Australia', 'Bahrain', 'China', 'Azerbaijan', 'Spain', 'Monaco', 'Canada', 'France', 'Austria', 'Great Britain', 'Germany', 'Hungary', 'Belgium', 'Italy', 'Singapore', 'Russia', 'Japan', 'Mexico', 'United States', 'Brazil', 'Abu Dhabi'],
+      minutes: 0,
+      seconds: 0,
+      milliseconds: 0,
+      selectedTeam: '0',
+      selectedCircuit: '0'
+    };
+  },
+  validations: function validations() {
+    return {
+      minutes: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["required"],
+        maxValue: Object(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["maxValue"])(60)
+      },
+      seconds: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["required"],
+        maxValue: Object(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["maxValue"])(60)
+      },
+      milliseconds: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["required"],
+        maxValue: Object(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["maxValue"])(999)
+      },
+      selectedTeam: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["required"],
+        notSameAs: Object(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["not"])(Object(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["sameAs"])(function () {
+          return '0';
+        }))
+      },
+      selectedCircuit: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["required"],
+        notSameAs: Object(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["not"])(Object(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["sameAs"])(function () {
+          return '0';
+        }))
+      }
+    };
+  },
+  computed: {
+    timeInMilliseconds: function timeInMilliseconds() {
+      return this.milliseconds + this.seconds * 1000 + this.minutes * 60 * 1000;
+    }
+  },
+  methods: {
+    onSubmit: function onSubmit() {
+      console.log(this.timeInMilliseconds);
+      console.log(this.selectedTeam);
+      console.log(this.selectedCircuit);
+      console.log(this.$v);
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/competitions/CompetitionOverview.vue?vue&type=script&lang=js&":
 /*!**************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/competitions/CompetitionOverview.vue?vue&type=script&lang=js& ***!
@@ -3236,8 +3436,107 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "CompetitionOverview"
+  name: "CompetitionOverview",
+  data: function data() {
+    return {
+      competitions: [{
+        name: 'Formula Dank',
+        numberOfDrivers: 10,
+        slug: 'Formuladank'
+      }, {
+        name: 'Formula 1.5',
+        numberOfDrivers: 15,
+        slug: 'FormulaOnePoint5'
+      }, {
+        name: 'I dont know',
+        numberOfDrivers: 20,
+        slug: 'idontknow'
+      }]
+    };
+  },
+  methods: {
+    onCompetitionClick: function onCompetitionClick(competition) {
+      this.$router.push({
+        path: "/competition/".concat(competition)
+      });
+    },
+    onAddButtonClick: function onAddButtonClick() {
+      this.$router.push({
+        path: '/competition/create'
+      });
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/competitions/ShowCompetition.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/competitions/ShowCompetition.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _components_shared_circuits_CircuitsNav__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/shared/circuits/CircuitsNav */ "./resources/js/components/shared/circuits/CircuitsNav.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "ShowCompetition",
+  components: {
+    CircuitsNav: _components_shared_circuits_CircuitsNav__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  data: function data() {
+    return {
+      selectedCircuit: 'Australia',
+      circuits: ['Australia', 'Bahrain', 'China', 'Azerbaijan', 'Spain', 'Monaco', 'Canada', 'France', 'Austria', 'Great Britain', 'Germany', 'Hungary', 'Belgium', 'Italy', 'Singapore', 'Russia', 'Japan', 'Mexico', 'United States', 'Brazil', 'Abu Dhabi']
+    };
+  },
+  watch: {
+    selectedCircuit: function selectedCircuit(circuit) {
+      console.log(circuit);
+      console.log(this.$route.params.competition);
+    }
+  },
+  methods: {
+    onCircuitChange: function onCircuitChange(circuit) {
+      this.selectedCircuit = circuit;
+    },
+    onAddButtonClick: function onAddButtonClick() {
+      this.$router.push({
+        path: "/competition/".concat(this.$route.params.competition, "/addTime")
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -3387,15 +3686,18 @@ __webpack_require__.r(__webpack_exports__);
       data: [{
         name: 'De Beste',
         car: 'Ferrari',
-        time: 83892
+        time: 83892,
+        isUsersTime: false
       }, {
         name: 'De bijna slechtste',
         car: 'Redbull',
-        time: 83903
+        time: 83903,
+        isUsersTime: false
       }, {
         name: 'De Noobs',
         car: 'Williams',
-        time: 123335
+        time: 123335,
+        isUsersTime: true
       }],
       selectedCircuit: 'Australia',
       circuits: ['Australia', 'Bahrain', 'China', 'Azerbaijan', 'Spain', 'Monaco', 'Canada', 'France', 'Austria', 'Great Britain', 'Germany', 'Hungary', 'Belgium', 'Italy', 'Singapore', 'Russia', 'Japan', 'Mexico', 'United States', 'Brazil', 'Abu Dhabi']
@@ -8014,6 +8316,84 @@ exports.push([module.i, "\n.background[data-v-4757c98a] {\n    background-image:
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/competitions/AddCompetitionPage.vue?vue&type=style&index=0&id=2046fed9&scoped=true&lang=css&":
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/competitions/AddCompetitionPage.vue?vue&type=style&index=0&id=2046fed9&scoped=true&lang=css& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var escape = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/url/escape.js */ "./node_modules/css-loader/lib/url/escape.js");
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.background[data-v-2046fed9] {\n    background-image: url(" + escape(__webpack_require__(/*! ../../../images/background.png */ "./resources/images/background.png")) + ");\n    height: 100vh;\n    width: 100vw;\n    margin-top: -69px;\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n            justify-content: center;\n}\n.create-container[data-v-2046fed9] {\n    clear: both;\n    background-color: white;\n    height: 25rem;\n    width: 30rem;\n    border-top-left-radius: 10px;\n    border-bottom-left-radius: 10px;\n    padding: 3em;\n    position: relative;\n    box-shadow: 13px 13px 41px -9px rgba(0, 0, 0, 0.47);\n}\n.right-container[data-v-2046fed9] {\n    clear: both;\n    background-color: gray;\n    height: 25rem;\n    width: 20rem;\n    border-top-right-radius: 10px;\n    border-bottom-right-radius: 10px;\n    padding: 3em;\n    position: relative;\n    box-shadow: 13px 13px 41px -9px rgba(0, 0, 0, 0.47);\n    background-image: url(" + escape(__webpack_require__(/*! ../../../images/add_competition.gif */ "./resources/images/add_competition.gif")) + ");\n    background-position: center;\n    background-size: cover;\n}\nform[data-v-2046fed9], label[data-v-2046fed9] {\n    font-family: FormulaOne-Regular, serif;\n}\nh2[data-v-2046fed9], button[data-v-2046fed9] {\n    font-family: FormulaOne-Bold, serif;\n    margin-bottom: 1em;\n}\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/competitions/AddTime.vue?vue&type=style&index=0&id=fdf1eb1c&scoped=true&lang=css&":
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/competitions/AddTime.vue?vue&type=style&index=0&id=fdf1eb1c&scoped=true&lang=css& ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var escape = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/url/escape.js */ "./node_modules/css-loader/lib/url/escape.js");
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.background[data-v-fdf1eb1c] {\n    background-image: url(" + escape(__webpack_require__(/*! ../../../images/background.png */ "./resources/images/background.png")) + ");\n    height: 100vh;\n    width: 100vw;\n    margin-top: -69px;\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n            justify-content: center;\n}\n.add-container[data-v-fdf1eb1c] {\n    clear: both;\n    background-color: white;\n    height: 25rem;\n    width: 35rem;\n    border-top-left-radius: 10px;\n    border-bottom-left-radius: 10px;\n    padding: 3em;\n    position: relative;\n    box-shadow: 13px 13px 41px -9px rgba(0, 0, 0, 0.47);\n    font-family: FormulaOne-Regular, serif;\n}\n.right-container[data-v-fdf1eb1c] {\n    clear: both;\n    background-color: gray;\n    height: 25rem;\n    width: 20rem;\n    border-top-right-radius: 10px;\n    border-bottom-right-radius: 10px;\n    padding: 3em;\n    position: relative;\n    box-shadow: 13px 13px 41px -9px rgba(0, 0, 0, 0.47);\n    background-image: url(" + escape(__webpack_require__(/*! ../../../images/addTime.gif */ "./resources/images/addTime.gif")) + ");\n    background-position: center;\n    background-size: cover;\n}\n.dot[data-v-fdf1eb1c] {\n    padding-top: 0.9em;\n    font-size: 2em;\n    color: gray;\n}\n.small-dot[data-v-fdf1eb1c] {\n    padding-top: 0.8em;\n    font-size: 2em;\n    color: gray;\n}\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/competitions/CompetitionOverview.vue?vue&type=style&index=0&id=11429e88&scoped=true&lang=css&":
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/competitions/CompetitionOverview.vue?vue&type=style&index=0&id=11429e88&scoped=true&lang=css& ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.container h1[data-v-11429e88] {\n    font-family: FormulaOne-Bold, serif;\n    border-bottom: 5px solid red;\n    padding: 0.2em 0;\n}\n.competition-name[data-v-11429e88] {\n    font-family: FormulaOne-Bold, serif;\n}\n.competition-drivers[data-v-11429e88] {\n    float: right;\n    width: 30%;\n    font-family: FormulaOne-Regular, serif;\n}\n.badge[data-v-11429e88] {\n    padding: 0.5em 1em;\n    margin-left: 1em;\n}\n.competition[data-v-11429e88]:hover {\n    cursor: pointer;\n    background: #34393b;\n    color: white;\n}\n.add-button[data-v-11429e88]{\n    position: absolute;\n    right: 2em;\n    bottom: 2em;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/competitions/ShowCompetition.vue?vue&type=style&index=0&id=1bf9a834&scoped=true&lang=css&":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/competitions/ShowCompetition.vue?vue&type=style&index=0&id=1bf9a834&scoped=true&lang=css& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.container h1[data-v-1bf9a834] {\n    font-family: FormulaOne-Bold, serif;\n    border-bottom: 5px solid red;\n    padding: 0.2em 0;\n}\n.add-button[data-v-1bf9a834]{\n    position: absolute;\n    right: 2em;\n    bottom: 2em;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/home/Home.vue?vue&type=style&index=0&id=0b5baac0&scoped=true&lang=css&":
 /*!**********************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/home/Home.vue?vue&type=style&index=0&id=0b5baac0&scoped=true&lang=css& ***!
@@ -8027,7 +8407,26 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.podium-container[data-v-0b5baac0] {\n    background-image: -webkit-gradient(linear, left top, left bottom, from(#212526), to(#656565));\n    background-image: linear-gradient(#212526, #656565);\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n            flex-direction: row;\n    -webkit-box-align: center;\n            align-items: center;\n}\n.sub-header[data-v-0b5baac0] {\n    font-family: FormulaOne-Bold, serif;\n    color: white;\n}\n.padding[data-v-0b5baac0] {\n    padding: 5em 10em;\n}\n.half-width-block[data-v-0b5baac0] {\n    height: 30em;\n}\n.trail-racer-information-container[data-v-0b5baac0] {\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n            flex-direction: row;\n}\n.run-gif[data-v-0b5baac0] {\n    background-position: center;\n    background-size: cover;\n    background-image: url(" + escape(__webpack_require__(/*! ../../../images/run.gif */ "./resources/images/run.gif")) + ");\n}\n.trail-racer-information-container h1[data-v-0b5baac0] {\n    font-family: FormulaOne-Bold, serif;\n    margin-top: 1em;\n}\n.trail-racer-information[data-v-0b5baac0] {\n    font-family: FormulaOne-Regular, serif;\n    font-size: 1.1em;\n}\n.trail-racer-information-2[data-v-0b5baac0] {\n    color: white;\n    font-family: FormulaOne-Regular, serif;\n    font-size: 1.1em;\n}\n.competition-container[data-v-0b5baac0] {\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n            flex-direction: row;\n    -webkit-box-align: center;\n            align-items: center;\n}\n.competition-container h1[data-v-0b5baac0]{\n    font-family: FormulaOne-Bold, serif;\n}\n.competition-name[data-v-0b5baac0] {\n    font-family: FormulaOne-Bold, serif;\n}\n.competition-drivers[data-v-0b5baac0] {\n    float: right;\n    font-family: FormulaOne-Regular, serif;\n}\n.badge[data-v-0b5baac0] {\n    padding: 0.5em 1em;\n}\n.competition-information[data-v-0b5baac0]{\n    font-family: FormulaOne-Regular, serif;\n    font-size: 1.1em;\n}\n\n", ""]);
+exports.push([module.i, "\n.podium-container[data-v-0b5baac0] {\n    background-image: -webkit-gradient(linear, left top, left bottom, from(#212526), to(#656565));\n    background-image: linear-gradient(#212526, #656565);\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n            flex-direction: row;\n    -webkit-box-align: center;\n            align-items: center;\n}\n.sub-header[data-v-0b5baac0] {\n    font-family: FormulaOne-Bold, serif;\n    color: white;\n}\n.padding[data-v-0b5baac0] {\n    padding: 5em 10em;\n}\n.half-width-block[data-v-0b5baac0] {\n    height: 30em;\n}\n.trail-racer-information-container[data-v-0b5baac0] {\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n            flex-direction: row;\n}\n.run-gif[data-v-0b5baac0] {\n    background-position: center;\n    background-size: cover;\n    background-image: url(" + escape(__webpack_require__(/*! ../../../images/run.gif */ "./resources/images/run.gif")) + ");\n}\n.trail-racer-information-container h1[data-v-0b5baac0] {\n    font-family: FormulaOne-Bold, serif;\n    margin-top: 1em;\n}\n.trail-racer-information[data-v-0b5baac0] {\n    font-family: FormulaOne-Regular, serif;\n    font-size: 1.1em;\n}\n.trail-racer-information-2[data-v-0b5baac0] {\n    color: white;\n    font-family: FormulaOne-Regular, serif;\n    font-size: 1.1em;\n}\n.competition-container[data-v-0b5baac0] {\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n            flex-direction: row;\n    -webkit-box-align: center;\n            align-items: center;\n}\n.competition-container h1[data-v-0b5baac0]{\n    font-family: FormulaOne-Bold, serif;\n}\n.competition-name[data-v-0b5baac0] {\n    font-family: FormulaOne-Bold, serif;\n}\n.competition-drivers[data-v-0b5baac0] {\n    float: right;\n    width: 30%;\n    font-family: FormulaOne-Regular, serif;\n}\n.badge[data-v-0b5baac0] {\n    padding: 0.5em 1em;\n    margin-left: 1em;\n}\n.competition-information[data-v-0b5baac0]{\n    font-family: FormulaOne-Regular, serif;\n    font-size: 1.1em;\n}\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/leaderboard/Leaderboard.vue?vue&type=style&index=0&id=93bc06c8&scoped=true&lang=css&":
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/leaderboard/Leaderboard.vue?vue&type=style&index=0&id=93bc06c8&scoped=true&lang=css& ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.container h1[data-v-93bc06c8] {\n    font-family: FormulaOne-Bold, serif;\n    border-bottom: 5px solid red;\n    padding: 0.2em 0;\n}\n", ""]);
 
 // exports
 
@@ -59934,6 +60333,126 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/competitions/AddCompetitionPage.vue?vue&type=style&index=0&id=2046fed9&scoped=true&lang=css&":
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/competitions/AddCompetitionPage.vue?vue&type=style&index=0&id=2046fed9&scoped=true&lang=css& ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./AddCompetitionPage.vue?vue&type=style&index=0&id=2046fed9&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/competitions/AddCompetitionPage.vue?vue&type=style&index=0&id=2046fed9&scoped=true&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/competitions/AddTime.vue?vue&type=style&index=0&id=fdf1eb1c&scoped=true&lang=css&":
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/competitions/AddTime.vue?vue&type=style&index=0&id=fdf1eb1c&scoped=true&lang=css& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./AddTime.vue?vue&type=style&index=0&id=fdf1eb1c&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/competitions/AddTime.vue?vue&type=style&index=0&id=fdf1eb1c&scoped=true&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/competitions/CompetitionOverview.vue?vue&type=style&index=0&id=11429e88&scoped=true&lang=css&":
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/competitions/CompetitionOverview.vue?vue&type=style&index=0&id=11429e88&scoped=true&lang=css& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./CompetitionOverview.vue?vue&type=style&index=0&id=11429e88&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/competitions/CompetitionOverview.vue?vue&type=style&index=0&id=11429e88&scoped=true&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/competitions/ShowCompetition.vue?vue&type=style&index=0&id=1bf9a834&scoped=true&lang=css&":
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/competitions/ShowCompetition.vue?vue&type=style&index=0&id=1bf9a834&scoped=true&lang=css& ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./ShowCompetition.vue?vue&type=style&index=0&id=1bf9a834&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/competitions/ShowCompetition.vue?vue&type=style&index=0&id=1bf9a834&scoped=true&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/home/Home.vue?vue&type=style&index=0&id=0b5baac0&scoped=true&lang=css&":
 /*!**************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/home/Home.vue?vue&type=style&index=0&id=0b5baac0&scoped=true&lang=css& ***!
@@ -59943,6 +60462,36 @@ if(false) {}
 
 
 var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./Home.vue?vue&type=style&index=0&id=0b5baac0&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/home/Home.vue?vue&type=style&index=0&id=0b5baac0&scoped=true&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/leaderboard/Leaderboard.vue?vue&type=style&index=0&id=93bc06c8&scoped=true&lang=css&":
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/leaderboard/Leaderboard.vue?vue&type=style&index=0&id=93bc06c8&scoped=true&lang=css& ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./Leaderboard.vue?vue&type=style&index=0&id=93bc06c8&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/leaderboard/Leaderboard.vue?vue&type=style&index=0&id=93bc06c8&scoped=true&lang=css&");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -60911,7 +61460,15 @@ var render = function() {
             _vm._v(" "),
             _c("td", [_vm._v(_vm._s(row.car))]),
             _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(_vm._f("formatDate")(row.time)))])
+            _c("td", [_vm._v(_vm._s(_vm._f("formatDate")(row.time)))]),
+            _vm._v(" "),
+            row.isUsersTime
+              ? _c("td", [
+                  _c("button", { staticClass: "btn btn-sm btn-primary" }, [
+                    _vm._v("X")
+                  ])
+                ])
+              : _vm._e()
           ])
         }),
         0
@@ -61468,6 +62025,330 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/competitions/AddCompetitionPage.vue?vue&type=template&id=2046fed9&scoped=true&":
+/*!*****************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/competitions/AddCompetitionPage.vue?vue&type=template&id=2046fed9&scoped=true& ***!
+  \*****************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "background" }, [
+    _c("div", { staticClass: "create-container" }, [
+      _c("h2", [_vm._v("Competitie aanmaken")]),
+      _vm._v(" "),
+      _c("form", [
+        _c("div", { staticClass: "form-group" }, [
+          _c("label", { attrs: { for: "name" } }, [_vm._v("Competitie naam:")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.competition.name,
+                expression: "competition.name"
+              }
+            ],
+            staticClass: "form-control",
+            attrs: {
+              type: "text",
+              id: "name",
+              placeholder: "Vul competitie naam in"
+            },
+            domProps: { value: _vm.competition.name },
+            on: {
+              blur: function($event) {
+                return _vm.$v.competition.name.$touch()
+              },
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.competition, "name", $event.target.value)
+              }
+            }
+          }),
+          _vm._v(" "),
+          !_vm.$v.competition.name.required && _vm.$v.competition.name.$dirty
+            ? _c("p", [
+                _vm._v(
+                  "\n                    * Naam mag niet leeg zijn.\n                "
+                )
+              ])
+            : _vm._e()
+        ]),
+        _vm._v(" "),
+        _c(
+          "button",
+          { staticClass: "btn btn-primary float-right rounded px-3" },
+          [_vm._v("\n                Aanmaken\n            ")]
+        )
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "right-container" })
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/competitions/AddTime.vue?vue&type=template&id=fdf1eb1c&scoped=true&":
+/*!******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/competitions/AddTime.vue?vue&type=template&id=fdf1eb1c&scoped=true& ***!
+  \******************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "background" }, [
+    _c("div", { staticClass: "add-container" }, [
+      _c("form", [
+        _c("div", { staticClass: "row align-content-around" }, [
+          _c("div", { staticClass: "form-group col-3" }, [
+            _c("label", { attrs: { for: "min" } }, [_vm._v("Minuten:")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.minutes,
+                  expression: "minutes"
+                }
+              ],
+              staticClass: "form-control",
+              class: !_vm.$v.minutes.maxValue ? "is-invalid" : "",
+              attrs: { type: "number", id: "min", placeholder: "Minuten" },
+              domProps: { value: _vm.minutes },
+              on: {
+                blur: function($event) {
+                  return _vm.$v.minutes.$touch()
+                },
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.minutes = $event.target.value
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("span", { staticClass: "dot" }, [_vm._v(":")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group col-3" }, [
+            _c("label", { attrs: { for: "sec" } }, [_vm._v("Seconden:")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.seconds,
+                  expression: "seconds"
+                }
+              ],
+              staticClass: "form-control",
+              class: !_vm.$v.seconds.maxValue ? "is-invalid" : "",
+              attrs: { type: "number", id: "sec", placeholder: "Seconden" },
+              domProps: { value: _vm.seconds },
+              on: {
+                blur: function($event) {
+                  return _vm.$v.seconds.$touch()
+                },
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.seconds = $event.target.value
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("span", { staticClass: "small-dot" }, [_vm._v(".")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group col-3" }, [
+            _c("label", { attrs: { for: "ms" } }, [_vm._v("Milliseconden:")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.milliseconds,
+                  expression: "milliseconds"
+                }
+              ],
+              staticClass: "form-control",
+              class: !_vm.$v.milliseconds.maxValue ? "is-invalid" : "",
+              attrs: { type: "number", id: "ms", placeholder: "Milliseconden" },
+              domProps: { value: _vm.milliseconds },
+              on: {
+                blur: function($event) {
+                  return _vm.$v.milliseconds.$touch()
+                },
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.milliseconds = $event.target.value
+                }
+              }
+            })
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("label", { attrs: { for: "teams" } }, [_vm._v("Team:")]),
+          _vm._v(" "),
+          _c(
+            "select",
+            {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.selectedTeam,
+                  expression: "selectedTeam"
+                }
+              ],
+              staticClass: "form-control",
+              class:
+                !_vm.$v.selectedTeam.notSameAs && _vm.$v.selectedTeam.$dirty
+                  ? "is-invalid"
+                  : "",
+              attrs: { id: "teams" },
+              on: {
+                blur: function($event) {
+                  return _vm.$v.selectedTeam.$touch()
+                },
+                change: function($event) {
+                  var $$selectedVal = Array.prototype.filter
+                    .call($event.target.options, function(o) {
+                      return o.selected
+                    })
+                    .map(function(o) {
+                      var val = "_value" in o ? o._value : o.value
+                      return val
+                    })
+                  _vm.selectedTeam = $event.target.multiple
+                    ? $$selectedVal
+                    : $$selectedVal[0]
+                }
+              }
+            },
+            [
+              _c("option", { attrs: { value: "0" } }, [
+                _vm._v("Selecteer je team")
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.teams, function(team) {
+                return _c("option", [_vm._v(_vm._s(team))])
+              })
+            ],
+            2
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("label", { attrs: { for: "circuits" } }, [_vm._v("Circuit:")]),
+          _vm._v(" "),
+          _c(
+            "select",
+            {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.selectedCircuit,
+                  expression: "selectedCircuit"
+                }
+              ],
+              staticClass: "form-control",
+              class:
+                !_vm.$v.selectedCircuit.notSameAs &&
+                _vm.$v.selectedCircuit.$dirty
+                  ? "is-invalid"
+                  : "",
+              attrs: { id: "circuits" },
+              on: {
+                blur: function($event) {
+                  return _vm.$v.selectedCircuit.$touch()
+                },
+                change: function($event) {
+                  var $$selectedVal = Array.prototype.filter
+                    .call($event.target.options, function(o) {
+                      return o.selected
+                    })
+                    .map(function(o) {
+                      var val = "_value" in o ? o._value : o.value
+                      return val
+                    })
+                  _vm.selectedCircuit = $event.target.multiple
+                    ? $$selectedVal
+                    : $$selectedVal[0]
+                }
+              }
+            },
+            [
+              _c("option", { attrs: { value: "0" } }, [
+                _vm._v("Selecteer je circuit")
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.circuits, function(circuit) {
+                return _c("option", [_vm._v(_vm._s(circuit))])
+              })
+            ],
+            2
+          )
+        ]),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-primary",
+            on: {
+              click: function($event) {
+                $event.preventDefault()
+                return _vm.onSubmit($event)
+              }
+            }
+          },
+          [_vm._v("Toevoegen")]
+        )
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "right-container" })
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/competitions/CompetitionOverview.vue?vue&type=template&id=11429e88&scoped=true&":
 /*!******************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/competitions/CompetitionOverview.vue?vue&type=template&id=11429e88&scoped=true& ***!
@@ -61483,7 +62364,108 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _c("div", [
+    _c("div", { staticClass: "container" }, [
+      _c("h1", [_vm._v("Competities")]),
+      _vm._v(" "),
+      _c(
+        "ul",
+        { staticClass: "list-group" },
+        _vm._l(_vm.competitions, function(competition) {
+          return _c(
+            "li",
+            {
+              staticClass: "list-group-item competition",
+              on: {
+                click: function($event) {
+                  return _vm.onCompetitionClick(competition.slug)
+                }
+              }
+            },
+            [
+              _c("span", { staticClass: "competition-name" }, [
+                _vm._v(_vm._s(competition.name))
+              ]),
+              _vm._v(" "),
+              _c("span", { staticClass: "competition-drivers" }, [
+                _vm._v("Aantal coureurs:\n                    "),
+                _c("span", { staticClass: "badge badge-primary badge-pill" }, [
+                  _vm._v(_vm._s(competition.numberOfDrivers))
+                ])
+              ])
+            ]
+          )
+        }),
+        0
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-primary rounded-circle add-button",
+          on: {
+            click: function($event) {
+              return _vm.onAddButtonClick()
+            }
+          }
+        },
+        [_vm._v("+")]
+      )
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/competitions/ShowCompetition.vue?vue&type=template&id=1bf9a834&scoped=true&":
+/*!**************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/competitions/ShowCompetition.vue?vue&type=template&id=1bf9a834&scoped=true& ***!
+  \**************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c("circuits-nav", {
+        attrs: {
+          circuits: _vm.circuits,
+          "selected-circuit": _vm.selectedCircuit
+        },
+        on: { circuitChanged: _vm.onCircuitChange }
+      }),
+      _vm._v(" "),
+      _c("div", { staticClass: "container" }, [
+        _c("h1", [_vm._v(_vm._s(_vm.$route.params.competition))])
+      ]),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-primary rounded-circle add-button",
+          on: {
+            click: function($event) {
+              return _vm.onAddButtonClick()
+            }
+          }
+        },
+        [_vm._v("+")]
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -61594,7 +62576,7 @@ var staticRenderFns = [
               ]),
               _vm._v(" "),
               _c("span", { staticClass: "competition-drivers" }, [
-                _vm._v("Aantal coureurs\n                                "),
+                _vm._v("Aantal coureurs:\n                                "),
                 _c("span", { staticClass: "badge badge-primary badge-pill" }, [
                   _vm._v("10")
                 ])
@@ -61607,7 +62589,7 @@ var staticRenderFns = [
               ]),
               _vm._v(" "),
               _c("span", { staticClass: "competition-drivers" }, [
-                _vm._v("Aantal coureurs\n                                "),
+                _vm._v("Aantal coureurs:\n                                "),
                 _c("span", { staticClass: "badge badge-primary badge-pill" }, [
                   _vm._v("1000")
                 ])
@@ -61620,7 +62602,7 @@ var staticRenderFns = [
               ]),
               _vm._v(" "),
               _c("span", { staticClass: "competition-drivers" }, [
-                _vm._v("Aantal coureurs\n                                "),
+                _vm._v("Aantal coureurs:\n                                "),
                 _c("span", { staticClass: "badge badge-primary badge-pill" }, [
                   _vm._v("14")
                 ])
@@ -61633,7 +62615,7 @@ var staticRenderFns = [
               ]),
               _vm._v(" "),
               _c("span", { staticClass: "competition-drivers" }, [
-                _vm._v("Aantal coureurs\n                                "),
+                _vm._v("Aantal coureurs:\n                                "),
                 _c("span", { staticClass: "badge badge-primary badge-pill" }, [
                   _vm._v("14")
                 ])
@@ -79735,6 +80717,28 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./resources/images/addTime.gif":
+/*!**************************************!*\
+  !*** ./resources/images/addTime.gif ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/addTime.gif?c428711678c355b9ec805f32710339ff";
+
+/***/ }),
+
+/***/ "./resources/images/add_competition.gif":
+/*!**********************************************!*\
+  !*** ./resources/images/add_competition.gif ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/add_competition.gif?ef177d9da7973a37c9158b38f1769815";
+
+/***/ }),
+
 /***/ "./resources/images/background.png":
 /*!*****************************************!*\
   !*** ./resources/images/background.png ***!
@@ -80511,7 +81515,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_0__);
 
 /* harmony default export */ __webpack_exports__["default"] = (function (time) {
-  return moment__WEBPACK_IMPORTED_MODULE_0___default()(time).format('m.ss.SSS');
+  return moment__WEBPACK_IMPORTED_MODULE_0___default()(time).format('m:ss.SSS');
 });
 
 /***/ }),
@@ -80575,6 +81579,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _views_auth_RegisterPage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../views/auth/RegisterPage */ "./resources/js/views/auth/RegisterPage.vue");
 /* harmony import */ var _views_leaderboard_Leaderboard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../views/leaderboard/Leaderboard */ "./resources/js/views/leaderboard/Leaderboard.vue");
 /* harmony import */ var _views_competitions_CompetitionOverview__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../views/competitions/CompetitionOverview */ "./resources/js/views/competitions/CompetitionOverview.vue");
+/* harmony import */ var _views_competitions_AddCompetitionPage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../views/competitions/AddCompetitionPage */ "./resources/js/views/competitions/AddCompetitionPage.vue");
+/* harmony import */ var _views_competitions_ShowCompetition__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../views/competitions/ShowCompetition */ "./resources/js/views/competitions/ShowCompetition.vue");
+/* harmony import */ var _views_competitions_AddTime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../views/competitions/AddTime */ "./resources/js/views/competitions/AddTime.vue");
+
+
+
 
 
 
@@ -80600,6 +81610,22 @@ var routes = [{
   path: '/competitions',
   name: 'competitions',
   component: _views_competitions_CompetitionOverview__WEBPACK_IMPORTED_MODULE_4__["default"]
+}, {
+  path: '/competition',
+  name: 'competitions',
+  component: _views_competitions_CompetitionOverview__WEBPACK_IMPORTED_MODULE_4__["default"]
+}, {
+  path: '/competition/create',
+  name: 'createCompetition',
+  component: _views_competitions_AddCompetitionPage__WEBPACK_IMPORTED_MODULE_5__["default"]
+}, {
+  path: '/competition/:competition',
+  name: 'showCompetition',
+  component: _views_competitions_ShowCompetition__WEBPACK_IMPORTED_MODULE_6__["default"]
+}, {
+  path: '/competition/:competition/addTime',
+  name: 'addTime',
+  component: _views_competitions_AddTime__WEBPACK_IMPORTED_MODULE_7__["default"]
 }];
 
 /***/ }),
@@ -80847,6 +81873,180 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/views/competitions/AddCompetitionPage.vue":
+/*!****************************************************************!*\
+  !*** ./resources/js/views/competitions/AddCompetitionPage.vue ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _AddCompetitionPage_vue_vue_type_template_id_2046fed9_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AddCompetitionPage.vue?vue&type=template&id=2046fed9&scoped=true& */ "./resources/js/views/competitions/AddCompetitionPage.vue?vue&type=template&id=2046fed9&scoped=true&");
+/* harmony import */ var _AddCompetitionPage_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AddCompetitionPage.vue?vue&type=script&lang=js& */ "./resources/js/views/competitions/AddCompetitionPage.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _AddCompetitionPage_vue_vue_type_style_index_0_id_2046fed9_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./AddCompetitionPage.vue?vue&type=style&index=0&id=2046fed9&scoped=true&lang=css& */ "./resources/js/views/competitions/AddCompetitionPage.vue?vue&type=style&index=0&id=2046fed9&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _AddCompetitionPage_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _AddCompetitionPage_vue_vue_type_template_id_2046fed9_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _AddCompetitionPage_vue_vue_type_template_id_2046fed9_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "2046fed9",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/views/competitions/AddCompetitionPage.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/views/competitions/AddCompetitionPage.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************!*\
+  !*** ./resources/js/views/competitions/AddCompetitionPage.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AddCompetitionPage_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./AddCompetitionPage.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/competitions/AddCompetitionPage.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AddCompetitionPage_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/views/competitions/AddCompetitionPage.vue?vue&type=style&index=0&id=2046fed9&scoped=true&lang=css&":
+/*!*************************************************************************************************************************!*\
+  !*** ./resources/js/views/competitions/AddCompetitionPage.vue?vue&type=style&index=0&id=2046fed9&scoped=true&lang=css& ***!
+  \*************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AddCompetitionPage_vue_vue_type_style_index_0_id_2046fed9_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./AddCompetitionPage.vue?vue&type=style&index=0&id=2046fed9&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/competitions/AddCompetitionPage.vue?vue&type=style&index=0&id=2046fed9&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AddCompetitionPage_vue_vue_type_style_index_0_id_2046fed9_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AddCompetitionPage_vue_vue_type_style_index_0_id_2046fed9_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AddCompetitionPage_vue_vue_type_style_index_0_id_2046fed9_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AddCompetitionPage_vue_vue_type_style_index_0_id_2046fed9_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AddCompetitionPage_vue_vue_type_style_index_0_id_2046fed9_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/js/views/competitions/AddCompetitionPage.vue?vue&type=template&id=2046fed9&scoped=true&":
+/*!***********************************************************************************************************!*\
+  !*** ./resources/js/views/competitions/AddCompetitionPage.vue?vue&type=template&id=2046fed9&scoped=true& ***!
+  \***********************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AddCompetitionPage_vue_vue_type_template_id_2046fed9_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./AddCompetitionPage.vue?vue&type=template&id=2046fed9&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/competitions/AddCompetitionPage.vue?vue&type=template&id=2046fed9&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AddCompetitionPage_vue_vue_type_template_id_2046fed9_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AddCompetitionPage_vue_vue_type_template_id_2046fed9_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/views/competitions/AddTime.vue":
+/*!*****************************************************!*\
+  !*** ./resources/js/views/competitions/AddTime.vue ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _AddTime_vue_vue_type_template_id_fdf1eb1c_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AddTime.vue?vue&type=template&id=fdf1eb1c&scoped=true& */ "./resources/js/views/competitions/AddTime.vue?vue&type=template&id=fdf1eb1c&scoped=true&");
+/* harmony import */ var _AddTime_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AddTime.vue?vue&type=script&lang=js& */ "./resources/js/views/competitions/AddTime.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _AddTime_vue_vue_type_style_index_0_id_fdf1eb1c_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./AddTime.vue?vue&type=style&index=0&id=fdf1eb1c&scoped=true&lang=css& */ "./resources/js/views/competitions/AddTime.vue?vue&type=style&index=0&id=fdf1eb1c&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _AddTime_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _AddTime_vue_vue_type_template_id_fdf1eb1c_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _AddTime_vue_vue_type_template_id_fdf1eb1c_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "fdf1eb1c",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/views/competitions/AddTime.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/views/competitions/AddTime.vue?vue&type=script&lang=js&":
+/*!******************************************************************************!*\
+  !*** ./resources/js/views/competitions/AddTime.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AddTime_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./AddTime.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/competitions/AddTime.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AddTime_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/views/competitions/AddTime.vue?vue&type=style&index=0&id=fdf1eb1c&scoped=true&lang=css&":
+/*!**************************************************************************************************************!*\
+  !*** ./resources/js/views/competitions/AddTime.vue?vue&type=style&index=0&id=fdf1eb1c&scoped=true&lang=css& ***!
+  \**************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AddTime_vue_vue_type_style_index_0_id_fdf1eb1c_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./AddTime.vue?vue&type=style&index=0&id=fdf1eb1c&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/competitions/AddTime.vue?vue&type=style&index=0&id=fdf1eb1c&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AddTime_vue_vue_type_style_index_0_id_fdf1eb1c_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AddTime_vue_vue_type_style_index_0_id_fdf1eb1c_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AddTime_vue_vue_type_style_index_0_id_fdf1eb1c_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AddTime_vue_vue_type_style_index_0_id_fdf1eb1c_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AddTime_vue_vue_type_style_index_0_id_fdf1eb1c_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/js/views/competitions/AddTime.vue?vue&type=template&id=fdf1eb1c&scoped=true&":
+/*!************************************************************************************************!*\
+  !*** ./resources/js/views/competitions/AddTime.vue?vue&type=template&id=fdf1eb1c&scoped=true& ***!
+  \************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AddTime_vue_vue_type_template_id_fdf1eb1c_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./AddTime.vue?vue&type=template&id=fdf1eb1c&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/competitions/AddTime.vue?vue&type=template&id=fdf1eb1c&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AddTime_vue_vue_type_template_id_fdf1eb1c_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AddTime_vue_vue_type_template_id_fdf1eb1c_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/views/competitions/CompetitionOverview.vue":
 /*!*****************************************************************!*\
   !*** ./resources/js/views/competitions/CompetitionOverview.vue ***!
@@ -80858,7 +82058,9 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _CompetitionOverview_vue_vue_type_template_id_11429e88_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CompetitionOverview.vue?vue&type=template&id=11429e88&scoped=true& */ "./resources/js/views/competitions/CompetitionOverview.vue?vue&type=template&id=11429e88&scoped=true&");
 /* harmony import */ var _CompetitionOverview_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CompetitionOverview.vue?vue&type=script&lang=js& */ "./resources/js/views/competitions/CompetitionOverview.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _CompetitionOverview_vue_vue_type_style_index_0_id_11429e88_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CompetitionOverview.vue?vue&type=style&index=0&id=11429e88&scoped=true&lang=css& */ "./resources/js/views/competitions/CompetitionOverview.vue?vue&type=style&index=0&id=11429e88&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
 
 
 
@@ -80866,7 +82068,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
   _CompetitionOverview_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _CompetitionOverview_vue_vue_type_template_id_11429e88_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
   _CompetitionOverview_vue_vue_type_template_id_11429e88_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
@@ -80898,6 +82100,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/views/competitions/CompetitionOverview.vue?vue&type=style&index=0&id=11429e88&scoped=true&lang=css&":
+/*!**************************************************************************************************************************!*\
+  !*** ./resources/js/views/competitions/CompetitionOverview.vue?vue&type=style&index=0&id=11429e88&scoped=true&lang=css& ***!
+  \**************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_CompetitionOverview_vue_vue_type_style_index_0_id_11429e88_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./CompetitionOverview.vue?vue&type=style&index=0&id=11429e88&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/competitions/CompetitionOverview.vue?vue&type=style&index=0&id=11429e88&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_CompetitionOverview_vue_vue_type_style_index_0_id_11429e88_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_CompetitionOverview_vue_vue_type_style_index_0_id_11429e88_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_CompetitionOverview_vue_vue_type_style_index_0_id_11429e88_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_CompetitionOverview_vue_vue_type_style_index_0_id_11429e88_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_CompetitionOverview_vue_vue_type_style_index_0_id_11429e88_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
 /***/ "./resources/js/views/competitions/CompetitionOverview.vue?vue&type=template&id=11429e88&scoped=true&":
 /*!************************************************************************************************************!*\
   !*** ./resources/js/views/competitions/CompetitionOverview.vue?vue&type=template&id=11429e88&scoped=true& ***!
@@ -80911,6 +82129,93 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CompetitionOverview_vue_vue_type_template_id_11429e88_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CompetitionOverview_vue_vue_type_template_id_11429e88_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/views/competitions/ShowCompetition.vue":
+/*!*************************************************************!*\
+  !*** ./resources/js/views/competitions/ShowCompetition.vue ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ShowCompetition_vue_vue_type_template_id_1bf9a834_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ShowCompetition.vue?vue&type=template&id=1bf9a834&scoped=true& */ "./resources/js/views/competitions/ShowCompetition.vue?vue&type=template&id=1bf9a834&scoped=true&");
+/* harmony import */ var _ShowCompetition_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ShowCompetition.vue?vue&type=script&lang=js& */ "./resources/js/views/competitions/ShowCompetition.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _ShowCompetition_vue_vue_type_style_index_0_id_1bf9a834_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ShowCompetition.vue?vue&type=style&index=0&id=1bf9a834&scoped=true&lang=css& */ "./resources/js/views/competitions/ShowCompetition.vue?vue&type=style&index=0&id=1bf9a834&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _ShowCompetition_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ShowCompetition_vue_vue_type_template_id_1bf9a834_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ShowCompetition_vue_vue_type_template_id_1bf9a834_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "1bf9a834",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/views/competitions/ShowCompetition.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/views/competitions/ShowCompetition.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************!*\
+  !*** ./resources/js/views/competitions/ShowCompetition.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ShowCompetition_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./ShowCompetition.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/competitions/ShowCompetition.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ShowCompetition_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/views/competitions/ShowCompetition.vue?vue&type=style&index=0&id=1bf9a834&scoped=true&lang=css&":
+/*!**********************************************************************************************************************!*\
+  !*** ./resources/js/views/competitions/ShowCompetition.vue?vue&type=style&index=0&id=1bf9a834&scoped=true&lang=css& ***!
+  \**********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ShowCompetition_vue_vue_type_style_index_0_id_1bf9a834_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./ShowCompetition.vue?vue&type=style&index=0&id=1bf9a834&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/competitions/ShowCompetition.vue?vue&type=style&index=0&id=1bf9a834&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ShowCompetition_vue_vue_type_style_index_0_id_1bf9a834_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ShowCompetition_vue_vue_type_style_index_0_id_1bf9a834_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ShowCompetition_vue_vue_type_style_index_0_id_1bf9a834_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ShowCompetition_vue_vue_type_style_index_0_id_1bf9a834_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ShowCompetition_vue_vue_type_style_index_0_id_1bf9a834_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/js/views/competitions/ShowCompetition.vue?vue&type=template&id=1bf9a834&scoped=true&":
+/*!********************************************************************************************************!*\
+  !*** ./resources/js/views/competitions/ShowCompetition.vue?vue&type=template&id=1bf9a834&scoped=true& ***!
+  \********************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ShowCompetition_vue_vue_type_template_id_1bf9a834_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./ShowCompetition.vue?vue&type=template&id=1bf9a834&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/competitions/ShowCompetition.vue?vue&type=template&id=1bf9a834&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ShowCompetition_vue_vue_type_template_id_1bf9a834_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ShowCompetition_vue_vue_type_template_id_1bf9a834_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -81014,7 +82319,9 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Leaderboard_vue_vue_type_template_id_93bc06c8_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Leaderboard.vue?vue&type=template&id=93bc06c8&scoped=true& */ "./resources/js/views/leaderboard/Leaderboard.vue?vue&type=template&id=93bc06c8&scoped=true&");
 /* harmony import */ var _Leaderboard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Leaderboard.vue?vue&type=script&lang=js& */ "./resources/js/views/leaderboard/Leaderboard.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _Leaderboard_vue_vue_type_style_index_0_id_93bc06c8_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Leaderboard.vue?vue&type=style&index=0&id=93bc06c8&scoped=true&lang=css& */ "./resources/js/views/leaderboard/Leaderboard.vue?vue&type=style&index=0&id=93bc06c8&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
 
 
 
@@ -81022,7 +82329,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
   _Leaderboard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _Leaderboard_vue_vue_type_template_id_93bc06c8_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
   _Leaderboard_vue_vue_type_template_id_93bc06c8_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
@@ -81051,6 +82358,22 @@ component.options.__file = "resources/js/views/leaderboard/Leaderboard.vue"
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Leaderboard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./Leaderboard.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/leaderboard/Leaderboard.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Leaderboard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/views/leaderboard/Leaderboard.vue?vue&type=style&index=0&id=93bc06c8&scoped=true&lang=css&":
+/*!*****************************************************************************************************************!*\
+  !*** ./resources/js/views/leaderboard/Leaderboard.vue?vue&type=style&index=0&id=93bc06c8&scoped=true&lang=css& ***!
+  \*****************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Leaderboard_vue_vue_type_style_index_0_id_93bc06c8_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./Leaderboard.vue?vue&type=style&index=0&id=93bc06c8&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/leaderboard/Leaderboard.vue?vue&type=style&index=0&id=93bc06c8&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Leaderboard_vue_vue_type_style_index_0_id_93bc06c8_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Leaderboard_vue_vue_type_style_index_0_id_93bc06c8_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Leaderboard_vue_vue_type_style_index_0_id_93bc06c8_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Leaderboard_vue_vue_type_style_index_0_id_93bc06c8_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Leaderboard_vue_vue_type_style_index_0_id_93bc06c8_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 

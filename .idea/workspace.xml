@@ -1,52 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c4f124b7-cff4-4d19-abc3-20f118e4bb48" name="Default Changelist" comment="Add Validation, Homepage content and styling. First styling leaderboard">
-      <change afterPath="$PROJECT_DIR$/src/public/images/Italian.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/images/abudhabi.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/images/australia.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/images/run.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/images/run.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/images/tracks/China.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/images/tracks/abudhabi.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/images/tracks/australia.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/images/tracks/austria.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/images/tracks/azerbijan.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/images/tracks/bahrain.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/images/tracks/belgium.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/images/tracks/brazil.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/images/tracks/brit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/images/tracks/canada.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/images/tracks/france.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/images/tracks/germany.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/images/tracks/hungary.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/images/tracks/italy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/images/tracks/japan.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/images/tracks/mexico.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/images/tracks/monaco.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/images/tracks/russia.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/images/tracks/singapore.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/images/tracks/spain.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/images/tracks/unitedstates.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/js/components/auth/LoginForm.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/js/components/auth/RegisterForm.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/js/components/shared/podium/Podium.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/js/views/leaderboard/Leaderboard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Trail_Racer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Trail_Racer.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="54506896-0cb1-4222-9b10-b6682bbe6b3b" name="Default Changelist" comment="Add remove button, change time format to mm:ss:SSS, Add addCompetitionPage,&#10;Add addTimePage, Add competition overview and show.">
+      <change afterPath="$PROJECT_DIR$/src/resources/js/views/competitions/AddCompetitionPage.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/js/views/competitions/AddTime.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/js/views/competitions/ShowCompetition.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node_modules/vue/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/node_modules/vue/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/js/components/shared/navbar/NavBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/js/components/shared/navbar/NavBar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/js/components/shared/leaderboard/LeaderboardTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/js/components/shared/leaderboard/LeaderboardTable.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/js/filters/DateFormat.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/js/filters/DateFormat.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/js/router/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/js/router/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/js/views/auth/LoginPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/js/views/auth/LoginPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/js/views/auth/RegisterPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/js/views/auth/RegisterPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/js/views/competitions/CompetitionOverview.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/js/views/competitions/CompetitionOverview.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/js/views/home/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/js/views/home/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/js/views/leaderboard/Leaderboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/js/views/leaderboard/Leaderboard.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,7 +20,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings">
     <pharConfigPath>$PROJECT_DIR$/src/composer.json</pharConfigPath>
     <execution>
       <executable />
@@ -87,7 +53,6 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="Vue Single File Component" />
       </list>
     </option>
@@ -182,31 +147,10 @@
       <path value="$PROJECT_DIR$/src/vendor/laravel/ui" />
     </include_path>
   </component>
-  <component name="ProjectId" id="1Ty5JJq4FgHB77MQQdKkBNTmkty" />
+  <component name="ProjectId" id="1UQvBsTftiODHZykznwCqN9usHU" />
   <component name="PropertiesComponent">
-    <property name="DatabaseDriversLRU" value="mariadb&#10;mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/resources/images" />
-      <recent name="$PROJECT_DIR$/src/resources/images/tracks" />
-      <recent name="$PROJECT_DIR$/src/resources/sounds" />
-      <recent name="$PROJECT_DIR$/src/resources/js/views" />
-      <recent name="$PROJECT_DIR$/src/resources/js/vuex" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/resources/images/tracks" />
-      <recent name="$PROJECT_DIR$/src/public" />
-      <recent name="$PROJECT_DIR$/src" />
-    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -220,112 +164,24 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.dev">
-    <configuration default="true" type="Application" factoryName="Application">
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <option name="TEST_OBJECT" value="class" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="TestNG">
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/src/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="dev" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <configuration name="watch" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/src/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="watch" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <list>
-      <item itemvalue="npm.dev" />
-      <item itemvalue="npm.watch" />
-    </list>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="allServicesViewState">
-      <serviceView>
-        <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@1f2881be" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@1f2881be" type="9fbbdea:ServiceModel$ServiceNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@4661e3dd" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@1f2881be" type="9fbbdea:ServiceModel$ServiceNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@4661e3dd" type="9fbbdea:ServiceModel$ServiceNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@57711fe1" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@1f2881be" type="9fbbdea:ServiceModel$ServiceNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@4661e3dd" type="9fbbdea:ServiceModel$ServiceNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@1155915" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-          </expand>
-          <select />
-        </treeState>
-      </serviceView>
-    </option>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="c4f124b7-cff4-4d19-abc3-20f118e4bb48" name="Default Changelist" comment="" />
-      <created>1574419421899</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1574419421899</updated>
-      <workItem from="1574419423264" duration="6571000" />
-      <workItem from="1574429155274" duration="8497000" />
-      <workItem from="1574670529877" duration="2290000" />
-      <workItem from="1574673418622" duration="2807000" />
-      <workItem from="1574679212956" duration="9704000" />
-      <workItem from="1574937369646" duration="534000" />
-      <workItem from="1574938071950" duration="276000" />
-      <workItem from="1574938446911" duration="10435000" />
-      <workItem from="1574954411803" duration="7733000" />
-    </task>
-    <task id="LOCAL-00001" summary="git ignore">
-      <created>1574698538324</created>
+    <task id="LOCAL-00001" summary="Add circuits, Add leaderboard table, Update podium with dynamic values,&#10; add truncate &amp; timeformat filter, Fix autoplay">
+      <created>1575281000959</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1574698538324</updated>
+      <updated>1575281000960</updated>
+    </task>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="54506896-0cb1-4222-9b10-b6682bbe6b3b" name="Default Changelist" comment="Add circuits, Add leaderboard table, Update podium with dynamic values,&#10; add truncate &amp; timeformat filter, Fix autoplay" />
+      <created>1575301501676</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1575301501676</updated>
+      <workItem from="1575301506087" duration="8260000" />
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
@@ -347,9 +203,8 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="true" />
-    <MESSAGE value="git ignore" />
-    <MESSAGE value="Add Validation, Homepage content and styling. First styling leaderboard" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Validation, Homepage content and styling. First styling leaderboard" />
+    <MESSAGE value="Add circuits, Add leaderboard table, Update podium with dynamic values,&#10; add truncate &amp; timeformat filter, Fix autoplay" />
+    <MESSAGE value="Add remove button, change time format to mm:ss:SSS, Add addCompetitionPage,&#10;Add addTimePage, Add competition overview and show." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add remove button, change time format to mm:ss:SSS, Add addCompetitionPage,&#10;Add addTimePage, Add competition overview and show." />
   </component>
 </project>

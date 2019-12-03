@@ -1,48 +1,24 @@
 <template>
     <div>
-        <circuits-nav
-            :circuits="circuits"
-            :selected-circuit="selectedCircuit"
-            @circuitChanged="onCircuitChange">
+        <circuits-nav :circuits="circuits"
+                      :selected-circuit="selectedCircuit"
+                      @circuitChanged="onCircuitChange">
         </circuits-nav>
         <div class="container">
-            <h1>Top 100 van {{selectedCircuit}}:</h1>
-            <podium :first="data[0].name" :second="data[1].name" :third="data[2].name"></podium>
-            <leaderboard-table :data="data"></leaderboard-table>
+            <h1>{{$route.params.competition}}</h1>
         </div>
+        <button class="btn btn-primary rounded-circle add-button" @click="onAddButtonClick()">+</button>
     </div>
 </template>
 
 <script>
-    import Podium from "../../components/shared/podium/Podium";
     import CircuitsNav from "../../components/shared/circuits/CircuitsNav";
-    import LeaderboardTable from "../../components/shared/leaderboard/LeaderboardTable";
 
     export default {
-        name: "Leaderbord",
-        components: {LeaderboardTable, CircuitsNav, Podium},
-        data: () => {
+        name: "ShowCompetition",
+        components: {CircuitsNav},
+        data() {
             return {
-                data: [
-                    {
-                        name: 'De Beste',
-                        car: 'Ferrari',
-                        time: 83892,
-                        isUsersTime: false
-                    },
-                    {
-                        name: 'De bijna slechtste',
-                        car: 'Redbull',
-                        time: 83903,
-                        isUsersTime: false
-                    },
-                    {
-                        name: 'De Noobs',
-                        car: 'Williams',
-                        time: 123335,
-                        isUsersTime: true
-                    }
-                ],
                 selectedCircuit: 'Australia',
                 circuits: [
                     'Australia',
@@ -72,11 +48,16 @@
         watch: {
             selectedCircuit: function (circuit) {
                 console.log(circuit);
+                console.log(this.$route.params.competition);
             }
         },
         methods: {
             onCircuitChange(circuit) {
                 this.selectedCircuit = circuit;
+            },
+
+            onAddButtonClick(){
+                this.$router.push({path: `/competition/${this.$route.params.competition}/addTime`})
             }
         }
     }
@@ -87,5 +68,10 @@
         font-family: FormulaOne-Bold, serif;
         border-bottom: 5px solid red;
         padding: 0.2em 0;
+    }
+    .add-button{
+        position: absolute;
+        right: 2em;
+        bottom: 2em;
     }
 </style>

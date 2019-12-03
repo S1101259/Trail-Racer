@@ -45,25 +45,25 @@
                         <ul class="list-group">
                             <li class="list-group-item">
                                 <span class="competition-name">De snelste Rijders</span>
-                                <span class="competition-drivers">Aantal coureurs
+                                <span class="competition-drivers">Aantal coureurs:
                                     <span class="badge badge-primary badge-pill">10</span>
                                 </span>
                             </li>
                             <li class="list-group-item">
                                 <span class="competition-name">Formuladank</span>
-                                <span class="competition-drivers">Aantal coureurs
+                                <span class="competition-drivers">Aantal coureurs:
                                     <span class="badge badge-primary badge-pill">1000</span>
                                 </span>
                             </li>
                             <li class="list-group-item">
                                 <span class="competition-name">Formula 1.5</span>
-                                <span class="competition-drivers">Aantal coureurs
+                                <span class="competition-drivers">Aantal coureurs:
                                     <span class="badge badge-primary badge-pill">14</span>
                                 </span>
                             </li>
                             <li class="list-group-item">
                                 <span class="competition-name">Formula 1.5</span>
-                                <span class="competition-drivers">Aantal coureurs
+                                <span class="competition-drivers">Aantal coureurs:
                                     <span class="badge badge-primary badge-pill">14</span>
                                 </span>
                             </li>
@@ -150,11 +150,13 @@
 
     .competition-drivers {
         float: right;
+        width: 30%;
         font-family: FormulaOne-Regular, serif;
     }
 
     .badge {
         padding: 0.5em 1em;
+        margin-left: 1em;
     }
 
     .competition-information{

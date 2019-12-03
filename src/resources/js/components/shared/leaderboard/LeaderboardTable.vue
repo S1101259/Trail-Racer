@@ -7,6 +7,7 @@
                 <td>{{row.name}}</td>
                 <td>{{row.car}}</td>
                 <td>{{row.time | formatDate}}</td>
+                <td v-if="row.isUsersTime"><button class="btn btn-sm btn-primary">X</button></td>
             </tr>
             </tbody>
         </table>
