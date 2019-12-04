@@ -49,6 +49,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        min-height: 750px;
+
     }
 
     .login-container {

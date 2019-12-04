@@ -3295,6 +3295,8 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuelidate/lib/validators */ "./node_modules/vuelidate/lib/validators/index.js");
 /* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 //
 //
 //
@@ -3365,12 +3367,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "AddTime",
   data: function data() {
     return {
-      teams: ['Ferrari', 'Mercedes', 'Renault', 'Mclaren', 'Williams', 'Redbull', 'Toro Rosso', 'Haas', 'Alfa Romeo'],
-      circuits: ['Australia', 'Bahrain', 'China', 'Azerbaijan', 'Spain', 'Monaco', 'Canada', 'France', 'Austria', 'Great Britain', 'Germany', 'Hungary', 'Belgium', 'Italy', 'Singapore', 'Russia', 'Japan', 'Mexico', 'United States', 'Brazil', 'Abu Dhabi'],
       minutes: 0,
       seconds: 0,
       milliseconds: 0,
@@ -3409,6 +3410,12 @@ __webpack_require__.r(__webpack_exports__);
   computed: {
     timeInMilliseconds: function timeInMilliseconds() {
       return this.milliseconds + this.seconds * 1000 + this.minutes * 60 * 1000;
+    },
+    circuits: function circuits() {
+      return this.$store.getters.getCircuits;
+    },
+    teams: function teams() {
+      return this.$store.getters.getTeams;
     }
   },
   methods: {
@@ -3417,7 +3424,17 @@ __webpack_require__.r(__webpack_exports__);
       console.log(this.selectedTeam);
       console.log(this.selectedCircuit);
       console.log(this.$v);
+    },
+    fetchTeams: function fetchTeams() {
+      this.$store.dispatch("fetchTeams");
+    },
+    fetchCircuits: function fetchCircuits() {
+      this.$store.dispatch("fetchCircuits");
     }
+  },
+  mounted: function mounted() {
+    this.fetchTeams();
+    this.fetchCircuits();
   }
 });
 
@@ -3517,9 +3534,13 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      selectedCircuit: 'Australia',
-      circuits: ['Australia', 'Bahrain', 'China', 'Azerbaijan', 'Spain', 'Monaco', 'Canada', 'France', 'Austria', 'Great Britain', 'Germany', 'Hungary', 'Belgium', 'Italy', 'Singapore', 'Russia', 'Japan', 'Mexico', 'United States', 'Brazil', 'Abu Dhabi']
+      selectedCircuit: 'Australia'
     };
+  },
+  computed: {
+    circuits: function circuits() {
+      return this.$store.getters.getCircuits;
+    }
   },
   watch: {
     selectedCircuit: function selectedCircuit(circuit) {
@@ -3536,6 +3557,9 @@ __webpack_require__.r(__webpack_exports__);
         path: "/competition/".concat(this.$route.params.competition, "/addTime")
       });
     }
+  },
+  mounted: function mounted() {
+    this.$store.dispatch("fetchCircuits");
   }
 });
 
@@ -3699,8 +3723,7 @@ __webpack_require__.r(__webpack_exports__);
         time: 123335,
         isUsersTime: true
       }],
-      selectedCircuit: 'Australia',
-      circuits: ['Australia', 'Bahrain', 'China', 'Azerbaijan', 'Spain', 'Monaco', 'Canada', 'France', 'Austria', 'Great Britain', 'Germany', 'Hungary', 'Belgium', 'Italy', 'Singapore', 'Russia', 'Japan', 'Mexico', 'United States', 'Brazil', 'Abu Dhabi']
+      selectedCircuit: 'Australia'
     };
   },
   watch: {
@@ -3708,10 +3731,18 @@ __webpack_require__.r(__webpack_exports__);
       console.log(circuit);
     }
   },
+  computed: {
+    circuits: function circuits() {
+      return this.$store.getters.getCircuits;
+    }
+  },
   methods: {
     onCircuitChange: function onCircuitChange(circuit) {
       this.selectedCircuit = circuit;
     }
+  },
+  mounted: function mounted() {
+    this.$store.dispatch("fetchCircuits");
   }
 });
 
@@ -8289,7 +8320,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.background[data-v-e7b39fe0] {\n    background-image: url(" + escape(__webpack_require__(/*! ../../../images/background.png */ "./resources/images/background.png")) + ");\n    height: 100vh;\n    width: 100vw;\n    margin-top: -69px;\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n            justify-content: center;\n}\n.login-container[data-v-e7b39fe0] {\n    clear: both;\n    background-color: white;\n    height: 25rem;\n    width: 30rem;\n    border-top-left-radius: 10px;\n    border-bottom-left-radius: 10px;\n    padding: 3em;\n    position: relative;\n    box-shadow: 13px 13px 41px -9px rgba(0, 0, 0, 0.47);\n}\n.right-container[data-v-e7b39fe0] {\n    clear: both;\n    background-color: gray;\n    height: 25rem;\n    width: 20rem;\n    border-top-right-radius: 10px;\n    border-bottom-right-radius: 10px;\n    padding: 3em;\n    position: relative;\n    box-shadow: 13px 13px 41px -9px rgba(0, 0, 0, 0.47);\n    background-image: url(" + escape(__webpack_require__(/*! ../../../images/lando.gif */ "./resources/images/lando.gif")) + ");\n    background-position: center;\n    background-size: cover;\n}\n.register[data-v-e7b39fe0] {\n    position: absolute;\n    bottom: 3em;\n    left: 3em;\n}\n\n\n", ""]);
+exports.push([module.i, "\n.background[data-v-e7b39fe0] {\n    background-image: url(" + escape(__webpack_require__(/*! ../../../images/background.png */ "./resources/images/background.png")) + ");\n    height: 100vh;\n    width: 100vw;\n    margin-top: -69px;\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n            justify-content: center;\n    min-height: 600px;\n}\n.login-container[data-v-e7b39fe0] {\n    clear: both;\n    background-color: white;\n    height: 25rem;\n    width: 30rem;\n    border-top-left-radius: 10px;\n    border-bottom-left-radius: 10px;\n    padding: 3em;\n    position: relative;\n    box-shadow: 13px 13px 41px -9px rgba(0, 0, 0, 0.47);\n}\n.right-container[data-v-e7b39fe0] {\n    clear: both;\n    background-color: gray;\n    height: 25rem;\n    width: 20rem;\n    border-top-right-radius: 10px;\n    border-bottom-right-radius: 10px;\n    padding: 3em;\n    position: relative;\n    box-shadow: 13px 13px 41px -9px rgba(0, 0, 0, 0.47);\n    background-image: url(" + escape(__webpack_require__(/*! ../../../images/lando.gif */ "./resources/images/lando.gif")) + ");\n    background-position: center;\n    background-size: cover;\n}\n.register[data-v-e7b39fe0] {\n    position: absolute;\n    bottom: 3em;\n    left: 3em;\n}\n\n\n", ""]);
 
 // exports
 
@@ -8309,7 +8340,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.background[data-v-4757c98a] {\n    background-image: url(" + escape(__webpack_require__(/*! ../../../images/background.png */ "./resources/images/background.png")) + ");\n    height: 100vh;\n    width: 100vw;\n    margin-top: -69px;\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n            justify-content: center;\n}\n.login-container[data-v-4757c98a] {\n    clear: both;\n    background-color: white;\n    height: 35rem;\n    width: 30rem;\n    border-top-left-radius: 10px;\n    border-bottom-left-radius: 10px;\n    padding: 3em;\n    position: relative;\n    box-shadow: 13px 13px 41px -9px rgba(0, 0, 0, 0.47);\n}\n.right-container[data-v-4757c98a] {\n    clear: both;\n    background-color: gray;\n    height: 35rem;\n    width: 20rem;\n    border-top-right-radius: 10px;\n    border-bottom-right-radius: 10px;\n    padding: 3em;\n    position: relative;\n    box-shadow: 13px 13px 41px -9px rgba(0, 0, 0, 0.47);\n    background-image: url(" + escape(__webpack_require__(/*! ../../../images/landoReg.gif */ "./resources/images/landoReg.gif")) + ");\n    background-position: center;\n    background-size: cover;\n}\nform[data-v-4757c98a], label[data-v-4757c98a] {\n    font-family: FormulaOne-Regular, serif;\n}\nh2[data-v-4757c98a], button[data-v-4757c98a] {\n    font-family: FormulaOne-Bold, serif;\n    margin-bottom: 1em;\n}\n.register[data-v-4757c98a] {\n    position: absolute;\n    bottom: 3em;\n    left: 3em;\n}\n\n", ""]);
+exports.push([module.i, "\n.background[data-v-4757c98a] {\n    background-image: url(" + escape(__webpack_require__(/*! ../../../images/background.png */ "./resources/images/background.png")) + ");\n    height: 100vh;\n    width: 100vw;\n    margin-top: -69px;\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n            justify-content: center;\n    min-height: 750px;\n}\n.login-container[data-v-4757c98a] {\n    clear: both;\n    background-color: white;\n    height: 35rem;\n    width: 30rem;\n    border-top-left-radius: 10px;\n    border-bottom-left-radius: 10px;\n    padding: 3em;\n    position: relative;\n    box-shadow: 13px 13px 41px -9px rgba(0, 0, 0, 0.47);\n}\n.right-container[data-v-4757c98a] {\n    clear: both;\n    background-color: gray;\n    height: 35rem;\n    width: 20rem;\n    border-top-right-radius: 10px;\n    border-bottom-right-radius: 10px;\n    padding: 3em;\n    position: relative;\n    box-shadow: 13px 13px 41px -9px rgba(0, 0, 0, 0.47);\n    background-image: url(" + escape(__webpack_require__(/*! ../../../images/landoReg.gif */ "./resources/images/landoReg.gif")) + ");\n    background-position: center;\n    background-size: cover;\n}\nform[data-v-4757c98a], label[data-v-4757c98a] {\n    font-family: FormulaOne-Regular, serif;\n}\nh2[data-v-4757c98a], button[data-v-4757c98a] {\n    font-family: FormulaOne-Bold, serif;\n    margin-bottom: 1em;\n}\n.register[data-v-4757c98a] {\n    position: absolute;\n    bottom: 3em;\n    left: 3em;\n}\n\n", ""]);
 
 // exports
 
@@ -8349,7 +8380,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.background[data-v-fdf1eb1c] {\n    background-image: url(" + escape(__webpack_require__(/*! ../../../images/background.png */ "./resources/images/background.png")) + ");\n    height: 100vh;\n    width: 100vw;\n    margin-top: -69px;\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n            justify-content: center;\n}\n.add-container[data-v-fdf1eb1c] {\n    clear: both;\n    background-color: white;\n    height: 25rem;\n    width: 35rem;\n    border-top-left-radius: 10px;\n    border-bottom-left-radius: 10px;\n    padding: 3em;\n    position: relative;\n    box-shadow: 13px 13px 41px -9px rgba(0, 0, 0, 0.47);\n    font-family: FormulaOne-Regular, serif;\n}\n.right-container[data-v-fdf1eb1c] {\n    clear: both;\n    background-color: gray;\n    height: 25rem;\n    width: 20rem;\n    border-top-right-radius: 10px;\n    border-bottom-right-radius: 10px;\n    padding: 3em;\n    position: relative;\n    box-shadow: 13px 13px 41px -9px rgba(0, 0, 0, 0.47);\n    background-image: url(" + escape(__webpack_require__(/*! ../../../images/addTime.gif */ "./resources/images/addTime.gif")) + ");\n    background-position: center;\n    background-size: cover;\n}\n.dot[data-v-fdf1eb1c] {\n    padding-top: 0.9em;\n    font-size: 2em;\n    color: gray;\n}\n.small-dot[data-v-fdf1eb1c] {\n    padding-top: 0.8em;\n    font-size: 2em;\n    color: gray;\n}\n\n", ""]);
+exports.push([module.i, "\n.background[data-v-fdf1eb1c] {\n    background-image: url(" + escape(__webpack_require__(/*! ../../../images/background.png */ "./resources/images/background.png")) + ");\n    height: 100vh;\n    min-height: 600px;\n    width: 100vw;\n    margin-top: -69px;\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n            justify-content: center;\n}\n.add-container[data-v-fdf1eb1c] {\n    clear: both;\n    background-color: white;\n    height: 25rem;\n    width: 35rem;\n    border-top-left-radius: 10px;\n    border-bottom-left-radius: 10px;\n    padding: 3em;\n    position: relative;\n    box-shadow: 13px 13px 41px -9px rgba(0, 0, 0, 0.47);\n    font-family: FormulaOne-Regular, serif;\n}\n.right-container[data-v-fdf1eb1c] {\n    clear: both;\n    background-color: gray;\n    height: 25rem;\n    width: 20rem;\n    border-top-right-radius: 10px;\n    border-bottom-right-radius: 10px;\n    padding: 3em;\n    position: relative;\n    box-shadow: 13px 13px 41px -9px rgba(0, 0, 0, 0.47);\n    background-image: url(" + escape(__webpack_require__(/*! ../../../images/addTime.gif */ "./resources/images/addTime.gif")) + ");\n    background-position: center;\n    background-size: cover;\n}\n.dot[data-v-fdf1eb1c] {\n    padding-top: 0.9em;\n    font-size: 2em;\n    color: gray;\n}\n.small-dot[data-v-fdf1eb1c] {\n    padding-top: 0.8em;\n    font-size: 2em;\n    color: gray;\n}\n\n", ""]);
 
 // exports
 
@@ -61418,7 +61449,11 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("\n                " + _vm._s(circuit) + "\n            ")]
+            [
+              _vm._v(
+                "\n                " + _vm._s(circuit.name) + "\n            "
+              )
+            ]
           )
         ])
       }),
@@ -62263,7 +62298,9 @@ var render = function() {
               ]),
               _vm._v(" "),
               _vm._l(_vm.teams, function(team) {
-                return _c("option", [_vm._v(_vm._s(team))])
+                return _c("option", { domProps: { value: team.id } }, [
+                  _vm._v(_vm._s(team.name))
+                ])
               })
             ],
             2
@@ -62316,7 +62353,9 @@ var render = function() {
               ]),
               _vm._v(" "),
               _vm._l(_vm.circuits, function(circuit) {
-                return _c("option", [_vm._v(_vm._s(circuit))])
+                return _c("option", { domProps: { value: circuit.id } }, [
+                  _vm._v(_vm._s(circuit.name))
+                ])
               })
             ],
             2
@@ -62664,7 +62703,7 @@ var render = function() {
         { staticClass: "container" },
         [
           _c("h1", [
-            _vm._v("Top 100 van " + _vm._s(_vm.selectedCircuit) + ":")
+            _vm._v("Top 100 van " + _vm._s(_vm.selectedCircuit.name) + ":")
           ]),
           _vm._v(" "),
           _c("podium", {
@@ -82423,6 +82462,138 @@ var actions = {};
 
 /***/ }),
 
+/***/ "./resources/js/vuex/modules/circuits.js":
+/*!***********************************************!*\
+  !*** ./resources/js/vuex/modules/circuits.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+
+var state = {
+  circuits: [],
+  isLoading: false,
+  error: ''
+};
+var getters = {
+  getCircuits: function getCircuits(state) {
+    return state.circuits;
+  },
+  isLoadingCircuits: function isLoadingCircuits(state) {
+    return state.isLoading;
+  },
+  getCircuitsRequestError: function getCircuitsRequestError(state) {
+    return state.error;
+  }
+};
+var mutations = {
+  circuits_request: function circuits_request(state) {
+    state.isLoading = true;
+  },
+  circuits_success: function circuits_success(state, receivedCircuits) {
+    state.circuits = receivedCircuits;
+  },
+  circuits_error: function circuits_error(state, error) {
+    state.error = error;
+  },
+  circuits_finished: function circuits_finished(state) {
+    state.isLoading = false;
+  }
+};
+var actions = {
+  fetchCircuits: function fetchCircuits(_ref) {
+    var state = _ref.state,
+        commit = _ref.commit;
+
+    if (state.circuits.length <= 0) {
+      commit('circuit_request');
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/circuits/all').then(function (response) {
+        commit('circuits_success', response.data.circuits);
+      })["catch"](function (e) {})["finally"](function () {
+        commit('circuits_finished');
+      });
+    }
+  }
+};
+/* harmony default export */ __webpack_exports__["default"] = ({
+  state: state,
+  mutations: mutations,
+  actions: actions,
+  getters: getters
+});
+
+/***/ }),
+
+/***/ "./resources/js/vuex/modules/teams.js":
+/*!********************************************!*\
+  !*** ./resources/js/vuex/modules/teams.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+
+var state = {
+  teams: [],
+  isLoading: false,
+  error: ''
+};
+var getters = {
+  getTeams: function getTeams(state) {
+    return state.teams;
+  },
+  isLoadingTeams: function isLoadingTeams(state) {
+    return state.isLoading;
+  },
+  getTeamsRequestError: function getTeamsRequestError(state) {
+    return state.error;
+  }
+};
+var mutations = {
+  teams_request: function teams_request(state) {
+    state.isLoading = true;
+  },
+  teams_success: function teams_success(state, receivedTeams) {
+    state.teams = receivedTeams;
+  },
+  teams_error: function teams_error(state, error) {
+    state.error = error;
+  },
+  teams_finished: function teams_finished(state) {
+    state.isLoading = false;
+  }
+};
+var actions = {
+  fetchTeams: function fetchTeams(_ref) {
+    var state = _ref.state,
+        commit = _ref.commit;
+
+    if (state.teams.length <= 0) {
+      commit('teams_request');
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/teams/all').then(function (response) {
+        commit('teams_success', response.data.teams);
+      })["catch"](function (e) {})["finally"](function () {
+        commit('teams_finished');
+      });
+    }
+  }
+};
+/* harmony default export */ __webpack_exports__["default"] = ({
+  state: state,
+  mutations: mutations,
+  actions: actions,
+  getters: getters
+});
+
+/***/ }),
+
 /***/ "./resources/js/vuex/store.js":
 /*!************************************!*\
   !*** ./resources/js/vuex/store.js ***!
@@ -82434,19 +82605,25 @@ var actions = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var _modules_auth__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/auth */ "./resources/js/vuex/modules/auth.js");
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _modules_circuits__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/circuits */ "./resources/js/vuex/modules/circuits.js");
+/* harmony import */ var _modules_teams__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/teams */ "./resources/js/vuex/modules/teams.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_4__);
 
 
 
-vue__WEBPACK_IMPORTED_MODULE_2___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_0__["default"]);
+
+
+vue__WEBPACK_IMPORTED_MODULE_4___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_0__["default"]);
 /* harmony default export */ __webpack_exports__["default"] = (new vuex__WEBPACK_IMPORTED_MODULE_0__["default"].Store({
   state: {},
   actions: {},
   mutations: {},
   getters: {},
   modules: {
-    auth: _modules_auth__WEBPACK_IMPORTED_MODULE_1__["default"]
+    auth: _modules_auth__WEBPACK_IMPORTED_MODULE_1__["default"],
+    circuits: _modules_circuits__WEBPACK_IMPORTED_MODULE_2__["default"],
+    teams: _modules_teams__WEBPACK_IMPORTED_MODULE_3__["default"]
   }
 }));
 

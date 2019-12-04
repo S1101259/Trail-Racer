@@ -4,7 +4,7 @@
             <li class="nav-item" v-for="circuit in circuits">
                 <span class="nav-link" :class="selectedCircuit === circuit ? 'active' : ''"
                       @click="$emit('circuitChanged', circuit)">
-                    {{circuit}}
+                    {{circuit.name}}
                 </span>
             </li>
         </ul>

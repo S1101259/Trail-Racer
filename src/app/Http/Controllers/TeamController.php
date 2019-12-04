@@ -10,7 +10,7 @@ class TeamController extends Controller
        $teams = Team::all();
        return response([
            'status' => 200,
-           'temas' => $teams
+           'teams' => $teams
        ]);
    }
 }

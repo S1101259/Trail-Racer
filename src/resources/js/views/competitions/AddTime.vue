@@ -44,7 +44,7 @@
                             v-model="selectedTeam"
                             @blur="$v.selectedTeam.$touch()">
                         <option value="0">Selecteer je team</option>
-                        <option v-for="team in teams">{{team}}</option>
+                        <option :value="team.id" v-for="team in teams">{{team.name}}</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -55,7 +55,7 @@
                             v-model="selectedCircuit"
                             @blur="$v.selectedCircuit.$touch()">
                         <option value="0">Selecteer je circuit</option>
-                        <option v-for="circuit in circuits">{{circuit}}</option>
+                        <option :value="circuit.id" v-for="circuit in circuits">{{circuit.name}}</option>
                     </select>
                 </div>
                 <button class="btn btn-primary" @click.prevent="onSubmit">Toevoegen</button>
@@ -69,13 +69,12 @@
 
 <script>
     import {maxValue, not, required, sameAs} from "vuelidate/lib/validators";
+    import axios from 'axios'
 
     export default {
         name: "AddTime",
         data() {
             return {
-                teams: ['Ferrari', 'Mercedes', 'Renault', 'Mclaren', 'Williams', 'Redbull', 'Toro Rosso', 'Haas', 'Alfa Romeo'],
-                circuits: ['Australia', 'Bahrain', 'China', 'Azerbaijan', 'Spain', 'Monaco', 'Canada', 'France', 'Austria', 'Great Britain', 'Germany', 'Hungary', 'Belgium', 'Italy', 'Singapore', 'Russia', 'Japan', 'Mexico', 'United States', 'Brazil', 'Abu Dhabi',],
                 minutes: 0,
                 seconds: 0,
                 milliseconds: 0,
@@ -110,6 +109,13 @@
         computed: {
             timeInMilliseconds: function () {
                 return this.milliseconds + (this.seconds * 1000) + (this.minutes * 60 * 1000)
+            },
+
+            circuits: function () {
+                return this.$store.getters.getCircuits
+            },
+            teams: function () {
+                return this.$store.getters.getTeams
             }
         },
         methods: {
@@ -118,7 +124,17 @@
                 console.log(this.selectedTeam);
                 console.log(this.selectedCircuit);
                 console.log(this.$v)
+            },
+            fetchTeams(){
+                this.$store.dispatch("fetchTeams")
+            },
+            fetchCircuits(){
+                this.$store.dispatch("fetchCircuits")
             }
+        },
+        mounted() {
+            this.fetchTeams();
+            this.fetchCircuits();
         }
     }
 </script>
@@ -127,6 +143,7 @@
     .background {
         background-image: url("../../../images/background.png");
         height: 100vh;
+        min-height: 600px;
         width: 100vw;
         margin-top: -69px;
         display: flex;

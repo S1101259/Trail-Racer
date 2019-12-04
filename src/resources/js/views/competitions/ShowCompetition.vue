@@ -20,29 +20,11 @@
         data() {
             return {
                 selectedCircuit: 'Australia',
-                circuits: [
-                    'Australia',
-                    'Bahrain',
-                    'China',
-                    'Azerbaijan',
-                    'Spain',
-                    'Monaco',
-                    'Canada',
-                    'France',
-                    'Austria',
-                    'Great Britain',
-                    'Germany',
-                    'Hungary',
-                    'Belgium',
-                    'Italy',
-                    'Singapore',
-                    'Russia',
-                    'Japan',
-                    'Mexico',
-                    'United States',
-                    'Brazil',
-                    'Abu Dhabi',
-                ]
+            }
+        },
+        computed: {
+            circuits: function () {
+                return this.$store.getters.getCircuits
             }
         },
         watch: {
@@ -59,6 +41,9 @@
             onAddButtonClick(){
                 this.$router.push({path: `/competition/${this.$route.params.competition}/addTime`})
             }
+        },
+        mounted(){
+            this.$store.dispatch("fetchCircuits")
         }
     }
 </script>

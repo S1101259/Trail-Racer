@@ -6,7 +6,7 @@
             @circuitChanged="onCircuitChange">
         </circuits-nav>
         <div class="container">
-            <h1>Top 100 van {{selectedCircuit}}:</h1>
+            <h1>Top 100 van {{selectedCircuit.name}}:</h1>
             <podium :first="data[0].name" :second="data[1].name" :third="data[2].name"></podium>
             <leaderboard-table :data="data"></leaderboard-table>
         </div>
@@ -44,29 +44,6 @@
                     }
                 ],
                 selectedCircuit: 'Australia',
-                circuits: [
-                    'Australia',
-                    'Bahrain',
-                    'China',
-                    'Azerbaijan',
-                    'Spain',
-                    'Monaco',
-                    'Canada',
-                    'France',
-                    'Austria',
-                    'Great Britain',
-                    'Germany',
-                    'Hungary',
-                    'Belgium',
-                    'Italy',
-                    'Singapore',
-                    'Russia',
-                    'Japan',
-                    'Mexico',
-                    'United States',
-                    'Brazil',
-                    'Abu Dhabi',
-                ]
             }
         },
         watch: {
@@ -74,10 +51,18 @@
                 console.log(circuit);
             }
         },
+        computed: {
+            circuits: function () {
+                return this.$store.getters.getCircuits
+            }
+        },
         methods: {
             onCircuitChange(circuit) {
                 this.selectedCircuit = circuit;
             }
+        },
+        mounted() {
+            this.$store.dispatch("fetchCircuits")
         }
     }
 </script>
