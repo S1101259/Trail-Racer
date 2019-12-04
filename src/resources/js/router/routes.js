@@ -12,7 +12,6 @@ export const routes = [
     {path: '/login', name: 'login', component: LoginPage},
     {path: '/register', name: 'register', component: RegisterPage},
     {path: '/leaderboard', name: 'leaderboard', component: Leaderboard},
-    {path: '/competitions', name: 'competitions', component: CompetitionOverview},
     {path: '/competition', name: 'competitions', component: CompetitionOverview},
     {path: '/competition/create', name: 'createCompetition', component: AddCompetitionPage},
     {path: '/competition/:competition', name: 'showCompetition', component: ShowCompetition},

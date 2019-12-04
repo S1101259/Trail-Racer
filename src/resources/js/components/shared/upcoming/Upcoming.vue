@@ -45,6 +45,7 @@
             fetchData() {
                 const instance = this.axios.create();
                 delete instance.defaults.headers.common["X-Requested-With"];
+                delete instance.defaults.headers.common["Authorization"];
                 instance.get('http://ergast.com/api/f1/current/next.json', {
 
                     }).then((response) => {

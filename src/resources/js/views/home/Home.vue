@@ -163,5 +163,4 @@
         font-family: FormulaOne-Regular, serif;
         font-size: 1.1em;
     }
-
 </style>
