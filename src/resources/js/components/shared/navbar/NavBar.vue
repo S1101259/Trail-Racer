@@ -34,7 +34,7 @@
                         <a class="nav-link navbar-item-font" href="#">Mijn Profiel</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link navbar-item-font" href="#">Uitloggen</a>
+                        <span class="nav-link navbar-item-font" @click="logout()">Uitloggen</span>
                     </li>
                 </template>
             </ul>
@@ -48,6 +48,11 @@
         computed: {
             isLoggedIn: function () {
                 return this.$store.getters.isLoggedIn
+            }
+        },
+        methods: {
+            logout(){
+                this.$store.dispatch('logout');
             }
         }
     }
@@ -71,8 +76,23 @@
         width: 17em;
     }
 
+    .nav-link{
+        cursor: pointer;
+    }
+
     .navbar-item-font {
         color: white !important;
         font-family: FormulaOne-Bold, serif;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .navbar-brand{
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        .navbar-brand-logo{
+            width: 15em;
+        }
     }
 </style>

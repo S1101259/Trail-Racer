@@ -19,3 +19,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('circuits/all', 'CircuitController@getCircuits');
 Route::get('teams/all', 'TeamController@getTeams');
+
+Route::post('auth/register', 'AuthController@register');
+Route::post('auth/login', 'AuthController@login');
+Route::post('/logout', 'AuthController@logout');
+
