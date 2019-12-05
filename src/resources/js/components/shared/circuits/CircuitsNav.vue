@@ -25,6 +25,7 @@
         flex-wrap: nowrap;
         flex-direction: row;
         overflow: scroll;
+        overflow-y: hidden;
     }
 
     .nav::-webkit-scrollbar{

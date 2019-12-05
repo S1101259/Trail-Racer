@@ -70,6 +70,7 @@
     .navbar-custom-padding {
         padding-top: 0;
         padding-bottom: 0;
+        z-index: 999;
     }
 
     .navbar-brand-logo {

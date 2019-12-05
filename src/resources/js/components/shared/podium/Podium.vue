@@ -76,10 +76,36 @@
         width: 100%;
         text-align: center;
     }
+
     .driver {
         font-family: FormulaOne-Regular, serif;
         background: #34393b;
         font-size: 1.2em;
         border-radius: 0 0 10px 10px;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .first{
+            width: 2em;
+            height: 4em;
+        }
+        .second{
+            width: 2em;
+            height: 2.5em;
+            margin-top: 1.5em;
+        }
+        .third{
+            width: 2em;
+            height: 2em;
+            margin-top: 2em;
+        }
+
+        .podium-position {
+            font-size: 0.8em;
+        }
+
+        .driver{
+            font-size: 0.8em;
+        }
     }
 </style>

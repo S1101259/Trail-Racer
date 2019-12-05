@@ -15,6 +15,7 @@
 
 <script>
     import LoginForm from "../../components/auth/LoginForm";
+
     require('howler');
 
     const sound = new Howl({
@@ -30,7 +31,7 @@
             playSound() {
                 sound.play()
             },
-            stopSound(){
+            stopSound() {
                 sound.stop()
             }
         },
@@ -88,5 +89,43 @@
         left: 3em;
     }
 
+    h2 {
+        font-family: FormulaOne-Bold, serif;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .login-container {
+            width: 100vw;
+            border-radius: 0;
+            position: relative;
+            padding: 1.5em 1em;
+            box-shadow: none;
+            z-index: 2;
+        }
+
+        .background {
+            position: initial;
+            margin-top: 0;
+            height: auto;
+            align-items: initial;
+            background: white;
+            flex-direction: column-reverse;
+        }
+
+        .right-container {
+            width: 100%;
+            height: 18em;
+            background-position: top;
+            border-radius: 0;
+            box-shadow: none;
+            z-index: 0
+        }
+
+        .register {
+            position: initial;
+            bottom: 0;
+            left: 0;
+        }
+    }
 
 </style>

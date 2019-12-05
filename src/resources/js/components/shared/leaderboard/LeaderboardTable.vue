@@ -1,6 +1,6 @@
 <template>
     <div class="top-50">
-        <table class="table">
+        <table class="table table-responsive-md">
             <tbody>
             <tr v-for="(row, index) in data">
                 <td>#{{index + 1}}</td>

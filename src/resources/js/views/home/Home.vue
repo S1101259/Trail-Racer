@@ -21,7 +21,7 @@
                 <div class="col-md-6  pt-5 pb-5">
                     <podium first="" second="" third=""></podium>
                 </div>
-                <div class="col-md-6 padding">
+                <div class="col-md-6 padding drivers">
                     <h1 class="sub-header">Beste Coureurs</h1>
                     <p class="trail-racer-information-2">
                         Hiernaast zit u de huidige top drie op alle cicuits. Om dit te berijken moet je toch uit het
@@ -162,5 +162,36 @@
     .competition-information{
         font-family: FormulaOne-Regular, serif;
         font-size: 1.1em;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .padding{
+            padding: 0 1em;
+        }
+
+        .trail-racer-information-container{
+            flex-direction: column
+        }
+
+        .half-width-block{
+            height: 25em;
+        }
+
+        .run-gif{
+            display:none;
+        }
+
+        .podium-container, .competition-container{
+            flex-direction: column;
+        }
+
+        .drivers{
+            padding-bottom: 2em;
+        }
+
+        .competition-container{
+            padding-top: 3em;
+            padding-bottom: 2em;
+        }
     }
 </style>

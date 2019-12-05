@@ -8,8 +8,8 @@
             </div>
         </div>
         <div class="countdown d-flex">
-            <h1>Race start over:</h1>
-            <countdown :time="raceStart" @end="show = false">
+            <h1 class="race-start">Race start over:</h1>
+            <countdown :time="raceStart" @end="show = false" class="timer">
                 <template slot-scope="props">
                     {{ props.days }} dagen, {{ props.hours }} uur, {{ props.minutes }} minuten.
                 </template>
@@ -104,5 +104,49 @@
         font-size: 2em;
         flex-direction: column;
         margin: auto 0;
+    }
+
+    @media only screen and (max-width: 600px) {
+        h1{
+            font-size: 1rem;
+            width: 100vw;
+        }
+
+        h2{
+            font-size: 0.8rem;
+            width: 100vw;
+        }
+
+        .circuit-layout{
+            display: none;
+            width: 0;
+            height: 0;
+        }
+
+        .race-start{
+            display: none;
+        }
+
+        .countdown{
+            font-size: 0.8rem;
+        }
+
+        .upcoming{
+            display: block;
+            height: auto;
+        }
+
+        .countdown{
+            text-align: center;
+        }
+
+        .grand-prix{
+            margin-top: 0.4rem;
+            margin-bottom: 0;
+        }
+
+        .timer{
+            margin-bottom: 0.4rem;
+        }
     }
 </style>
