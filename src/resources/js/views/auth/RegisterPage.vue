@@ -95,4 +95,41 @@
         left: 3em;
     }
 
+    @media only screen and (max-width: 600px) {
+        .login-container {
+            width: auto;
+            height: auto;
+            border-radius: 0;
+            position: relative;
+            padding: 1.5em 1em;
+            box-shadow: none;
+            z-index: 2;
+        }
+
+        .background {
+            position: initial;
+            margin-top: 0;
+            height: auto;
+            align-items: initial;
+            background: white;
+            flex-direction: column-reverse;
+            justify-content: flex-end;
+        }
+
+        .right-container {
+            width: 100%;
+            height: 18em;
+            background-position: top;
+            border-radius: 0;
+            box-shadow: none;
+            z-index: 0
+        }
+
+        .register {
+            position: initial;
+            bottom: 0;
+            left: 0;
+        }
+    }
+
 </style>
