@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+Route::middleware('jwt:auth')->get('/user', function (Request $request) {
     return $request->user();
 });
 
@@ -23,4 +23,12 @@ Route::get('teams/all', 'TeamController@getTeams');
 Route::post('auth/register', 'AuthController@register');
 Route::post('auth/login', 'AuthController@login');
 Route::post('/logout', 'AuthController@logout');
+
+Route::group(['middleware' => 'jwt.auth'], function (){
+    Route::get('/competition/all', 'CompetitionController@getAllCompetitions');
+    Route::post('/competition/create', 'CompetitionController@createCompetition');
+
+    Route::post('/time/add', 'TimeController@addTime');
+    Route::delete('/time/remove/{id}', 'TimeController@removeTime');
+});
 
