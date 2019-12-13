@@ -107,10 +107,6 @@
             }
         },
         computed: {
-            timeInMilliseconds: function () {
-                return this.milliseconds + (this.seconds * 1000) + (this.minutes * 60 * 1000)
-            },
-
             circuits: function () {
                 return this.$store.getters.getCircuits
             },
@@ -120,16 +116,25 @@
         },
         methods: {
             onSubmit() {
-                console.log(this.timeInMilliseconds);
-                console.log(this.selectedTeam);
-                console.log(this.selectedCircuit);
-                console.log(this.$v)
+                const data = {
+                    competition: this.$route.params.competition,
+                    teamId: this.selectedTeam,
+                    circuitId: this.selectedCircuit,
+                    minutes: this.minutes,
+                    seconds: this.seconds,
+                    milliseconds: this.milliseconds,
+                };
+                axios.post('/time/add', data).then(() => {
+                    this.$router.back();
+                })
             },
             fetchTeams(){
                 this.$store.dispatch("fetchTeams")
             },
             fetchCircuits(){
-                this.$store.dispatch("fetchCircuits")
+                this.$store.dispatch("fetchCircuits").then(
+                    this.selectedCircuit = this.circuits[0]
+                )
             }
         },
         mounted() {

@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="container">
-            <h1>Competities</h1>
+            <h1>Mijn Competities</h1>
             <CompetitionList :competitions="competitions"></CompetitionList>
             <button v-if="isLoggedIn" @click="onAddButtonClick()" class="btn btn-primary rounded-circle add-button">+
             </button>
@@ -12,9 +12,8 @@
 <script>
     import axios from 'axios'
     import CompetitionList from "../../components/competitions/CompetitionList";
-
     export default {
-        name: "CompetitionOverview",
+        name: "PersonalCompetitionOverview",
         components: {CompetitionList},
         data() {
             return {
@@ -32,7 +31,7 @@
             }
         },
         mounted() {
-            axios.get('/competition/all').then((response) => {
+            axios.get('/competition/personal').then((response) => {
                 this.competitions = response.data.competitions;
             })
         }

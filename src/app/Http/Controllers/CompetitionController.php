@@ -28,14 +28,57 @@ class CompetitionController extends Controller
     }
 
     public function getAllCompetitions(Request $request){
-        $user = Auth::user();
         $competitions = Competition::all();
-        $response_data = [];
+        $response_data = $this->formatCompetition($competitions);
+        return response([
+            'status' => 200,
+            'competitions' => $response_data
+        ]);
+    }
 
+    public function getRandomCompetitions(){
+        $competitions = Competition::take(5)
+            ->inRandomOrder()
+            ->get();
+
+        $response_data = $this->formatCompetition($competitions);
+
+        return response([
+            'status' => 200,
+            'competitions' => $response_data
+        ]);
+    }
+
+    public function getOwnCompetitions(){
+        $user = Auth::user();
+        $entries = Entry::where('user_id', '=', $user->id)->with('competition')->get();
+        $competitions = [];
+
+        foreach ($entries as $entry){
+            array_push($competitions, $entry->competition);
+        }
+
+        $response_data = $this->formatCompetition($competitions);
+
+        return response([
+           'status' => 200,
+           'competitions' => $response_data
+        ]);
+
+    }
+
+    private function formatCompetition($competitions){
+        $response_data = [];
         foreach ($competitions as $competition){
             $entries = $competition->entries;
-            $userEntries = Entry::where('user_id', '=', $user->id)->where('competition_id' , '=', $competition->id)->get();
-            $joined = count($userEntries) > 0 ? true : false;
+
+            if($user = Auth::user()){
+                $userEntries = Entry::where('user_id', '=', $user->id)->where('competition_id' , '=', $competition->id)->get();
+                $joined = count($userEntries) > 0 ? true : false;
+            }else{
+                $joined = false;
+            }
+
             array_push($response_data, [
                 'name' => $competition->name,
                 'slug' => $competition->slug,
@@ -43,10 +86,7 @@ class CompetitionController extends Controller
                 'joined' => $joined
             ]);
         }
-
-        return response([
-            'status' => 200,
-            'competitions' => $response_data
-        ]);
+        return $response_data;
     }
 }
+

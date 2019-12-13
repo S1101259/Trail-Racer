@@ -33,10 +33,20 @@ Vue.filter('truncate', function (textString, value) {
     return Truncate(textString, value)
 });
 
+addAuthHeader();
+
+
 const app = new Vue({
     router,
     store,
     render: h => h(App)
 }).$mount("#app");
+
+function addAuthHeader() {
+    const token = localStorage.getItem('access_token');
+    if (token) {
+        store.dispatch('addAuthorizationHeader', token);
+    }
+}
 
 export default app;

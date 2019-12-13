@@ -11,10 +11,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <router-link :to="{name: 'competitions'}" class="nav-link navbar-item-font">Competities</router-link>
+                    <router-link :to="{name: 'competitions'}" class="nav-link navbar-item-font">Competities
+                    </router-link>
                 </li>
                 <li class="nav-item" v-if="isLoggedIn">
-                    <router-link to="" class="nav-link navbar-item-font">Mijn Competities</router-link>
+                    <router-link :to="{name: 'personalCompetitions'}" class="nav-link navbar-item-font">
+                        Mijn Competities
+                    </router-link>
                 </li>
                 <li class="nav-item">
                     <router-link :to="{name: 'leaderboard'}" class="nav-link navbar-item-font">Klassement</router-link>
@@ -22,12 +25,12 @@
             </ul>
             <ul class="navbar-nav float-lg-right">
                 <template v-if="!isLoggedIn">
-                <li class="nav-item active">
-                    <router-link :to="{name: 'login'}" class="nav-link navbar-item-font">Login</router-link>
-                </li>
-                <li class="nav-item">
-                    <router-link :to="{name: 'register'}" class="nav-link navbar-item-font">Registreer</router-link>
-                </li>
+                    <li class="nav-item active">
+                        <router-link :to="{name: 'login'}" class="nav-link navbar-item-font">Login</router-link>
+                    </li>
+                    <li class="nav-item">
+                        <router-link :to="{name: 'register'}" class="nav-link navbar-item-font">Registreer</router-link>
+                    </li>
                 </template>
                 <template v-else>
                     <li class="nav-item">
@@ -51,7 +54,7 @@
             }
         },
         methods: {
-            logout(){
+            logout() {
                 this.$store.dispatch('logout');
             }
         }
@@ -77,7 +80,7 @@
         width: 17em;
     }
 
-    .nav-link{
+    .nav-link {
         cursor: pointer;
     }
 
@@ -87,12 +90,12 @@
     }
 
     @media only screen and (max-width: 600px) {
-        .navbar-brand{
+        .navbar-brand {
             padding-top: 0;
             padding-bottom: 0;
         }
 
-        .navbar-brand-logo{
+        .navbar-brand-logo {
             width: 15em;
         }
     }

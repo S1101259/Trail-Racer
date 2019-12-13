@@ -19,7 +19,7 @@
             </div>
             <div class="podium-container">
                 <div class="col-md-6  pt-5 pb-5">
-                    <podium first="" second="" third=""></podium>
+                    <podium :first="names[0]" :second="names[1]" :third="names[2]"></podium>
                 </div>
                 <div class="col-md-6 padding drivers">
                     <h1 class="sub-header">Beste Coureurs</h1>
@@ -35,39 +35,15 @@
                 <div class="col-md-6 padding">
                     <h1 class="">Competities</h1>
                     <p class="competition-information">
-                        Trail racer bevat verschillende competities net als echte autosport. Denk aan F1, F2 F3, Nascar en Indycar.
+                        Trail racer bevat verschillende competities net als echte autosport. Denk aan F1, F2 F3, Nascar
+                        en Indycar.
                         In deze competieties gaan verschillende coureurs de strijd met elkaar aan.
                         Zoek een competitie die bij je past of maak er zelf een met je vrienden.
                     </p>
                 </div>
                 <div class="col-md-6">
                     <div>
-                        <ul class="list-group">
-                            <li class="list-group-item">
-                                <span class="competition-name">De snelste Rijders</span>
-                                <span class="competition-drivers">Aantal coureurs:
-                                    <span class="badge badge-primary badge-pill">10</span>
-                                </span>
-                            </li>
-                            <li class="list-group-item">
-                                <span class="competition-name">Formuladank</span>
-                                <span class="competition-drivers">Aantal coureurs:
-                                    <span class="badge badge-primary badge-pill">1000</span>
-                                </span>
-                            </li>
-                            <li class="list-group-item">
-                                <span class="competition-name">Formula 1.5</span>
-                                <span class="competition-drivers">Aantal coureurs:
-                                    <span class="badge badge-primary badge-pill">14</span>
-                                </span>
-                            </li>
-                            <li class="list-group-item">
-                                <span class="competition-name">Formula 1.5</span>
-                                <span class="competition-drivers">Aantal coureurs:
-                                    <span class="badge badge-primary badge-pill">14</span>
-                                </span>
-                            </li>
-                        </ul>
+                        <CompetitionList :competitions="competitions"></CompetitionList>
                     </div>
                 </div>
             </div>
@@ -79,10 +55,29 @@
     import Countdown from "@chenfengyuan/vue-countdown/src/index";
     import Podium from "../../components/shared/podium/Podium";
     import Upcoming from "../../components/shared/upcoming/Upcoming";
+    import CompetitionList from "../../components/competitions/CompetitionList";
+    import axios from 'axios';
 
     export default {
-        components: {Upcoming, Podium, Countdown},
-        name: "Home"
+        components: {CompetitionList, Upcoming, Podium, Countdown},
+        name: "Home",
+        data() {
+            return {
+                competitions: [],
+                names: ['Raymon', 'Stephan', 'Jerome' ]
+            }
+        },
+        methods: {
+            fetchRandomCompetitions() {
+                axios.get('/competition/random')
+                    .then((response) => {
+                        this.competitions = response.data.competitions;
+                    });
+            }
+        },
+        mounted() {
+            this.fetchRandomCompetitions();
+        }
     }
 </script>
 
@@ -140,56 +135,41 @@
         align-items: center;
     }
 
-    .competition-container h1{
+    .competition-container h1 {
         font-family: FormulaOne-Bold, serif;
     }
 
-    .competition-name {
-        font-family: FormulaOne-Bold, serif;
-    }
-
-    .competition-drivers {
-        float: right;
-        width: 30%;
-        font-family: FormulaOne-Regular, serif;
-    }
-
-    .badge {
-        padding: 0.5em 1em;
-        margin-left: 1em;
-    }
-
-    .competition-information{
+    .competition-information {
         font-family: FormulaOne-Regular, serif;
         font-size: 1.1em;
     }
 
     @media only screen and (max-width: 600px) {
-        .padding{
+        .padding {
             padding: 0 1em;
         }
 
-        .trail-racer-information-container{
+        .trail-racer-information-container {
             flex-direction: column
         }
 
-        .half-width-block{
+        .half-width-block {
             height: 25em;
         }
 
-        .run-gif{
-            display:none;
+        .run-gif {
+            display: none;
         }
 
-        .podium-container, .competition-container{
+        .podium-container, .competition-container {
             flex-direction: column;
         }
 
-        .drivers{
+        .drivers {
             padding-bottom: 2em;
         }
 
-        .competition-container{
+        .competition-container {
             padding-top: 3em;
             padding-bottom: 2em;
         }

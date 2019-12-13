@@ -7,8 +7,13 @@
         </circuits-nav>
         <div class="container">
             <h1>Top 100 van {{selectedCircuit.name}}:</h1>
-            <podium :first="data[0].name" :second="data[1].name" :third="data[2].name"></podium>
-            <leaderboard-table :data="data"></leaderboard-table>
+            <podium
+                v-if="times.length >= 3"
+                :first="times[0].user"
+                :second="times[1].user"
+                :third="times[2].user">
+            </podium>
+            <leaderboard-table :data="times"></leaderboard-table>
         </div>
     </div>
 </template>
@@ -17,38 +22,29 @@
     import Podium from "../../components/shared/podium/Podium";
     import CircuitsNav from "../../components/shared/circuits/CircuitsNav";
     import LeaderboardTable from "../../components/shared/leaderboard/LeaderboardTable";
+    import circuits from "../../vuex/modules/circuits";
 
     export default {
         name: "Leaderbord",
         components: {LeaderboardTable, CircuitsNav, Podium},
-        data: () => {
+        data(){
             return {
-                data: [
-                    {
-                        name: 'De Beste',
-                        car: 'Ferrari',
-                        time: 83892,
-                        isUsersTime: false
-                    },
-                    {
-                        name: 'De bijna slechtste',
-                        car: 'Redbull',
-                        time: 83903,
-                        isUsersTime: false
-                    },
-                    {
-                        name: 'De Noobs',
-                        car: 'Williams',
-                        time: 123335,
-                        isUsersTime: true
-                    }
-                ],
-                selectedCircuit: 'Australia',
+                times: [],
+                selectedCircuit: circuits,
             }
         },
         watch: {
             selectedCircuit: function (circuit) {
-                console.log(circuit);
+                axios.get('/leaderboard/circuit', {
+                    params: {
+                        'circuit': circuit.id
+                    }
+                }).then((response) => {
+                    this.times = response.data.times;
+                });
+            },
+            circuits: function () {
+                this.selectedCircuit = this.circuits[0];
             }
         },
         computed: {

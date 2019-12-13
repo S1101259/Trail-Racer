@@ -48,7 +48,7 @@
             return {
                 credentials: {
                     email: '',
-                    password: '',
+                    password: ''
                 },
                 error: ''
             };

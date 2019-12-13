@@ -15,7 +15,7 @@
                         * Naam mag niet leeg zijn.
                     </p>
                 </div>
-                <button class="btn btn-primary float-right rounded px-3">
+                <button @click.prevent="createCompetition" class="btn btn-primary float-right rounded px-3">
                     Aanmaken
                 </button>
             </form>
@@ -27,6 +27,7 @@
 </template>
 
 <script>
+    import axios from 'axios';
     import {required} from "vuelidate/lib/validators";
     export default {
         name: "AddCompetitionPage",
@@ -36,6 +37,20 @@
                     name: ''
                 }
             }
+        },
+        methods: {
+          createCompetition(){
+              const data = {
+                  name:  this.competition.name
+              };
+              axios.post('/competition/create', data)
+                  .then(() => {
+                      this.$router.push({name: 'competitions'})
+                  })
+                  .catch((errorMessage) => {
+
+                  })
+          }
         },
         validations: {
             competition:{

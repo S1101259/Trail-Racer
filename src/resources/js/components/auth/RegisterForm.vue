@@ -3,6 +3,18 @@
         <error-box v-if="error">{{error}}</error-box>
         <form>
             <div class="form-group">
+                <label for="name">Naam</label>
+                <input type="text"
+                       v-model="accountInformation.name"
+                       @blur="$v.accountInformation.name.$touch()"
+                       class="form-control"
+                       id="name"
+                       placeholder="Vul uw naam in">
+                <p v-if="!$v.accountInformation.name.required && $v.accountInformation.name.$dirty">
+                    * Naam mag niet leeg zijn.
+                </p>
+            </div>
+            <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email"
                        class="form-control"
@@ -64,6 +76,7 @@
                     email: '',
                     password: '',
                     repeatedPassword: '',
+                    name: '',
                 },
                 error: ''
             }
@@ -81,6 +94,9 @@
                 repeatedPassword: {
                     required,
                     sameAsPassword: sameAs('password')
+                },
+                name: {
+                    required
                 }
             }
         },
@@ -90,6 +106,7 @@
                     return
                 }
                 const user = {
+                    name: this.accountInformation.name,
                     email: this.accountInformation.email,
                     password: this.accountInformation.password
                 };
