@@ -2,7 +2,12 @@
     <div>
         <div class="container">
             <h1>Mijn Competities</h1>
-            <CompetitionList :competitions="competitions"></CompetitionList>
+            <error-box v-if="errorMessage">{{errorMessage}}</error-box>
+            <Loading :is-loading="isFetchingCompetitions"></Loading>
+            <CompetitionList v-if="!isFetchingCompetitions"
+                             :competitions="competitions"
+                             leave-action="fetchPersonalCompetitions">
+            </CompetitionList>
             <button v-if="isLoggedIn" @click="onAddButtonClick()" class="btn btn-primary rounded-circle add-button">+
             </button>
         </div>
@@ -10,19 +15,25 @@
 </template>
 
 <script>
-    import axios from 'axios'
+    import ErrorBox from "../../components/shared/error/ErrorBox";
     import CompetitionList from "../../components/competitions/CompetitionList";
+    import Loading from "../../components/shared/loading/Loading";
+
     export default {
         name: "PersonalCompetitionOverview",
-        components: {CompetitionList},
-        data() {
-            return {
-                competitions: []
-            }
-        },
+        components: {Loading, CompetitionList, ErrorBox},
         computed: {
             isLoggedIn: function () {
                 return this.$store.getters.isLoggedIn
+            },
+            competitions: function () {
+                return this.$store.getters.personalCompetitions
+            },
+            isFetchingCompetitions: function () {
+                return this.$store.getters.isFetchingCompetitions
+            },
+            errorMessage: function () {
+                return this.$store.getters.errorMessage
             }
         },
         methods: {
@@ -31,9 +42,7 @@
             }
         },
         mounted() {
-            axios.get('/competition/personal').then((response) => {
-                this.competitions = response.data.competitions;
-            })
+            this.$store.dispatch('fetchPersonalCompetitions')
         }
     }
 </script>

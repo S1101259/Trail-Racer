@@ -13,17 +13,17 @@ const getters = {
 };
 
 const mutations = {
-    teams_request(state){
-        state.isLoading= true;
+    teams_request(state) {
+        state.isLoading = true;
     },
-    teams_success(state, receivedTeams){
+    teams_success(state, receivedTeams) {
         state.teams = receivedTeams;
     },
-    teams_error(state, error){
+    teams_error(state, error) {
         state.error = error
     },
-    teams_finished(state){
-        state.isLoading= false;
+    teams_finished(state) {
+        state.isLoading = false;
     }
 };
 
@@ -35,8 +35,8 @@ const actions = {
                 .then((response) => {
                     commit('teams_success', response.data.teams);
                 })
-                .catch((e)=>{
-
+                .catch((e) => {
+                    commit('teams_error', e);
                 }).finally(() => {
                 commit('teams_finished')
             })

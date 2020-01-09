@@ -29,7 +29,7 @@
                 </p>
             </div>
             <button v-on:click.prevent="login()"
-                    :disabled="$v.$invalid"
+                    :disabled="$v.$invalid || authStatus === 'loading'"
                     class="btn btn-primary float-right rounded px-3">
                 Inloggen
             </button>
@@ -75,6 +75,11 @@
                     }).catch(() => {
                     this.error = "Inloggen is niet gelukt. Controleer uw gegevens."
                 })
+            }
+        },
+        computed: {
+            authStatus: function () {
+                return this.$store.getters.authStatus
             }
         }
 

@@ -1,7 +1,6 @@
 <template>
     <ul class="list-group">
         <li v-for="competition in competitions"
-
             class="list-group-item competition">
             <button v-if="competition.joined && isLoggedIn"
                     @click="onLeaveClick(competition)"
@@ -26,7 +25,7 @@
 <script>
     export default {
         name: "CompetitionList",
-        props: ['competitions'],
+        props: ['competitions', 'leaveAction'],
         computed: {
             isLoggedIn: function () {
                 return this.$store.getters.isLoggedIn
@@ -37,24 +36,10 @@
                 this.$router.push({path: `/competition/${competition}`})
             },
             onJoinClick(competition) {
-                const data = {
-                    competition: competition.slug
-                };
-
-                console.log(data);
-                axios.post('/competition/join', data).then(() => {
-                    this.$router.push({path: `/competition/${competition.slug}`})
-                })
+                this.$store.dispatch('joinCompetition', competition)
             },
             onLeaveClick(competition) {
-                const data = {
-                    competition: competition.slug
-                };
-                axios.post('/competition/leave', data).then(() => {
-                    axios.get('/competition/all').then((response) => {
-                        this.competitions = response.data.competitions;
-                    })
-                })
+                this.$store.dispatch('leaveCompetition', {competition, leaveAction: this.leaveAction})
             }
         }
     }

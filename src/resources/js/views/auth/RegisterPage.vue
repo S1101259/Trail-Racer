@@ -56,7 +56,7 @@
     .login-container {
         clear: both;
         background-color: white;
-        height: 35rem;
+        height: 40rem;
         width: 30rem;
         border-top-left-radius: 10px;
         border-bottom-left-radius: 10px;
@@ -68,7 +68,7 @@
     .right-container {
         clear: both;
         background-color: gray;
-        height: 35rem;
+        height: 40rem;
         width: 20rem;
         border-top-right-radius: 10px;
         border-bottom-right-radius: 10px;

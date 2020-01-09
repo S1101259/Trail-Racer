@@ -56,7 +56,9 @@
                     * Uw wachtwoord komt niet overeen.
                 </p>
             </div>
-            <button @click.prevent="register()" class="btn btn-primary float-right rounded px-3" :disabled="$v.$invalid">
+            <button @click.prevent="register()"
+                    class="btn btn-primary float-right rounded px-3"
+                    :disabled="$v.$invalid || authStatus === 'loading'">
                 Registreren
             </button>
         </form>
@@ -98,6 +100,11 @@
                 name: {
                     required
                 }
+            }
+        },
+        computed: {
+            authStatus: function () {
+                return this.$store.getters.authStatus
             }
         },
         methods: {

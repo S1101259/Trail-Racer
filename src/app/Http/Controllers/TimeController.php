@@ -6,9 +6,7 @@ use App\Competition;
 use App\Time;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 use Mockery\Exception;
-use phpDocumentor\Reflection\Types\Integer;
 
 class TimeController extends Controller
 {
@@ -34,8 +32,7 @@ class TimeController extends Controller
     public function removeTime($id)
     {
         try {
-            $time = Time::findOrFail($id)->where('user_id', '=', Auth::user()->id);
-            $time->delete();
+            $time = Time::where('id', '=', $id)->where('user_id', '=', Auth::user()->id)->delete();
         } catch (Exception $e) {
             return response([
                 'status' => 400
@@ -85,11 +82,22 @@ class TimeController extends Controller
     private function formatTimes($times)
     {
         $response_data = [];
+
         foreach ($times as $time) {
+            if ($user = Auth::user()) {
+                $isUsersTime = $time->user->id == $user->id ? true : false;
+            } else {
+                $isUsersTime = false;
+            }
+
             array_push($response_data, [
-                'time' => $time->time,
+                'time' => [
+                    'id' => $time->id,
+                    'lapTime' => $time->time
+                ],
                 'team' => $time->team,
-                'user' => $time->user->name
+                'user' => $time->user->name,
+                'isUsersTime' => $isUsersTime,
             ]);
         }
         return $response_data;

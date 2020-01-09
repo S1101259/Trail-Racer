@@ -6,44 +6,46 @@
         </circuits-nav>
         <div class="container">
             <h1>{{$route.params.competition}}</h1>
-            <leaderboard-table :data="times"></leaderboard-table>
+            <loading :is-loading="isFetchingStanding"></loading>
+            <leaderboard-table :reload-action="fetchCompetitionStanding"
+                v-if="!isFetchingStanding"
+                :data="times"></leaderboard-table>
         </div>
-        <button v-if="isLoggedIn" class="btn btn-primary rounded-circle add-button" @click="onAddButtonClick()">+</button>
+        <button v-if="isLoggedIn" class="btn btn-primary rounded-circle add-button" @click="onAddButtonClick()">+
+        </button>
     </div>
 </template>
 
 <script>
     import CircuitsNav from "../../components/shared/circuits/CircuitsNav";
-    import axios from 'axios';
     import LeaderboardTable from "../../components/shared/leaderboard/LeaderboardTable";
+    import Loading from "../../components/shared/loading/Loading";
 
     export default {
         name: "ShowCompetition",
-        components: {LeaderboardTable, CircuitsNav},
+        components: {Loading, LeaderboardTable, CircuitsNav},
         data() {
             return {
-                selectedCircuit: '',
-                times: []
+                selectedCircuit: ''
             }
         },
         computed: {
             circuits: function () {
-                return this.$store.getters.getCircuits
+                return this.$store.getters.getCircuits;
             },
             isLoggedIn: function () {
-                return this.$store.getters.isLoggedIn
+                return this.$store.getters.isLoggedIn;
+            },
+            times: function () {
+                return this.$store.getters.competitionStanding;
+            },
+            isFetchingStanding: function () {
+                return this.$store.getters.isFetchingStanding
             }
         },
         watch: {
-            selectedCircuit: function (circuit) {
-                axios.get('/competition/standing', {
-                    params: {
-                        'circuit': circuit.id,
-                        'competition': this.$route.params.competition
-                    }
-                }).then((response) => {
-                    this.times = response.data.times;
-                });
+            selectedCircuit: function () {
+                this.fetchCompetitionStanding()
             },
             circuits: function () {
                 this.selectedCircuit = this.circuits[0];
@@ -56,6 +58,13 @@
 
             onAddButtonClick() {
                 this.$router.push({path: `/competition/${this.$route.params.competition}/addTime`})
+            },
+            fetchCompetitionStanding(){
+                const data = {
+                    'circuit': this.selectedCircuit.id,
+                    'competition': this.$route.params.competition
+                };
+                this.$store.dispatch('fetchCompetitionStanding', data)
             }
         },
         mounted() {

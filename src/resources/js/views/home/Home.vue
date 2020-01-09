@@ -63,20 +63,16 @@
         name: "Home",
         data() {
             return {
-                competitions: [],
                 names: ['Raymon', 'Stephan', 'Jerome' ]
             }
         },
-        methods: {
-            fetchRandomCompetitions() {
-                axios.get('/competition/random')
-                    .then((response) => {
-                        this.competitions = response.data.competitions;
-                    });
+        computed: {
+            competitions: function () {
+                return this.$store.getters.randomCompetitions
             }
         },
         mounted() {
-            this.fetchRandomCompetitions();
+            this.$store.dispatch('fetchRandomCompetitions')
         }
     }
 </script>

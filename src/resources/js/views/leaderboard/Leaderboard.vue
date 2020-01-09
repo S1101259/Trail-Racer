@@ -6,14 +6,24 @@
             @circuitChanged="onCircuitChange">
         </circuits-nav>
         <div class="container">
-            <h1>Top 100 van {{selectedCircuit.name}}:</h1>
+            <h1 v-if="
+            Object.entries(selectedCircuit).length === 0 &&
+            selectedCircuit.constructor === Object">
+                Selecteer een circuit
+            </h1>
+            <h1 v-else>Top 100 van {{selectedCircuit.name}}:</h1>
+            <loading :is-loading="isFetchingStanding || circuits.length === 0"></loading>
             <podium
-                v-if="times.length >= 3"
+                v-if="times.length >= 3 && !isFetchingStanding"
+                class="podium"
                 :first="times[0].user"
                 :second="times[1].user"
                 :third="times[2].user">
             </podium>
-            <leaderboard-table :data="times"></leaderboard-table>
+            <leaderboard-table v-if="!isFetchingStanding"
+                               :reload-action="fetchOverallStanding"
+                               :data="times">
+            </leaderboard-table>
         </div>
     </div>
 </template>
@@ -22,26 +32,24 @@
     import Podium from "../../components/shared/podium/Podium";
     import CircuitsNav from "../../components/shared/circuits/CircuitsNav";
     import LeaderboardTable from "../../components/shared/leaderboard/LeaderboardTable";
-    import circuits from "../../vuex/modules/circuits";
+    import Loading from "../../components/shared/loading/Loading";
 
     export default {
         name: "Leaderbord",
-        components: {LeaderboardTable, CircuitsNav, Podium},
-        data(){
+        components: {Loading, LeaderboardTable, CircuitsNav, Podium},
+        data() {
             return {
-                times: [],
-                selectedCircuit: circuits,
+                selectedCircuit: {},
             }
         },
         watch: {
             selectedCircuit: function (circuit) {
-                axios.get('/leaderboard/circuit', {
-                    params: {
-                        'circuit': circuit.id
-                    }
-                }).then((response) => {
-                    this.times = response.data.times;
-                });
+                // const data = {
+                //     'circuit': circuit.id
+                // };
+                //
+                // this.$store.dispatch('fetchOverallStanding', data)
+                this.fetchOverallStanding();
             },
             circuits: function () {
                 this.selectedCircuit = this.circuits[0];
@@ -50,11 +58,24 @@
         computed: {
             circuits: function () {
                 return this.$store.getters.getCircuits
+            },
+            times: function () {
+                return this.$store.getters.overallStanding
+            },
+            isFetchingStanding: function () {
+                return this.$store.getters.isFetchingStanding
             }
         },
         methods: {
             onCircuitChange(circuit) {
                 this.selectedCircuit = circuit;
+            },
+            fetchOverallStanding(){
+                const data = {
+                    'circuit': this.selectedCircuit.id
+                };
+
+                this.$store.dispatch('fetchOverallStanding', data)
             }
         },
         mounted() {
@@ -68,5 +89,9 @@
         font-family: FormulaOne-Bold, serif;
         border-bottom: 5px solid red;
         padding: 0.2em 0;
+    }
+
+    .podium{
+        margin: 4em;
     }
 </style>

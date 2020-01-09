@@ -2,23 +2,7 @@
     <div class="background">
         <div class="create-container">
             <h2>Competitie aanmaken</h2>
-            <form>
-                <div class="form-group">
-                    <label for="name">Competitie naam:</label>
-                    <input type="text"
-                           class="form-control"
-                           id="name"
-                           v-model="competition.name"
-                           @blur="$v.competition.name.$touch()"
-                           placeholder="Vul competitie naam in">
-                    <p v-if="!$v.competition.name.required && $v.competition.name.$dirty">
-                        * Naam mag niet leeg zijn.
-                    </p>
-                </div>
-                <button @click.prevent="createCompetition" class="btn btn-primary float-right rounded px-3">
-                    Aanmaken
-                </button>
-            </form>
+            <AddCompetitionForm></AddCompetitionForm>
         </div>
         <div class="right-container">
 
@@ -27,38 +11,10 @@
 </template>
 
 <script>
-    import axios from 'axios';
-    import {required} from "vuelidate/lib/validators";
+    import AddCompetitionForm from "../../components/competitions/AddCompetitionForm";
     export default {
         name: "AddCompetitionPage",
-        data(){
-            return {
-                competition:{
-                    name: ''
-                }
-            }
-        },
-        methods: {
-          createCompetition(){
-              const data = {
-                  name:  this.competition.name
-              };
-              axios.post('/competition/create', data)
-                  .then(() => {
-                      this.$router.push({name: 'competitions'})
-                  })
-                  .catch((errorMessage) => {
-
-                  })
-          }
-        },
-        validations: {
-            competition:{
-                name: {
-                    required
-                }
-            }
-        }
+        components: {AddCompetitionForm},
     }
 </script>
 
