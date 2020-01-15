@@ -30,6 +30,10 @@ Route::get('/leaderboard/circuit', 'TimeController@getLeaderboard');
 Route::get('/competition/random', 'CompetitionController@getRandomCompetitions');
 
 Route::group(['middleware' => 'jwt.auth'], function (){
+    Route::put('auth/changename', 'AuthController@changeName');
+    Route::put('auth/changepassword', 'AuthController@changePassword');
+    Route::get('auth/info', 'AuthController@getUserInfo');
+
     Route::get('/competition/personal', 'CompetitionController@getOwnCompetitions');
     Route::post('/competition/create', 'CompetitionController@createCompetition');
 

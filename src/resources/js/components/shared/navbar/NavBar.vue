@@ -34,7 +34,7 @@
                 </template>
                 <template v-else>
                     <li class="nav-item">
-                        <a class="nav-link navbar-item-font" href="#">Mijn Profiel</a>
+                        <router-link class="nav-link navbar-item-font" :to="{name: 'profile'}">Mijn Profiel</router-link>
                     </li>
                     <li class="nav-item">
                         <span class="nav-link navbar-item-font" @click="logout()">Uitloggen</span>

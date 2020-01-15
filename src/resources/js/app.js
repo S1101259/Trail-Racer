@@ -7,6 +7,7 @@ import VueCountdown from '@chenfengyuan/vue-countdown';
 import VueAxios from "vue-axios";
 import DateFormat from "./filters/DateFormat";
 import Truncate from "./filters/Truncate";
+import CreatedFormat from "./filters/CreatedFormat";
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -31,6 +32,10 @@ Vue.filter('formatDate', function (value) {
 
 Vue.filter('truncate', function (textString, value) {
     return Truncate(textString, value)
+});
+
+Vue.filter('formatCreated', function (value) {
+    return CreatedFormat(value)
 });
 
 addAuthHeader();

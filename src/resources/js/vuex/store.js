@@ -5,6 +5,7 @@ import competition from "./modules/competition";
 import teams from "./modules/teams";
 import standing from "./modules/standing";
 import entry from "./modules/entry";
+import profile from "./modules/profile"
 import Vue from 'vue';
 
 Vue.use(Vuex);
@@ -20,6 +21,7 @@ export default new Vuex.Store({
         teams,
         competition,
         standing,
-        entry
+        entry,
+        profile
     }
 });

@@ -49,7 +49,7 @@
                        v-model="accountInformation.repeatedPassword"
                        id="repeatPassword"
                        placeholder="Herhaal wachtwoord">
-                <p v-if="!$v.accountInformation.email.required && $v.accountInformation.email.$dirty">
+                <p v-if="!$v.accountInformation.repeatedPassword.required && $v.accountInformation.repeatedPassword.$dirty">
                     * Wachtwoord herhalen mag niet leeg zijn.
                 </p>
                 <p v-if="!$v.accountInformation.repeatedPassword.sameAsPassword">
