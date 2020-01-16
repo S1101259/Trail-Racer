@@ -11,7 +11,8 @@
                              :competitions="competitions"
                              leave-action="fetchAllCompetitions">
             </CompetitionList>
-            <button v-if="isLoggedIn" @click="onAddButtonClick()" class="btn btn-primary rounded-circle add-button">+
+            <button v-if="isLoggedIn" @click="onAddButtonClick()" class="btn btn-primary rounded-circle add-button">
+                <font-awesome-icon icon="plus"></font-awesome-icon>
             </button>
         </div>
     </div>

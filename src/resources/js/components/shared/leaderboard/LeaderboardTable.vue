@@ -10,7 +10,9 @@
                 </td>
                 <td>{{row.time.lapTime | formatDate}}</td>
                 <td v-if="row.isUsersTime">
-                    <button @click.prevent="removeTime(row.time.id)" class="btn btn-sm btn-primary">X</button>
+                    <button @click.prevent="removeTime(row.time.id)" class="btn btn-sm btn-primary">
+                        <font-awesome-icon icon="times"></font-awesome-icon>
+                    </button>
                 </td>
             </tr>
             </tbody>

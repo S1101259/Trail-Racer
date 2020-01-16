@@ -9,6 +9,10 @@ import DateFormat from "./filters/DateFormat";
 import Truncate from "./filters/Truncate";
 import CreatedFormat from "./filters/CreatedFormat";
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faSignInAlt, faTimes, faPlus } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -24,7 +28,10 @@ Vue.use(VueAxios, axios);
 
 axios.defaults.baseURL = "/api";
 
+Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.component(VueCountdown.name, VueCountdown);
+
+library.add(faSignInAlt, faPlus, faTimes);
 
 Vue.filter('formatDate', function (value) {
     return DateFormat(value)

@@ -11,7 +11,8 @@
                 v-if="!isFetchingStanding"
                 :data="times"></leaderboard-table>
         </div>
-        <button v-if="isLoggedIn" class="btn btn-primary rounded-circle add-button" @click="onAddButtonClick()">+
+        <button v-if="isLoggedIn" class="btn btn-primary rounded-circle add-button" @click="onAddButtonClick()">
+            <font-awesome-icon icon="plus"></font-awesome-icon>
         </button>
     </div>
 </template>

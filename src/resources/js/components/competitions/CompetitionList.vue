@@ -5,12 +5,12 @@
             <button v-if="competition.joined && isLoggedIn"
                     @click="onLeaveClick(competition)"
                     class="button btn-sm btn-danger mr-3 float-left">
-                X
+                <font-awesome-icon class="icon" icon="times"></font-awesome-icon>
             </button>
             <button v-else-if="isLoggedIn"
                     @click="onJoinClick(competition)"
-                    class="button btn-sm btn-info mr-3 float-left">
-                J
+                    class="button btn-sm btn-success mr-3 float-left">
+                <font-awesome-icon class="icon" icon="sign-in-alt"></font-awesome-icon>
             </button>
             <div @click="onCompetitionClick(competition.slug)">
                 <span class="competition-name">{{competition.name}}</span>
@@ -65,5 +65,10 @@
         cursor: pointer;
         background: #34393b;
         color: white;
+    }
+
+    .icon{
+        width: 1em;
+        height: 1em;
     }
 </style>
