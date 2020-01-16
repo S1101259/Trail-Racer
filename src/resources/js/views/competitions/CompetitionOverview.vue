@@ -45,7 +45,7 @@
             }
         },
         mounted() {
-            this.$store.dispatch('fetchUserData')
+            this.$store.dispatch('fetchAllCompetitions')
         }
     }
 </script>

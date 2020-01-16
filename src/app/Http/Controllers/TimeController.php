@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Competition;
+use App\Http\Requests\AddTimeRequest;
+use App\Http\Requests\GetCompetitionStandingRequest;
+use App\Http\Requests\GetLeaderboardRequest;
 use App\Time;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -10,7 +13,7 @@ use Mockery\Exception;
 
 class TimeController extends Controller
 {
-    public function addTime(Request $request)
+    public function addTime(AddTimeRequest $request)
     {
         $competition = Competition::where('slug', '=', $request['competition'])->first();
         $timeInMilliseconds = ($request['minutes'] * 60000) + ($request['seconds'] * 1000) + $request['milliseconds'];
@@ -24,9 +27,8 @@ class TimeController extends Controller
         ]);
 
         return response([
-            'status' => 201,
             'time' => $time
-        ]);
+        ], 201);
     }
 
     public function removeTime($id)
@@ -34,17 +36,13 @@ class TimeController extends Controller
         try {
             $time = Time::where('id', '=', $id)->where('user_id', '=', Auth::user()->id)->delete();
         } catch (Exception $e) {
-            return response([
-                'status' => 400
-            ]);
+            return response([], 400);
         }
 
-        return response([
-            'status' => 204
-        ]);
+        return response([], 204);
     }
 
-    public function getLeaderboard(Request $request)
+    public function getLeaderboard(GetLeaderboardRequest $request)
     {
         $times = Time::orderBy('time', 'DESC')
             ->where('circuit_id', '=', $request['circuit'])
@@ -55,12 +53,11 @@ class TimeController extends Controller
         $response_data = $this->formatTimes($times);
 
         return response([
-            'status' => 200,
             'times' => $response_data
-        ]);
+        ], 200);
     }
 
-    public function getCompetitionStanding(Request $request)
+    public function getCompetitionStanding(GetCompetitionStandingRequest $request)
     {
         $competition = Competition::where('slug', '=', $request['competition'])->first();
 
@@ -74,9 +71,8 @@ class TimeController extends Controller
         $response_data = $this->formatTimes($times);
 
         return response([
-            'status' => 200,
             'times' => $response_data
-        ]);
+        ], 200);
     }
 
     private function formatTimes($times)

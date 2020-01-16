@@ -9,8 +9,7 @@ class CircuitController extends Controller
    public function getCircuits(){
        $circuits = Circuit::all();
        return response([
-           'status' => 201,
            'circuits' => $circuits
-       ]);
+       ], 201);
    }
 }

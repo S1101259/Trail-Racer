@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Competition;
 use App\Entry;
+use App\Http\Requests\CreateCompetitionRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
 class CompetitionController extends Controller
 {
-    public function createCompetition(Request $request){
+    public function createCompetition(CreateCompetitionRequest $request){
         $competition = Competition::create([
            'name' =>  $request['name'],
            'slug' => Str::slug($request['name'], '_')
@@ -22,18 +23,16 @@ class CompetitionController extends Controller
         ]);
 
         return response([
-            'status' => 200,
             'competition' => $competition
-        ]);
+        ], 200);
     }
 
-    public function getAllCompetitions(Request $request){
+    public function getAllCompetitions(){
         $competitions = Competition::all();
         $response_data = $this->formatCompetition($competitions);
         return response([
-            'status' => 200,
             'competitions' => $response_data
-        ]);
+        ], 200);
     }
 
     public function getRandomCompetitions(){
@@ -44,9 +43,8 @@ class CompetitionController extends Controller
         $response_data = $this->formatCompetition($competitions);
 
         return response([
-            'status' => 200,
             'competitions' => $response_data
-        ]);
+        ], 200);
     }
 
     public function getOwnCompetitions(){
@@ -61,9 +59,8 @@ class CompetitionController extends Controller
         $response_data = $this->formatCompetition($competitions);
 
         return response([
-           'status' => 200,
            'competitions' => $response_data
-        ]);
+        ], 200);
 
     }
 

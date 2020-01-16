@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ChangeNameRequest;
+use App\Http\Requests\ChangePasswordRequest;
+use App\Http\Requests\CreateUserRequest;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -9,7 +12,7 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
-    public function register(Request $request){
+    public function register(CreateUserRequest $request){
         $user = User::create([
             'name' => $request->name,
             'email'    => $request->email,
@@ -31,7 +34,7 @@ class AuthController extends Controller
         return $this->respondWithToken($token);
     }
 
-    public function getUserInfo(Request $request){
+    public function getUserInfo(){
         $authUser = Auth::user();
         $user = User::where('id', $authUser->id)->first();
         return response([
@@ -41,13 +44,13 @@ class AuthController extends Controller
         ], 200);
     }
 
-    public function changePassword(Request $request){
+    public function changePassword(ChangePasswordRequest $request){
         $authUser = Auth::user();
         User::where('id', $authUser->id)->update(array('password' => Hash::make($request->password)));
         return response([], 204);
     }
 
-    public function changeName(Request $request){
+    public function changeName(ChangeNameRequest $request){
         $authUser = Auth::user();
         User::where('id', $authUser->id)->update(array('name' => $request->name));
         return response([], 204);

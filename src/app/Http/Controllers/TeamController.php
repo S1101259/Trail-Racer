@@ -9,8 +9,7 @@ class TeamController extends Controller
    public function getTeams(){
        $teams = Team::all();
        return response([
-           'status' => 200,
            'teams' => $teams
-       ]);
+       ], 200);
    }
 }

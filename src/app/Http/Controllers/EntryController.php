@@ -4,22 +4,24 @@ namespace App\Http\Controllers;
 
 use App\Competition;
 use App\Entry;
+use App\Http\Requests\JoinCompetitionRequest;
+use App\Http\Requests\LeaveCompetitionRequest;
 use App\Time;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class EntryController extends Controller
 {
-    public function joinCompetition(Request $request)
+    public function joinCompetition(JoinCompetitionRequest $request)
     {
         $competition = Competition::where('slug', '=', $request['competition'])->first();
         $entry = Entry::create([
             'user_id' => Auth::user()->id,
             'competition_id' => $competition->id
         ]);
+        return response([], 204);
     }
 
-    public function leaveCompetition(Request $request)
+    public function leaveCompetition(LeaveCompetitionRequest $request)
     {
         $competition = Competition::where('slug', '=', $request['competition'])->first();
         try {
@@ -36,14 +38,9 @@ class EntryController extends Controller
             if (count($newCompetitionEntries) <= 0) {
                 $competition->delete();
             }
-            return response([
-                "status" => 203
-
-            ]);
+            return response([], 204);
         } catch (\Exception $e) {
-            return response([
-                "status" => 404
-            ]);
+            return response([], 404);
         }
     }
 }
