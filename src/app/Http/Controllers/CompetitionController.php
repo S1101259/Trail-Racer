@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Competition;
 use App\Entry;
 use App\Http\Requests\CreateCompetitionRequest;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 

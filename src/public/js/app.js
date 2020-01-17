@@ -13146,7 +13146,6 @@ __webpack_require__.r(__webpack_exports__);
     removeTime: function removeTime(id) {
       var _this = this;
 
-      console.log(id);
       axios__WEBPACK_IMPORTED_MODULE_0___default.a["delete"]("/time/remove/".concat(id)).then(function () {
         _this.reloadAction();
       });
@@ -18864,7 +18863,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "\n.f1-loading[data-v-52b63e2a] {\n    width: 80px;\n    height: 80px;\n    -webkit-animation: lds-dual-ring-data-v-52b63e2a 0.2s linear infinite;\n            animation: lds-dual-ring-data-v-52b63e2a 0.2s linear infinite;\n}\n@-webkit-keyframes lds-dual-ring-data-v-52b63e2a {\n0% {\n        -webkit-transform: rotate(0deg);\n                transform: rotate(0deg);\n}\n100% {\n        -webkit-transform: rotate(360deg);\n                transform: rotate(360deg);\n}\n}\n@keyframes lds-dual-ring-data-v-52b63e2a {\n0% {\n        -webkit-transform: rotate(0deg);\n                transform: rotate(0deg);\n}\n100% {\n        -webkit-transform: rotate(360deg);\n                transform: rotate(360deg);\n}\n}\n", ""]);
+exports.push([module.i, "\n.loader[data-v-52b63e2a]{\n    width: 100px;\n    margin: 0 auto;\n}\n.f1-loading[data-v-52b63e2a] {\n    width: 100px;\n    height: 100px;\n    -webkit-animation: lds-dual-ring-data-v-52b63e2a 0.2s linear infinite;\n            animation: lds-dual-ring-data-v-52b63e2a 0.2s linear infinite;\n}\n@-webkit-keyframes lds-dual-ring-data-v-52b63e2a {\n0% {\n        -webkit-transform: rotate(0deg);\n                transform: rotate(0deg);\n}\n100% {\n        -webkit-transform: rotate(360deg);\n                transform: rotate(360deg);\n}\n}\n@keyframes lds-dual-ring-data-v-52b63e2a {\n0% {\n        -webkit-transform: rotate(0deg);\n                transform: rotate(0deg);\n}\n100% {\n        -webkit-transform: rotate(360deg);\n                transform: rotate(360deg);\n}\n}\n", ""]);
 
 // exports
 
@@ -18928,6 +18927,25 @@ exports.push([module.i, "\n.circuit-layout[data-v-7d10a670] {\n    width: 10rem;
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/times/AddTimeForm.vue?vue&type=style&index=0&id=637e344e&scoped=true&lang=css&":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/times/AddTimeForm.vue?vue&type=style&index=0&id=637e344e&scoped=true&lang=css& ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.dot[data-v-637e344e] {\n    padding-top: 0.9em;\n    font-size: 2em;\n    color: gray;\n}\n.small-dot[data-v-637e344e] {\n    padding-top: 0.8em;\n    font-size: 2em;\n    color: gray;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/auth/LoginPage.vue?vue&type=style&index=0&id=e7b39fe0&scoped=true&lang=css&":
 /*!***************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/auth/LoginPage.vue?vue&type=style&index=0&id=e7b39fe0&scoped=true&lang=css& ***!
@@ -18981,7 +18999,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.background[data-v-2046fed9] {\n    background-image: url(" + escape(__webpack_require__(/*! ../../../images/background.png */ "./resources/images/background.png")) + ");\n    height: 100vh;\n    width: 100vw;\n    margin-top: -69px;\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n            justify-content: center;\n}\n.create-container[data-v-2046fed9] {\n    clear: both;\n    background-color: white;\n    height: 25rem;\n    width: 30rem;\n    border-top-left-radius: 10px;\n    border-bottom-left-radius: 10px;\n    padding: 3em;\n    position: relative;\n    box-shadow: 13px 13px 41px -9px rgba(0, 0, 0, 0.47);\n}\n.right-container[data-v-2046fed9] {\n    clear: both;\n    background-color: gray;\n    height: 25rem;\n    width: 20rem;\n    border-top-right-radius: 10px;\n    border-bottom-right-radius: 10px;\n    padding: 3em;\n    position: relative;\n    box-shadow: 13px 13px 41px -9px rgba(0, 0, 0, 0.47);\n    background-image: url(" + escape(__webpack_require__(/*! ../../../images/add_competition.gif */ "./resources/images/add_competition.gif")) + ");\n    background-position: center;\n    background-size: cover;\n}\nform[data-v-2046fed9], label[data-v-2046fed9] {\n    font-family: FormulaOne-Regular, serif;\n}\nh2[data-v-2046fed9], button[data-v-2046fed9] {\n    font-family: FormulaOne-Bold, serif;\n    margin-bottom: 1em;\n}\n\n", ""]);
+exports.push([module.i, "\n.background[data-v-2046fed9] {\n    background-image: url(" + escape(__webpack_require__(/*! ../../../images/background.png */ "./resources/images/background.png")) + ");\n    height: 100vh;\n    width: 100vw;\n    margin-top: -69px;\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n            justify-content: center;\n}\n.create-container[data-v-2046fed9] {\n    clear: both;\n    background-color: white;\n    height: 25rem;\n    width: 30rem;\n    border-top-left-radius: 10px;\n    border-bottom-left-radius: 10px;\n    padding: 3em;\n    position: relative;\n    box-shadow: 13px 13px 41px -9px rgba(0, 0, 0, 0.47);\n}\n.right-container[data-v-2046fed9] {\n    clear: both;\n    background-color: gray;\n    height: 25rem;\n    width: 20rem;\n    border-top-right-radius: 10px;\n    border-bottom-right-radius: 10px;\n    padding: 3em;\n    position: relative;\n    box-shadow: 13px 13px 41px -9px rgba(0, 0, 0, 0.47);\n    background-image: url(" + escape(__webpack_require__(/*! ../../../images/add_competition.gif */ "./resources/images/add_competition.gif")) + ");\n    background-position: center;\n    background-size: cover;\n}\nform[data-v-2046fed9], label[data-v-2046fed9] {\n    font-family: FormulaOne-Regular, serif;\n}\nh2[data-v-2046fed9], button[data-v-2046fed9] {\n    font-family: FormulaOne-Bold, serif;\n    margin-bottom: 1em;\n}\n@media only screen and (max-width: 600px) {\n.create-container[data-v-2046fed9] {\n        width: 100vw;\n        border-radius: 0;\n        position: relative;\n        padding: 1.5em 1em;\n        box-shadow: none;\n        z-index: 2;\n}\n.background[data-v-2046fed9] {\n        position: initial;\n        margin-top: 0;\n        height: auto;\n        -webkit-box-align: initial;\n                align-items: initial;\n        background: white;\n        -webkit-box-orient: vertical;\n        -webkit-box-direction: reverse;\n                flex-direction: column-reverse;\n}\n.right-container[data-v-2046fed9] {\n        width: 100%;\n        height: 18em;\n        background-position: top;\n        border-radius: 0;\n        box-shadow: none;\n        z-index: 0\n}\n}\n\n", ""]);
 
 // exports
 
@@ -19001,7 +19019,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.background[data-v-fdf1eb1c] {\n    background-image: url(" + escape(__webpack_require__(/*! ../../../images/background.png */ "./resources/images/background.png")) + ");\n    height: 100vh;\n    min-height: 600px;\n    width: 100vw;\n    margin-top: -69px;\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n            justify-content: center;\n}\n.add-container[data-v-fdf1eb1c] {\n    clear: both;\n    background-color: white;\n    height: 25rem;\n    width: 35rem;\n    border-top-left-radius: 10px;\n    border-bottom-left-radius: 10px;\n    padding: 3em;\n    position: relative;\n    box-shadow: 13px 13px 41px -9px rgba(0, 0, 0, 0.47);\n    font-family: FormulaOne-Regular, serif;\n}\n.right-container[data-v-fdf1eb1c] {\n    clear: both;\n    background-color: gray;\n    height: 25rem;\n    width: 20rem;\n    border-top-right-radius: 10px;\n    border-bottom-right-radius: 10px;\n    padding: 3em;\n    position: relative;\n    box-shadow: 13px 13px 41px -9px rgba(0, 0, 0, 0.47);\n    background-image: url(" + escape(__webpack_require__(/*! ../../../images/addTime.gif */ "./resources/images/addTime.gif")) + ");\n    background-position: center;\n    background-size: cover;\n}\n.dot[data-v-fdf1eb1c] {\n    padding-top: 0.9em;\n    font-size: 2em;\n    color: gray;\n}\n.small-dot[data-v-fdf1eb1c] {\n    padding-top: 0.8em;\n    font-size: 2em;\n    color: gray;\n}\n\n", ""]);
+exports.push([module.i, "\n.background[data-v-fdf1eb1c] {\n    background-image: url(" + escape(__webpack_require__(/*! ../../../images/background.png */ "./resources/images/background.png")) + ");\n    height: 100vh;\n    min-height: 600px;\n    width: 100vw;\n    margin-top: -69px;\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n            justify-content: center;\n}\n.add-container[data-v-fdf1eb1c] {\n    clear: both;\n    background-color: white;\n    height: 25rem;\n    width: 35rem;\n    border-top-left-radius: 10px;\n    border-bottom-left-radius: 10px;\n    padding: 3em;\n    position: relative;\n    box-shadow: 13px 13px 41px -9px rgba(0, 0, 0, 0.47);\n    font-family: FormulaOne-Regular, serif;\n}\n.right-container[data-v-fdf1eb1c] {\n    clear: both;\n    background-color: gray;\n    height: 25rem;\n    width: 20rem;\n    border-top-right-radius: 10px;\n    border-bottom-right-radius: 10px;\n    padding: 3em;\n    position: relative;\n    box-shadow: 13px 13px 41px -9px rgba(0, 0, 0, 0.47);\n    background-image: url(" + escape(__webpack_require__(/*! ../../../images/addTime.gif */ "./resources/images/addTime.gif")) + ");\n    background-position: center;\n    background-size: cover;\n}\n@media only screen and (max-width: 600px) {\n.add-container[data-v-fdf1eb1c] {\n        width: 100vw;\n        border-radius: 0;\n        position: relative;\n        padding: 1.5em 1em;\n        box-shadow: none;\n        z-index: 2;\n}\n.background[data-v-fdf1eb1c] {\n        position: initial;\n        margin-top: 0;\n        height: auto;\n        -webkit-box-align: initial;\n                align-items: initial;\n        background: white;\n        -webkit-box-orient: vertical;\n        -webkit-box-direction: reverse;\n                flex-direction: column-reverse;\n}\n.right-container[data-v-fdf1eb1c] {\n        width: 100%;\n        height: 18em;\n        background-position: top;\n        border-radius: 0;\n        box-shadow: none;\n        z-index: 0\n}\n}\n\n", ""]);
 
 // exports
 
@@ -19117,7 +19135,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\nh2[data-v-01a87ee2] {\n    font-family: FormulaOne-Bold, serif;\n}\n.background[data-v-01a87ee2] {\n    background-image: url(" + escape(__webpack_require__(/*! ../../../images/background.png */ "./resources/images/background.png")) + ");\n    height: 100vh;\n    width: 100vw;\n    margin-top: -69px;\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n            justify-content: center;\n    min-height: 600px;\n}\n.change-name-container[data-v-01a87ee2] {\n    clear: both;\n    background-color: white;\n    height: 25rem;\n    width: 30rem;\n    border-top-left-radius: 10px;\n    border-bottom-left-radius: 10px;\n    padding: 3em;\n    position: relative;\n    box-shadow: 13px 13px 41px -9px rgba(0, 0, 0, 0.47);\n}\n.right-container[data-v-01a87ee2] {\n    clear: both;\n    background-color: gray;\n    height: 25rem;\n    width: 20rem;\n    border-top-right-radius: 10px;\n    border-bottom-right-radius: 10px;\n    padding: 3em;\n    position: relative;\n    box-shadow: 13px 13px 41px -9px rgba(0, 0, 0, 0.47);\n    background-image: url(" + escape(__webpack_require__(/*! ../../../images/lando.gif */ "./resources/images/lando.gif")) + ");\n    background-position: center;\n    background-size: cover;\n}\n@media only screen and (max-width: 600px) {\n.change-name-container[data-v-01a87ee2] {\n        width: 100vw;\n        border-radius: 0;\n        position: relative;\n        padding: 1.5em 1em;\n        box-shadow: none;\n        z-index: 2;\n}\n.background[data-v-01a87ee2] {\n        position: initial;\n        margin-top: 0;\n        height: auto;\n        -webkit-box-align: initial;\n                align-items: initial;\n        background: white;\n        -webkit-box-orient: vertical;\n        -webkit-box-direction: reverse;\n                flex-direction: column-reverse;\n}\n.right-container[data-v-01a87ee2] {\n        width: 100%;\n        height: 18em;\n        background-position: top;\n        border-radius: 0;\n        box-shadow: none;\n        z-index: 0\n}\n}\n", ""]);
+exports.push([module.i, "\nh2[data-v-01a87ee2] {\n    font-family: FormulaOne-Bold, serif;\n}\n.background[data-v-01a87ee2] {\n    background-image: url(" + escape(__webpack_require__(/*! ../../../images/background.png */ "./resources/images/background.png")) + ");\n    height: 100vh;\n    width: 100vw;\n    margin-top: -69px;\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n            justify-content: center;\n    min-height: 600px;\n}\n.change-name-container[data-v-01a87ee2] {\n    clear: both;\n    background-color: white;\n    height: 25rem;\n    width: 30rem;\n    border-top-left-radius: 10px;\n    border-bottom-left-radius: 10px;\n    padding: 3em;\n    position: relative;\n    box-shadow: 13px 13px 41px -9px rgba(0, 0, 0, 0.47);\n}\n.right-container[data-v-01a87ee2] {\n    clear: both;\n    background-color: gray;\n    height: 25rem;\n    width: 20rem;\n    border-top-right-radius: 10px;\n    border-bottom-right-radius: 10px;\n    padding: 3em;\n    position: relative;\n    box-shadow: 13px 13px 41px -9px rgba(0, 0, 0, 0.47);\n    background-image: url(" + escape(__webpack_require__(/*! ../../../images/changeName.gif */ "./resources/images/changeName.gif")) + ");\n    background-position: center;\n    background-size: cover;\n}\n@media only screen and (max-width: 600px) {\n.change-name-container[data-v-01a87ee2] {\n        width: 100vw;\n        border-radius: 0;\n        position: relative;\n        padding: 1.5em 1em;\n        box-shadow: none;\n        z-index: 2;\n}\n.background[data-v-01a87ee2] {\n        position: initial;\n        margin-top: 0;\n        height: auto;\n        -webkit-box-align: initial;\n                align-items: initial;\n        background: white;\n        -webkit-box-orient: vertical;\n        -webkit-box-direction: reverse;\n                flex-direction: column-reverse;\n}\n.right-container[data-v-01a87ee2] {\n        width: 100%;\n        height: 18em;\n        background-position: top;\n        border-radius: 0;\n        box-shadow: none;\n        z-index: 0\n}\n}\n", ""]);
 
 // exports
 
@@ -19137,7 +19155,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\nh2[data-v-854debc2] {\n    font-family: FormulaOne-Bold, serif;\n}\n.background[data-v-854debc2] {\n    background-image: url(" + escape(__webpack_require__(/*! ../../../images/background.png */ "./resources/images/background.png")) + ");\n    height: 100vh;\n    width: 100vw;\n    margin-top: -69px;\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n            justify-content: center;\n    min-height: 600px;\n}\n.change-password-container[data-v-854debc2] {\n    clear: both;\n    background-color: white;\n    height: 25rem;\n    width: 30rem;\n    border-top-left-radius: 10px;\n    border-bottom-left-radius: 10px;\n    padding: 3em;\n    position: relative;\n    box-shadow: 13px 13px 41px -9px rgba(0, 0, 0, 0.47);\n}\n.right-container[data-v-854debc2] {\n    clear: both;\n    background-color: gray;\n    height: 25rem;\n    width: 20rem;\n    border-top-right-radius: 10px;\n    border-bottom-right-radius: 10px;\n    padding: 3em;\n    position: relative;\n    box-shadow: 13px 13px 41px -9px rgba(0, 0, 0, 0.47);\n    background-image: url(" + escape(__webpack_require__(/*! ../../../images/lando.gif */ "./resources/images/lando.gif")) + ");\n    background-position: center;\n    background-size: cover;\n}\n@media only screen and (max-width: 600px) {\n.change-password-container[data-v-854debc2] {\n        width: 100vw;\n        border-radius: 0;\n        position: relative;\n        padding: 1.5em 1em;\n        box-shadow: none;\n        z-index: 2;\n}\n.background[data-v-854debc2] {\n        position: initial;\n        margin-top: 0;\n        height: auto;\n        -webkit-box-align: initial;\n                align-items: initial;\n        background: white;\n        -webkit-box-orient: vertical;\n        -webkit-box-direction: reverse;\n                flex-direction: column-reverse;\n}\n.right-container[data-v-854debc2] {\n        width: 100%;\n        height: 18em;\n        background-position: top;\n        border-radius: 0;\n        box-shadow: none;\n        z-index: 0\n}\n}\n", ""]);
+exports.push([module.i, "\nh2[data-v-854debc2] {\n    font-family: FormulaOne-Bold, serif;\n}\n.background[data-v-854debc2] {\n    background-image: url(" + escape(__webpack_require__(/*! ../../../images/background.png */ "./resources/images/background.png")) + ");\n    height: 100vh;\n    width: 100vw;\n    margin-top: -69px;\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n            justify-content: center;\n    min-height: 600px;\n}\n.change-password-container[data-v-854debc2] {\n    clear: both;\n    background-color: white;\n    height: 25rem;\n    width: 30rem;\n    border-top-left-radius: 10px;\n    border-bottom-left-radius: 10px;\n    padding: 3em;\n    position: relative;\n    box-shadow: 13px 13px 41px -9px rgba(0, 0, 0, 0.47);\n}\n.right-container[data-v-854debc2] {\n    clear: both;\n    background-color: gray;\n    height: 25rem;\n    width: 20rem;\n    border-top-right-radius: 10px;\n    border-bottom-right-radius: 10px;\n    padding: 3em;\n    position: relative;\n    box-shadow: 13px 13px 41px -9px rgba(0, 0, 0, 0.47);\n    background-image: url(" + escape(__webpack_require__(/*! ../../../images/changePassword.gif */ "./resources/images/changePassword.gif")) + ");\n    background-position: center;\n    background-size: cover;\n}\n@media only screen and (max-width: 600px) {\n.change-password-container[data-v-854debc2] {\n        width: 100vw;\n        border-radius: 0;\n        position: relative;\n        padding: 1.5em 1em;\n        box-shadow: none;\n        z-index: 2;\n}\n.background[data-v-854debc2] {\n        position: initial;\n        margin-top: 0;\n        height: auto;\n        -webkit-box-align: initial;\n                align-items: initial;\n        background: white;\n        -webkit-box-orient: vertical;\n        -webkit-box-direction: reverse;\n                flex-direction: column-reverse;\n}\n.right-container[data-v-854debc2] {\n        width: 100%;\n        height: 18em;\n        background-position: top;\n        border-radius: 0;\n        box-shadow: none;\n        z-index: 0\n}\n}\n", ""]);
 
 // exports
 
@@ -71153,6 +71171,36 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/times/AddTimeForm.vue?vue&type=style&index=0&id=637e344e&scoped=true&lang=css&":
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/times/AddTimeForm.vue?vue&type=style&index=0&id=637e344e&scoped=true&lang=css& ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./AddTimeForm.vue?vue&type=style&index=0&id=637e344e&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/times/AddTimeForm.vue?vue&type=style&index=0&id=637e344e&scoped=true&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/auth/LoginPage.vue?vue&type=style&index=0&id=e7b39fe0&scoped=true&lang=css&":
 /*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/auth/LoginPage.vue?vue&type=style&index=0&id=e7b39fe0&scoped=true&lang=css& ***!
@@ -73164,7 +73212,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _vm.isLoading
-    ? _c("div", [
+    ? _c("div", { staticClass: "loader" }, [
         _c("img", {
           staticClass: "f1-loading",
           attrs: {
@@ -73201,7 +73249,7 @@ var render = function() {
     "nav",
     {
       staticClass:
-        "navbar navbar-expand-lg navbar-light bg-red navbar-padding navbar-custom-padding"
+        "navbar navbar-expand-lg navbar-dark bg-red navbar-padding navbar-custom-padding"
     },
     [
       _c(
@@ -92638,6 +92686,28 @@ module.exports = "/images/background.png?6b2859e80b770dafbfe5884a7d31e414";
 
 /***/ }),
 
+/***/ "./resources/images/changeName.gif":
+/*!*****************************************!*\
+  !*** ./resources/images/changeName.gif ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/changeName.gif?39eeede072f35fdd546dbd55e5891c20";
+
+/***/ }),
+
+/***/ "./resources/images/changePassword.gif":
+/*!*********************************************!*\
+  !*** ./resources/images/changePassword.gif ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/changePassword.gif?565a5b593ec777f029e86318cec371e0";
+
+/***/ }),
+
 /***/ "./resources/images/lando.gif":
 /*!************************************!*\
   !*** ./resources/images/lando.gif ***!
@@ -92755,6 +92825,19 @@ vue__WEBPACK_IMPORTED_MODULE_3___default.a.config.productionTip = false;
 vue__WEBPACK_IMPORTED_MODULE_3___default.a.use(vuelidate__WEBPACK_IMPORTED_MODULE_4___default.a);
 vue__WEBPACK_IMPORTED_MODULE_3___default.a.use(vue_axios__WEBPACK_IMPORTED_MODULE_6___default.a, axios);
 axios.defaults.baseURL = "/api";
+axios.interceptors.response.use(function (response) {
+  return response;
+}, function (error) {
+  if (error.response && error.response.status === 401) {
+    return _vuex_store__WEBPACK_IMPORTED_MODULE_2__["default"].dispatch('logout');
+  }
+
+  if (error.response && error.response.data) {
+    return Promise.reject(error.response.data);
+  }
+
+  return Promise.reject(error.message);
+});
 vue__WEBPACK_IMPORTED_MODULE_3___default.a.component('font-awesome-icon', _fortawesome_vue_fontawesome__WEBPACK_IMPORTED_MODULE_12__["FontAwesomeIcon"]);
 vue__WEBPACK_IMPORTED_MODULE_3___default.a.component(_chenfengyuan_vue_countdown__WEBPACK_IMPORTED_MODULE_5___default.a.name, _chenfengyuan_vue_countdown__WEBPACK_IMPORTED_MODULE_5___default.a);
 _fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_10__["library"].add(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_11__["faSignInAlt"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_11__["faPlus"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_11__["faTimes"]);
@@ -94008,7 +94091,9 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _AddTimeForm_vue_vue_type_template_id_637e344e_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AddTimeForm.vue?vue&type=template&id=637e344e&scoped=true& */ "./resources/js/components/times/AddTimeForm.vue?vue&type=template&id=637e344e&scoped=true&");
 /* harmony import */ var _AddTimeForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AddTimeForm.vue?vue&type=script&lang=js& */ "./resources/js/components/times/AddTimeForm.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _AddTimeForm_vue_vue_type_style_index_0_id_637e344e_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./AddTimeForm.vue?vue&type=style&index=0&id=637e344e&scoped=true&lang=css& */ "./resources/js/components/times/AddTimeForm.vue?vue&type=style&index=0&id=637e344e&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
 
 
 
@@ -94016,7 +94101,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
   _AddTimeForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _AddTimeForm_vue_vue_type_template_id_637e344e_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
   _AddTimeForm_vue_vue_type_template_id_637e344e_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
@@ -94045,6 +94130,22 @@ component.options.__file = "resources/js/components/times/AddTimeForm.vue"
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AddTimeForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./AddTimeForm.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/times/AddTimeForm.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AddTimeForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/times/AddTimeForm.vue?vue&type=style&index=0&id=637e344e&scoped=true&lang=css&":
+/*!****************************************************************************************************************!*\
+  !*** ./resources/js/components/times/AddTimeForm.vue?vue&type=style&index=0&id=637e344e&scoped=true&lang=css& ***!
+  \****************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AddTimeForm_vue_vue_type_style_index_0_id_637e344e_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./AddTimeForm.vue?vue&type=style&index=0&id=637e344e&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/times/AddTimeForm.vue?vue&type=style&index=0&id=637e344e&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AddTimeForm_vue_vue_type_style_index_0_id_637e344e_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AddTimeForm_vue_vue_type_style_index_0_id_637e344e_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AddTimeForm_vue_vue_type_style_index_0_id_637e344e_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AddTimeForm_vue_vue_type_style_index_0_id_637e344e_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AddTimeForm_vue_vue_type_style_index_0_id_637e344e_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
@@ -95464,8 +95565,7 @@ var actions = {
     });
   },
   logout: function logout(_ref3) {
-    var commit = _ref3.commit,
-        dispatch = _ref3.dispatch;
+    var commit = _ref3.commit;
     return new Promise(function (resolve) {
       commit("auth_logout");
       localStorage.removeItem("access_token");
@@ -95545,7 +95645,9 @@ var actions = {
       commit('circuit_request');
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/circuits/all').then(function (response) {
         commit('circuits_success', response.data.circuits);
-      })["catch"](function (e) {})["finally"](function () {
+      })["catch"](function (e) {
+        commit('circuit_error', e);
+      })["finally"](function () {
         commit('circuits_finished');
       });
     }
@@ -95630,8 +95732,7 @@ var mutations = {
 };
 var actions = {
   fetchPersonalCompetitions: function fetchPersonalCompetitions(_ref) {
-    var state = _ref.state,
-        commit = _ref.commit;
+    var commit = _ref.commit;
     commit('set_fetching_error', '');
     commit('fetching_competitions');
     axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/competition/personal').then(function (response) {
@@ -95643,8 +95744,7 @@ var actions = {
     });
   },
   fetchAllCompetitions: function fetchAllCompetitions(_ref2) {
-    var state = _ref2.state,
-        commit = _ref2.commit;
+    var commit = _ref2.commit;
     commit('set_fetching_error', '');
     commit('fetching_competitions');
     axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/competition/all').then(function (response) {
@@ -95656,8 +95756,7 @@ var actions = {
     });
   },
   fetchRandomCompetitions: function fetchRandomCompetitions(_ref3) {
-    var state = _ref3.state,
-        commit = _ref3.commit;
+    var commit = _ref3.commit;
     commit('set_fetching_error', '');
     commit('fetching_competitions');
     axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/competition/random').then(function (response) {

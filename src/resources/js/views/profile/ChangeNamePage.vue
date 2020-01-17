@@ -55,7 +55,7 @@
         padding: 3em;
         position: relative;
         box-shadow: 13px 13px 41px -9px rgba(0, 0, 0, 0.47);
-        background-image: url("../../../images/lando.gif");
+        background-image: url("../../../images/changeName.gif");
         background-position: center;
         background-size: cover;
     }

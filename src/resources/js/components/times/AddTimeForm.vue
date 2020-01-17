@@ -118,5 +118,15 @@
 </script>
 
 <style scoped>
+    .dot {
+        padding-top: 0.9em;
+        font-size: 2em;
+        color: gray;
+    }
 
+    .small-dot {
+        padding-top: 0.8em;
+        font-size: 2em;
+        color: gray;
+    }
 </style>

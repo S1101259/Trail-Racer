@@ -79,16 +79,33 @@
         background-size: cover;
     }
 
-    .dot {
-        padding-top: 0.9em;
-        font-size: 2em;
-        color: gray;
-    }
+    @media only screen and (max-width: 600px) {
+        .add-container {
+            width: 100vw;
+            border-radius: 0;
+            position: relative;
+            padding: 1.5em 1em;
+            box-shadow: none;
+            z-index: 2;
+        }
 
-    .small-dot {
-        padding-top: 0.8em;
-        font-size: 2em;
-        color: gray;
+        .background {
+            position: initial;
+            margin-top: 0;
+            height: auto;
+            align-items: initial;
+            background: white;
+            flex-direction: column-reverse;
+        }
+
+        .right-container {
+            width: 100%;
+            height: 18em;
+            background-position: top;
+            border-radius: 0;
+            box-shadow: none;
+            z-index: 0
+        }
     }
 
 </style>

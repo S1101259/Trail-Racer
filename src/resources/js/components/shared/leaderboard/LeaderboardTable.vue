@@ -28,7 +28,6 @@
         props: ['data', 'reloadAction'],
         methods: {
             removeTime(id) {
-                console.log(id);
                 axios.delete(`/time/remove/${id}`).then(() => {
                     this.reloadAction();
                 });

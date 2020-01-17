@@ -7,7 +7,6 @@ use App\Http\Requests\AddTimeRequest;
 use App\Http\Requests\GetCompetitionStandingRequest;
 use App\Http\Requests\GetLeaderboardRequest;
 use App\Time;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Mockery\Exception;
 
@@ -67,6 +66,7 @@ class TimeController extends Controller
             ->with('team')
             ->take(100)
             ->get();
+
 
         $response_data = $this->formatTimes($times);
 

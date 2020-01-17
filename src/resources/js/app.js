@@ -28,7 +28,20 @@ Vue.use(VueAxios, axios);
 
 axios.defaults.baseURL = "/api";
 
-Vue.component('font-awesome-icon', FontAwesomeIcon)
+axios.interceptors.response.use((response) => {
+        return response;
+    }, (error) => {
+        if (error.response && error.response.status ===401) {
+            return store.dispatch('logout');
+        }
+        if (error.response && error.response.data) {
+            return Promise.reject(error.response.data);
+        }
+        return Promise.reject(error.message);
+    }
+);
+
+Vue.component('font-awesome-icon', FontAwesomeIcon);
 Vue.component(VueCountdown.name, VueCountdown);
 
 library.add(faSignInAlt, faPlus, faTimes);

@@ -65,7 +65,7 @@ const actions = {
                 })
         })
     },
-    logout({commit, dispatch}){
+    logout({commit}){
         return new Promise(resolve => {
             commit("auth_logout");
             localStorage.removeItem("access_token");

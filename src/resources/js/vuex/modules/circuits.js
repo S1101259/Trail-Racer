@@ -36,7 +36,7 @@ const actions = {
                     commit('circuits_success', response.data.circuits);
                 })
                 .catch((e)=>{
-
+                    commit('circuit_error', e)
                 }).finally(() => {
                     commit('circuits_finished')
             })

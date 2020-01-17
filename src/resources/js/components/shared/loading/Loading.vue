@@ -1,5 +1,5 @@
 <template>
-    <div v-if="isLoading">
+    <div v-if="isLoading" class="loader">
         <img class="f1-loading" src="../../../../images/redTire.png" alt="loader"/>
     </div>
 </template>
@@ -12,9 +12,13 @@
 </script>
 
 <style scoped>
+    .loader{
+        width: 100px;
+        margin: 0 auto;
+    }
     .f1-loading {
-        width: 80px;
-        height: 80px;
+        width: 100px;
+        height: 100px;
         animation: lds-dual-ring 0.2s linear infinite;
     }
 

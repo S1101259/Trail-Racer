@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-expand-lg navbar-light bg-red navbar-padding navbar-custom-padding">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-red navbar-padding navbar-custom-padding">
         <router-link :to="{name: 'home'}" class="navbar-brand navbar-brand-font p-lg-0">
             <img src="../../../../images/raymonlogo.png"
                  class="d-inline-block align-top p-lg-0 navbar-brand-logo" alt="">

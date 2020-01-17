@@ -49,7 +49,7 @@ const mutations = {
 };
 
 const actions = {
-    fetchPersonalCompetitions({state, commit}) {
+    fetchPersonalCompetitions({commit}) {
         commit('set_fetching_error', '');
         commit('fetching_competitions');
         axios.get('/competition/personal').then((response) => {
@@ -60,7 +60,7 @@ const actions = {
             commit('fetching_competitions_finished');
         })
     },
-    fetchAllCompetitions({state, commit}) {
+    fetchAllCompetitions({commit}) {
         commit('set_fetching_error', '');
         commit('fetching_competitions');
         axios.get('/competition/all').then((response) => {
@@ -71,7 +71,7 @@ const actions = {
             commit('fetching_competitions_finished');
         })
     },
-    fetchRandomCompetitions({state, commit}) {
+    fetchRandomCompetitions({commit}) {
         commit('set_fetching_error', '');
         commit('fetching_competitions');
         axios.get('/competition/random').then((response) => {
