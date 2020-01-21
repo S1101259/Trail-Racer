@@ -2,44 +2,16 @@
     <div>
         <ErrorBox v-if="errorMessage">{{errorMessage}}</ErrorBox>
         <form>
-            <div class="form-group">
-                <label for="password">
-                    Wachtwoord
-                </label>
-                <input
-                    type="password"
-                    class="form-control"
-                    v-model="formData.password"
-                    @blur="$v.formData.password.$touch()"
-                    id="password"
-                    placeholder="Vul het nieuwe wachtwoord in.">
-
-                <p v-if="!$v.formData.password.required && $v.formData.password.$dirty">
-                    * deze veld mag niet leeg zijn.
-                </p>
-                <p v-if="!$v.formData.password.minLength">
-                    * Uw wachtwoord moet minimaal 6 karakters bevatten.
-                </p>
-            </div>
-            <div class="form-group">
-                <label for="repeatPassword">
-                    Herhaal wachtwoord
-                </label>
-                <input
-                    type="password"
-                    v-model="formData.repeatedPassword"
-                    class="form-control"
-                    @blur="$v.formData.repeatedPassword.$touch()"
-                    id="repeatPassword"
-                    placeholder="Vul het nieuwe wachtwoord in.">
-
-                <p v-if="!$v.formData.repeatedPassword.required && $v.formData.repeatedPassword.$dirty">
-                    * deze veld mag niet leeg zijn.
-                </p>
-                <p v-if="!$v.formData.repeatedPassword.sameAsPassword">
-                    * Uw wachtwoord komt niet overeen.
-                </p>
-            </div>
+            <InputField v-for="inputField in inputFields"
+                        :key="inputField.id"
+                        :id="inputField.id"
+                        :type="inputField.type"
+                        :placeholder="inputField.placeholder"
+                        :label="inputField.label"
+                        :validations="checkValidation(inputField.id)"
+                        @onBlur="onInputBlur"
+                        @onValueChange="onInputChange">
+            </InputField>
             <button class="btn btn-danger" @click.prevent="cancel">
                 Annuleren
             </button>
@@ -56,12 +28,17 @@
 <script>
     import {minLength, required, sameAs} from "vuelidate/lib/validators";
     import ErrorBox from "../shared/error/ErrorBox";
+    import InputField from "../shared/form/InputField";
 
     export default {
         name: "ChangePasswordForm",
-        components: {ErrorBox},
+        components: {InputField, ErrorBox},
         data() {
             return {
+                inputFields: [
+                    {id: 'password', type: 'password', placeholder: "Vul het nieuwe wachtwoord in.", label: 'Competitie naam:'},
+                    {id: 'repeatedPassword', type: 'password', placeholder: "Vul het nieuwe wachtwoord in.", label: 'Herhaal wachtwoord:'}
+                ],
                 formData: {
                     password: '',
                     repeatedPassword: ''
@@ -86,6 +63,34 @@
             }
         },
         methods: {
+            onInputChange(input) {
+                this.formData[input.id] = input.value
+            },
+            onInputBlur(inputId) {
+                this.$v.formData[inputId].$touch()
+            },
+            checkValidation(id) {
+                const violations = [];
+                switch (id) {
+                    case 'password':
+                        if (!this.$v.formData.password.required && this.$v.formData.password.$dirty) {
+                            violations.push('* deze veld mag niet leeg zijn.')
+                        }
+                        if(!this.$v.formData.password.minLength){
+                            violations.push('* Uw wachtwoord moet minimaal 6 karakters bevatten.')
+                        }
+                        break;
+                    case 'repeatedPassword':
+                        if (!this.$v.formData.repeatedPassword.required && this.$v.formData.repeatedPassword.$dirty) {
+                            violations.push('* deze veld mag niet leeg zijn.')
+                        }
+                        if(!this.$v.formData.repeatedPassword.sameAsPassword){
+                            violations.push('* Uw wachtwoord komt niet overeen.')
+                        }
+                        break;
+                }
+                return violations
+            },
             submit() {
                 const requestData = {
                     password: this.formData.password

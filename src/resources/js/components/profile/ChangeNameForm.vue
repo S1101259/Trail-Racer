@@ -2,19 +2,16 @@
     <div>
         <ErrorBox v-if="errorMessage">{{errorMessage}}</ErrorBox>
         <form>
-            <div class="form-group">
-                <label for="name"></label>
-                <input type="text"
-                       class="form-control"
-                       id="name"
-                       v-model="formData.name"
-                       @blur="$v.formData.name.$touch()"
-                       placeholder="Vul uw naam in">
-
-                <p v-if="!$v.formData.name.required && $v.formData.name.$dirty">
-                    * Naam mag niet leeg zijn.
-                </p>
-            </div>
+            <InputField v-for="inputField in inputFields"
+                        :key="inputField.id"
+                        :id="inputField.id"
+                        :type="inputField.type"
+                        :placeholder="inputField.placeholder"
+                        :label="inputField.label"
+                        :validations="checkValidation(inputField.id)"
+                        @onBlur="onInputBlur"
+                        @onValueChange="onInputChange">
+            </InputField>
             <div class="mt-4">
                 <button class="btn btn-danger" @click.prevent="cancel">
                     Annuleren
@@ -30,12 +27,16 @@
 <script>
     import {required} from "vuelidate/lib/validators";
     import ErrorBox from "../shared/error/ErrorBox";
+    import InputField from "../shared/form/InputField";
 
     export default {
         name: "ChangeNameForm",
-        components: {ErrorBox},
+        components: {InputField, ErrorBox},
         data() {
             return {
+                inputFields: [
+                    {id: 'name', type: 'text', placeholder: "Vul uw naam in", label: 'Naam:'}
+                ],
                 formData: {
                     name: ''
                 }
@@ -54,6 +55,23 @@
             }
         },
         methods: {
+            onInputChange(input) {
+                this.formData[input.id] = input.value
+            },
+            onInputBlur(inputId) {
+                this.$v.formData[inputId].$touch()
+            },
+            checkValidation(id) {
+                const violations = [];
+                switch (id) {
+                    case 'name':
+                        if (!this.$v.formData.name.required && this.$v.formData.name.$dirty) {
+                            violations.push('* Naam mag niet leeg zijn.')
+                        }
+                        break;
+                }
+                return violations
+            },
             submit() {
                 const requestData = {
                     "name": this.formData.name

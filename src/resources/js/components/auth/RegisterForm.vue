@@ -2,60 +2,16 @@
     <div>
         <error-box v-if="error">{{error}}</error-box>
         <form>
-            <div class="form-group">
-                <label for="name">Naam</label>
-                <input type="text"
-                       v-model="accountInformation.name"
-                       @blur="$v.accountInformation.name.$touch()"
-                       class="form-control"
-                       id="name"
-                       placeholder="Vul uw naam in">
-                <p v-if="!$v.accountInformation.name.required && $v.accountInformation.name.$dirty">
-                    * Naam mag niet leeg zijn.
-                </p>
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email"
-                       class="form-control"
-                       v-model="accountInformation.email"
-                       id="email"
-                       placeholder="Vul uw email in">
-                <p v-if="!$v.accountInformation.email.required && $v.accountInformation.email.$dirty">
-                    * Email mag niet leeg zijn.
-                </p>
-                <p v-if="!$v.accountInformation.email.email">
-                    * Geen geldige email.
-                </p>
-            </div>
-            <div class="form-group">
-                <label for="password">Wachtwoord</label>
-                <input type="password"
-                       class="form-control"
-                       v-model="accountInformation.password"
-                       id="password"
-                       placeholder="Vul uw wachtwoord in">
-                <p v-if="!$v.accountInformation.email.required && $v.accountInformation.email.$dirty">
-                    * Wachtwoord mag niet leeg zijn.
-                </p>
-                <p v-if="!$v.accountInformation.password.minLength">
-                    * Uw wachtwoord moet minimaal 6 karakters bevatten.
-                </p>
-            </div>
-            <div class="form-group">
-                <label for="repeatPassword">Wachtwoord herhalen</label>
-                <input type="password"
-                       class="form-control"
-                       v-model="accountInformation.repeatedPassword"
-                       id="repeatPassword"
-                       placeholder="Herhaal wachtwoord">
-                <p v-if="!$v.accountInformation.repeatedPassword.required && $v.accountInformation.repeatedPassword.$dirty">
-                    * Wachtwoord herhalen mag niet leeg zijn.
-                </p>
-                <p v-if="!$v.accountInformation.repeatedPassword.sameAsPassword">
-                    * Uw wachtwoord komt niet overeen.
-                </p>
-            </div>
+            <InputField v-for="inputField in inputFields"
+                        :key="inputField.id"
+                        :id="inputField.id"
+                        :type="inputField.type"
+                        :placeholder="inputField.placeholder"
+                        :label="inputField.label"
+                        :validations="checkValidation(inputField.id)"
+                        @onBlur="onInputBlur"
+                        @onValueChange="onInputChange">
+            </InputField>
             <button @click.prevent="register()"
                     class="btn btn-primary float-right rounded px-3"
                     :disabled="$v.$invalid || authStatus === 'loading'">
@@ -68,12 +24,19 @@
 <script>
     import {email, minLength, required, sameAs} from 'vuelidate/lib/validators'
     import ErrorBox from "../shared/error/ErrorBox";
+    import InputField from "../shared/form/InputField";
 
     export default {
         name: "RegisterForm",
-        components: {ErrorBox},
+        components: {InputField, ErrorBox},
         data: function () {
             return {
+                inputFields: [
+                    {id: 'name', type: 'text', placeholder: "Vul uw naam in", label: 'Naam:'},
+                    {id: 'email', type: 'email', placeholder: "Vul uw email in", label: 'Email:'},
+                    {id: 'password', type: 'password', placeholder: "Vul uw wachtwoord in", label: 'Wachtwoord:'},
+                    {id: 'repeatedPassword', type: 'password', placeholder: "Herhaal wachtwoord", label: 'Wachtwoord herhalen:'},
+                ],
                 accountInformation: {
                     email: '',
                     password: '',
@@ -85,6 +48,9 @@
         },
         validations: {
             accountInformation: {
+                name: {
+                    required
+                },
                 email: {
                     required,
                     email,
@@ -96,9 +62,6 @@
                 repeatedPassword: {
                     required,
                     sameAsPassword: sameAs('password')
-                },
-                name: {
-                    required
                 }
             }
         },
@@ -108,6 +71,47 @@
             }
         },
         methods: {
+            onInputChange(input) {
+                this.accountInformation[input.id] = input.value
+            },
+            onInputBlur(inputId) {
+                this.$v.accountInformation[inputId].$touch()
+            },
+            checkValidation(id) {
+                const violations = [];
+                switch (id) {
+                    case 'name':
+                        if (!this.$v.accountInformation.name.required && this.$v.accountInformation.name.$dirty) {
+                            violations.push('* Naam mag niet leeg zijn.')
+                        }
+                        break;
+                    case 'email':
+                        if(!this.$v.accountInformation.email.required && this.$v.accountInformation.email.$dirty){
+                            violations.push('* Email mag niet leeg zijn.')
+                        }
+                        if(!this.$v.accountInformation.email.email){
+                            violations.push('* Geen geldige email.')
+                        }
+                        break;
+                    case 'password':
+                        if(!this.$v.accountInformation.password.required && this.$v.accountInformation.password.$dirty){
+                            violations.push('* Wachtwoord mag niet leeg zijn.')
+                        }
+                        if(!this.$v.accountInformation.password.minLength){
+                            violations.push('* Uw wachtwoord moet minimaal 6 karakters bevatten.')
+                        }
+                        break;
+                    case 'repeatedPassword':
+                        if(!this.$v.accountInformation.repeatedPassword.required && this.$v.accountInformation.repeatedPassword.$dirty){
+                            violations.push('* Wachtwoord herhalen mag niet leeg zijn.')
+                        }
+                        if(!this.$v.accountInformation.repeatedPassword.sameAsPassword){
+                            violations.push('* Uw wachtwoord komt niet overeen.')
+                        }
+                        break;
+                }
+                return violations
+            },
             register() {
                 if(this.$v.invalid){
                     return

@@ -10,20 +10,15 @@
                     @onBlur="onInputBlur"
                     @onValueChange="onInputChange">
         </InputField>
-        <button @click.prevent="createCompetition"
-                class="btn btn-primary float-right rounded px-3"
-                :disabled="$v.$invalid || isCreatingCompetition">
-            Aanmaken
-        </button>
     </form>
 </template>
 
 <script>
     import {required} from 'vuelidate/lib/validators'
-    import InputField from "../shared/form/InputField";
+    import InputField from "./InputField";
 
     export default {
-        name: "AddCompetitionForm",
+        name: "TestForm",
         components: {InputField},
         data() {
             return {
@@ -42,14 +37,6 @@
                 }
             }
         },
-        computed: {
-            isCreatingCompetition: function () {
-                return this.$store.getters.isCreatingCompetition;
-            },
-            errorMessage: function () {
-                return this.$store.getters.errorMessage
-            }
-        },
         methods: {
             onInputChange(input) {
                 this.competition[input.id] = input.value
@@ -64,27 +51,13 @@
                         if (!this.$v.competition.name.required && this.$v.competition.name.$dirty) {
                             violations.push('* Naam mag niet leeg zijn.')
                         }
-                        break;
                 }
                 return violations
-            },
-            createCompetition() {
-                const data = {
-                    name: this.competition.name
-                };
-                this.$store.dispatch('createCompetition', data);
             }
         }
     }
 </script>
 
 <style scoped>
-    form, label {
-        font-family: FormulaOne-Regular, serif;
-    }
 
-    h2, button {
-        font-family: FormulaOne-Bold, serif;
-        margin-bottom: 1em;
-    }
 </style>
