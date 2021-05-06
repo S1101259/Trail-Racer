@@ -3,7 +3,6 @@
 namespace App;
 
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
@@ -52,5 +51,13 @@ class User extends Authenticatable implements JWTSubject
         if ( !empty($password) ) {
             $this->attributes['password'] = bcrypt($password);
         }
+    }
+
+    public function entries(){
+        return $this->hasMany('App\Entry');
+    }
+
+    public function times(){
+        return $this->hasMany('App\Time');
     }
 }

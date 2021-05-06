@@ -13,13 +13,13 @@ const getters = {
 };
 
 const mutations = {
-    circuits_request(state){
+    circuit_request(state){
         state.isLoading= true;
     },
     circuits_success(state, receivedCircuits){
         state.circuits = receivedCircuits;
     },
-    circuits_error(state, error){
+    circuit_error(state, error){
       state.error = error
     },
     circuits_finished(state){
@@ -36,7 +36,7 @@ const actions = {
                     commit('circuits_success', response.data.circuits);
                 })
                 .catch((e)=>{
-
+                    commit('circuit_error', e)
                 }).finally(() => {
                     commit('circuits_finished')
             })

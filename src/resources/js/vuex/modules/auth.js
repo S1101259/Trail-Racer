@@ -1,5 +1,6 @@
 import axios from 'axios'
-import router from "vue-router";
+import router from "../../router/router";
+
 const state = {
     token: localStorage.getItem('access_token') || "",
     status: ''
@@ -16,7 +17,7 @@ const mutations = {
     },
     auth_success(state, receivedToken){
         state.token = receivedToken;
-        state.status = "succes"
+        state.status = "success"
     },
     auth_error(state) {
         state.status = "error";
@@ -64,12 +65,12 @@ const actions = {
                 })
         })
     },
-    logout({commit, dispatch}){
+    logout({commit}){
         return new Promise(resolve => {
             commit("auth_logout");
             localStorage.removeItem("access_token");
             delete axios.defaults.headers.common["Authorization"];
-            router.push({name: "login"});
+            router.push({name: "login"}).then(r => resolve());
             resolve();
         });
     },

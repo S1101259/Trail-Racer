@@ -10,4 +10,8 @@ class Team extends Model
         'name',
         'color'
     ];
+
+    public function times(){
+        return $this->hasMany('App\Time');
+    }
 }

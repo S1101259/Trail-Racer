@@ -16,5 +16,7 @@
 </script>
 
 <style scoped>
-
+    .min-vh-100{
+        background-color: white;
+    }
 </style>

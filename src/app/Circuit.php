@@ -10,4 +10,8 @@ class Circuit extends Model
         'name',
         'imageName'
     ];
+
+    public function times(){
+        return $this->hasMany('App\Time');
+    }
 }

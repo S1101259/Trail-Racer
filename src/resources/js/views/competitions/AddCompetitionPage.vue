@@ -2,23 +2,7 @@
     <div class="background">
         <div class="create-container">
             <h2>Competitie aanmaken</h2>
-            <form>
-                <div class="form-group">
-                    <label for="name">Competitie naam:</label>
-                    <input type="text"
-                           class="form-control"
-                           id="name"
-                           v-model="competition.name"
-                           @blur="$v.competition.name.$touch()"
-                           placeholder="Vul competitie naam in">
-                    <p v-if="!$v.competition.name.required && $v.competition.name.$dirty">
-                        * Naam mag niet leeg zijn.
-                    </p>
-                </div>
-                <button class="btn btn-primary float-right rounded px-3">
-                    Aanmaken
-                </button>
-            </form>
+            <AddCompetitionForm></AddCompetitionForm>
         </div>
         <div class="right-container">
 
@@ -27,23 +11,10 @@
 </template>
 
 <script>
-    import {required} from "vuelidate/lib/validators";
+    import AddCompetitionForm from "../../components/competitions/AddCompetitionForm";
     export default {
         name: "AddCompetitionPage",
-        data(){
-            return {
-                competition:{
-                    name: ''
-                }
-            }
-        },
-        validations: {
-            competition:{
-                name: {
-                    required
-                }
-            }
-        }
+        components: {AddCompetitionForm},
     }
 </script>
 
@@ -92,6 +63,35 @@
     h2, button {
         font-family: FormulaOne-Bold, serif;
         margin-bottom: 1em;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .create-container {
+            width: 100vw;
+            border-radius: 0;
+            position: relative;
+            padding: 1.5em 1em;
+            box-shadow: none;
+            z-index: 2;
+        }
+
+        .background {
+            position: initial;
+            margin-top: 0;
+            height: auto;
+            align-items: initial;
+            background: white;
+            flex-direction: column-reverse;
+        }
+
+        .right-container {
+            width: 100%;
+            height: 18em;
+            background-position: top;
+            border-radius: 0;
+            box-shadow: none;
+            z-index: 0
+        }
     }
 
 </style>

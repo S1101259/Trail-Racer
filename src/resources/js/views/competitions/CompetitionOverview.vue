@@ -2,52 +2,51 @@
     <div>
         <div class="container">
             <h1>Competities</h1>
-            <ul class="list-group">
-                <li v-for="competition in competitions"
-                    @click="onCompetitionClick(competition.slug)"
-                    class="list-group-item competition">
-                    <span class="competition-name">{{competition.name}}</span>
-                    <span class="competition-drivers">Aantal coureurs:
-                        <span class="badge badge-primary badge-pill">{{competition.numberOfDrivers}}</span>
-                    </span>
-                </li>
-            </ul>
-            <button @click="onAddButtonClick()" class="btn btn-primary rounded-circle add-button">+</button>
+            <error-box v-if="errorMessage">{{errorMessage}}</error-box>
+            <Loading :is-loading="isFetchingCompetitions"></Loading>
+            <div v-if="competitions.length === 0 && !isFetchingCompetitions">
+                Geen competities niet gevonden. Maak nu je eigen!
+            </div>
+            <CompetitionList v-if="!isFetchingCompetitions"
+                             :competitions="competitions"
+                             leave-action="fetchAllCompetitions">
+            </CompetitionList>
+            <button v-if="isLoggedIn" @click="onAddButtonClick()" class="btn btn-primary rounded-circle add-button">
+                <font-awesome-icon icon="plus"></font-awesome-icon>
+            </button>
         </div>
     </div>
 </template>
 
 <script>
+    import CompetitionList from "../../components/competitions/CompetitionList";
+    import Loading from "../../components/shared/loading/Loading";
+    import ErrorBox from "../../components/shared/error/ErrorBox";
+
     export default {
         name: "CompetitionOverview",
-        data() {
-            return {
-                competitions: [
-                    {
-                        name: 'Formula Dank',
-                        numberOfDrivers: 10,
-                        slug: 'Formuladank'
-                    },
-                    {
-                        name: 'Formula 1.5',
-                        numberOfDrivers: 15,
-                        slug: 'FormulaOnePoint5'
-                    },
-                    {
-                        name: 'I dont know',
-                        numberOfDrivers: 20,
-                        slug: 'idontknow'
-                    }
-                ]
+        components: {Loading, CompetitionList, ErrorBox},
+        computed: {
+            isLoggedIn: function () {
+                return this.$store.getters.isLoggedIn
+            },
+            competitions: function () {
+                return this.$store.getters.allCompetitions
+            },
+            isFetchingCompetitions: function () {
+                return this.$store.getters.isFetchingCompetitions
+            },
+            errorMessage: function () {
+                return this.$store.getters.errorMessage
             }
         },
         methods: {
-            onCompetitionClick(competition) {
-                this.$router.push({path: `/competition/${competition}`})
-            },
-            onAddButtonClick(){
+            onAddButtonClick() {
                 this.$router.push({path: '/competition/create'})
             }
+        },
+        mounted() {
+            this.$store.dispatch('fetchAllCompetitions')
         }
     }
 </script>
@@ -59,28 +58,7 @@
         padding: 0.2em 0;
     }
 
-    .competition-name {
-        font-family: FormulaOne-Bold, serif;
-    }
-
-    .competition-drivers {
-        float: right;
-        width: 30%;
-        font-family: FormulaOne-Regular, serif;
-    }
-
-    .badge {
-        padding: 0.5em 1em;
-        margin-left: 1em;
-    }
-
-    .competition:hover {
-        cursor: pointer;
-        background: #34393b;
-        color: white;
-    }
-
-    .add-button{
+    .add-button {
         position: absolute;
         right: 2em;
         bottom: 2em;
